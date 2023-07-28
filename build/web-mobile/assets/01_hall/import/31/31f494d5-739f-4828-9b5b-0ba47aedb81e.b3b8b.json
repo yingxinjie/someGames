@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "44yeZU0sBNsKXUDUQGvi0s"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "input-bg",
+      "rect": [
+        0,
+        0,
+        443,
+        43
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        443,
+        43
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

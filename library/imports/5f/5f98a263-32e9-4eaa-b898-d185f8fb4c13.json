@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "牌局说明弹窗",
+    "texture": "ece2f6e3-af21-4f80-adaf-9e38289b0e19",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      511,
+      831
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      511,
+      831
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

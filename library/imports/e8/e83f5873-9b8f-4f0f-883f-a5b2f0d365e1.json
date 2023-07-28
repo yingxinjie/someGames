@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "铂金卡背景",
+    "texture": "c2adb667-e6f3-4913-a159-96b9a4c9604f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      757,
+      304
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      757,
+      304
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

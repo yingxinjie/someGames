@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1b1f039e-378b-4203-a0f9-ad02eb1f838c",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 109,
+  "height": 46,
+  "platformSettings": {},
+  "subMetas": {
+    "保险池icon": {
+      "ver": "1.0.6",
+      "uuid": "2dd259e7-8486-4873-bef6-b0170c518a44",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1b1f039e-378b-4203-a0f9-ad02eb1f838c",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 109,
+      "height": 46,
+      "rawWidth": 109,
+      "rawHeight": 46,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

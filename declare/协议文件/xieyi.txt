@@ -1,0 +1,91 @@
+说明: url地址后面加上参数 address=192.168.1.6 修改项目的http地址
+
+	枚举 AccountType ={phone:1,mail:2}
+
+
+http://xx.xx.x.x/user/reg
+	post
+	参数
+		type	number	//注册类型1：手机注册 2邮箱注册 AccountType 
+		account	string	//账号
+		code	string	//验证码
+		password	string	//密码
+	返回
+		code	number	//错误码 0成功 1手机号验证不通过，2邮箱验证不通过
+		msg	string	//错误消息提示可空
+
+http：//xx.xx.xx.xx/user/getcode
+	get
+	参数
+		type	number	//类型 1手机注册 2邮箱注册AccountType 
+		account	string	//手机号,或者邮箱
+	返回
+		code	string	//错误码 0成功,非0错误信息
+		msg	string	//错误消息提示可空
+
+http://xx.xx.xx.xx/user/login
+	post
+	参数
+		type	number	//账号类型：1手机 2 邮箱AccountType 
+		account	string	//账号
+		password	string	//密码
+	返回
+		code	number	//错误码 0成功,非0错误
+		msg	string	//错误消息提示可空
+		token	string	//token
+
+http://xx.xx.xx.xx/user/userinfo
+	post
+	参数
+		token	string	//token
+	返回	
+		uid	number	//uid
+		age	number	//年龄
+		gold	number	//金币 区别于money
+		nick	string	//昵称
+		gameid	number	//游戏id
+		roomid	number	//房间id
+		money	number	//钱
+	
+
+	枚举 MoneyType = {gold：1，money：2}
+
+
+http://xx.xx.xx.xx/user/update
+	post
+	参数
+		token	string	// token
+		uid	number	// uid
+		type	number	//MoneyType 
+	返回
+		type	number	//MoneyType 
+		gold	number	//金币数量
+		money	number	//钱数量
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

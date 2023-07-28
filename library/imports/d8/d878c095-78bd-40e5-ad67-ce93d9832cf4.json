@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-zuanshi1",
+    "texture": "849b3be5-03a9-4746-b1ed-02066f0af969",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      40,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      40,
+      33
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

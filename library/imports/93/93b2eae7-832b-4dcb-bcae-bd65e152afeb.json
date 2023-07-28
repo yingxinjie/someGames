@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-bi1",
+    "texture": "38877962-c2a1-4075-b274-e223324f1058",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      22,
+      21
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      22,
+      21
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

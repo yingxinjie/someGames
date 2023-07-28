@@ -1,0 +1,28 @@
+{
+    "paths": {
+        "1bqbYiyL9MYZgsjMb0RIHW": [
+            "i18n/lan",
+            "cc.TextAsset"
+        ]
+    },
+    "uuids": [
+        "1bqbYiyL9MYZgsjMb0RIHW"
+    ],
+    "scenes": {},
+    "redirect": [],
+    "deps": [],
+    "packs": {},
+    "name": "resources",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "1bqbYiyL9MYZgsjMb0RIHW",
+            "e6689"
+        ],
+        "native": []
+    }
+}

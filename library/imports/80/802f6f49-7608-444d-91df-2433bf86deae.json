@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-bigfish",
+    "texture": "a3f1cde7-bdbc-45f9-91ec-ce3f758f8676",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      56
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "8、allin",
+    "texture": "cf4c65ef-b2f1-497e-8e6f-413664c1edf3",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      89,
+      28
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      89,
+      28
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

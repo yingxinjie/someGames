@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "9、胜利标签",
+    "texture": "90cbca4b-5271-4772-ab31-c6b1c279c438",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      309,
+      208
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      309,
+      208
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

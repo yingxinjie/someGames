@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "daQdKlMe1Ka7rrDF8bdliY"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "box-bg",
+      "rect": [
+        0,
+        0,
+        499,
+        176
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        499,
+        176
+      ],
+      "capInsets": [
+        109,
+        0,
+        104,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

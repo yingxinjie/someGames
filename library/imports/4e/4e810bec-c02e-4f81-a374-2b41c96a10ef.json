@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "上滑展示个人图标",
+    "texture": "69af573a-c3c1-4605-9a2d-c30fbf8d35fe",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      56
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      56,
+      57
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "9fv49DoV9FIoGZ6pdB2c/q"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "julebu-icon1",
+      "rect": [
+        0,
+        0,
+        481,
+        398
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        481,
+        398
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

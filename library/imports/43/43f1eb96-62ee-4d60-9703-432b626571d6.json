@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "10、大筹码icon",
+    "texture": "b87da049-cd78-4087-a2ab-632e0b5f7162",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      55,
+      53
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      55,
+      53
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

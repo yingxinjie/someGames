@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "4msg-btn-hudong",
+    "texture": "32427835-c9b8-4160-81ab-890bc452ebac",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      61,
+      61
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      63,
+      62
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

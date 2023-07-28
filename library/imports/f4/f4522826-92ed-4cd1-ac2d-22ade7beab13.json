@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1、各通用标签按钮样式",
+    "texture": "6e8117c9-d757-4123-94c9-74d4f09dcf98",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

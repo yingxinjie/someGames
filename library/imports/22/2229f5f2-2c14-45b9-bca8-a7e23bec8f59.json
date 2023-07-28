@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "左上背景框",
+    "texture": "6cac3d74-99e2-49c4-b9f2-c540646efa86",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      93,
+      70
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      93,
+      70
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

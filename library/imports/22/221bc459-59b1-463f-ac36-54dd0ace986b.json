@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-head",
+    "texture": "268e5f22-5bd0-4efb-9241-0c7007a8dcc6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      62,
+      63
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      62,
+      63
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

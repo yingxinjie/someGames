@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "7、拉动条显示数字",
+    "texture": "2b459007-a812-4d3d-92ce-06a87507e771",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      89,
+      28
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      89,
+      28
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

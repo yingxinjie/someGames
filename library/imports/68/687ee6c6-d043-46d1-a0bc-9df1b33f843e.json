@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "3、牌高亮边框",
+    "texture": "79306265-df19-4e08-8f51-30f1f10aeb6c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      75,
+      98
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      75,
+      98
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

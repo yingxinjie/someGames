@@ -1,0 +1,79 @@
+{
+    "paths": {
+        "03bKsxohxKK5pHHpxiaj3R": [
+            "effect/mymaterial",
+            "cc.Material"
+        ],
+        "bfGGiH22BMnb9VIAddnJbJ": [
+            "effect/myshader",
+            "cc.EffectAsset"
+        ],
+        "06XrxAK7JBK5lVyzErka8T": [
+            "texture/bg_0",
+            "cc.Texture2D"
+        ],
+        "252pDUemJJuoXOhu6dTfcr": [
+            "texture/bg_0",
+            "cc.SpriteFrame",
+            1
+        ],
+        "29G9yEwEVFdJePFZnaYuLl": [
+            "texture/主页与登录注册7.1",
+            "cc.Texture2D"
+        ],
+        "cfRoLEUndGV4rggKBWbL/m": [
+            "texture/主页与登录注册7.1",
+            "cc.SpriteFrame",
+            1
+        ]
+    },
+    "uuids": [
+        "03bKsxohxKK5pHHpxiaj3R",
+        "06XrxAK7JBK5lVyzErka8T",
+        "252pDUemJJuoXOhu6dTfcr",
+        "28dPjdQWxEQIG3VVl1Qm6T",
+        "29G9yEwEVFdJePFZnaYuLl",
+        "bfGGiH22BMnb9VIAddnJbJ",
+        "cfRoLEUndGV4rggKBWbL/m"
+    ],
+    "scenes": {},
+    "redirect": [
+        "28dPjdQWxEQIG3VVl1Qm6T",
+        0
+    ],
+    "deps": [
+        "internal"
+    ],
+    "packs": {
+        "016a12b31": [
+            "06XrxAK7JBK5lVyzErka8T",
+            "29G9yEwEVFdJePFZnaYuLl"
+        ]
+    },
+    "name": "00_base",
+    "importBase": "import",
+    "nativeBase": "native",
+    "debug": true,
+    "isZip": false,
+    "encrypted": false,
+    "versions": {
+        "import": [
+            "016a12b31",
+            "45418",
+            "03bKsxohxKK5pHHpxiaj3R",
+            "42681",
+            "252pDUemJJuoXOhu6dTfcr",
+            "32e96",
+            "bfGGiH22BMnb9VIAddnJbJ",
+            "aa104",
+            "cfRoLEUndGV4rggKBWbL/m",
+            "871bd"
+        ],
+        "native": [
+            "06XrxAK7JBK5lVyzErka8T",
+            "30d91",
+            "29G9yEwEVFdJePFZnaYuLl",
+            "abc8c"
+        ]
+    }
+}

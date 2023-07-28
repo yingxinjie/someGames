@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-clock1",
+    "texture": "b57c871e-da84-43f6-8e8f-d1db2cf104c5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      18,
+      18
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      18,
+      18
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

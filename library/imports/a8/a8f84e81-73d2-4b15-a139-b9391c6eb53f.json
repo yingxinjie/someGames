@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "8、拉动条拉满",
+    "texture": "17210506-85ff-461e-a5c4-a00feb8b19ed",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      14,
+      441
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      14,
+      441
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

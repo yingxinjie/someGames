@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "未选中按钮",
+    "texture": "8555bfda-1f04-4ad4-ba15-2d2ebad5f9aa",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      73,
+      54
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      73,
+      54
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

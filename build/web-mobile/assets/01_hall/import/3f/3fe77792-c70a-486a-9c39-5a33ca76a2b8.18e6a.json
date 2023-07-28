@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "bfR9cpFBdEx6Dhs/tZVjsn"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "julebu-bottom-del",
+      "rect": [
+        0,
+        0,
+        123,
+        43
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        123,
+        43
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

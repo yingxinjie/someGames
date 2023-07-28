@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "创建牌局",
+    "texture": "9804543e-5d41-4f86-8294-1b0b0413ed60",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      42,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      42,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "蓝卡",
+    "texture": "62cd766a-5525-4209-946b-9192c4cc6149",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      757,
+      304
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      757,
+      304
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

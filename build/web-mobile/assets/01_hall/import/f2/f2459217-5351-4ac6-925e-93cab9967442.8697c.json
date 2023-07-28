@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "59UaK7Ce1IWKp8BhxFNCFS"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "背包为空",
+      "rect": [
+        0,
+        0,
+        424,
+        241
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        424,
+        241
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

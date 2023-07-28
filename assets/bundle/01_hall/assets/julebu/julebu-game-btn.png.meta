@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "157c5dc3-a7ee-43f3-b294-f98b797e850d",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 101,
+  "height": 47,
+  "platformSettings": {},
+  "subMetas": {
+    "julebu-game-btn": {
+      "ver": "1.0.6",
+      "uuid": "d37712f7-f4a8-4666-9ef8-783756d4e722",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "157c5dc3-a7ee-43f3-b294-f98b797e850d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 101,
+      "height": 47,
+      "rawWidth": 101,
+      "rawHeight": 47,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

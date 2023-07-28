@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "c2adb667-e6f3-4913-a159-96b9a4c9604f",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 757,
+  "height": 304,
+  "platformSettings": {},
+  "subMetas": {
+    "铂金卡背景": {
+      "ver": "1.0.6",
+      "uuid": "e83f5873-9b8f-4f0f-883f-a5b2f0d365e1",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "c2adb667-e6f3-4913-a159-96b9a4c9604f",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 757,
+      "height": 304,
+      "rawWidth": 757,
+      "rawHeight": 304,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

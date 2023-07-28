@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-centerbar",
+    "texture": "5797cc9e-0ec2-4b50-a1e9-b6069ac3657b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      690,
+      133
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      690,
+      133
+    ],
+    "capInsets": [
+      18,
+      20,
+      18,
+      22
+    ]
+  }
+}

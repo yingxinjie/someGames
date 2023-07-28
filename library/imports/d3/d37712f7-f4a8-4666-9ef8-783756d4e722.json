@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-game-btn",
+    "texture": "157c5dc3-a7ee-43f3-b294-f98b797e850d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      101,
+      47
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      101,
+      47
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

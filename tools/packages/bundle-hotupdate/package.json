@@ -1,0 +1,7 @@
+{
+    "name": "bundle-hotupdate",
+    "version": "0.0.1",
+    "description": "Bundle hotUpdate manifest generator",
+    "author": "Newrow",
+    "main": "main.js"
+}

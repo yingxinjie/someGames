@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-baoxianchi",
+    "texture": "1f38fce2-49f2-4cf0-b8ea-037e7dd737e9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      47,
+      53
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      47,
+      53
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

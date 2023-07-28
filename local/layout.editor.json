@@ -1,0 +1,103 @@
+{
+  "version": "1.1.1",
+  "windows": {
+    "main": {
+      "main": true,
+      "url": "app://editor/index.html",
+      "windowType": "dockable",
+      "x": 1600,
+      "y": 0,
+      "width": 2560,
+      "height": 1392,
+      "layout": {
+        "type": "dock-h",
+        "children": [
+          {
+            "width": 973,
+            "height": 1271.5,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "assets"
+            ]
+          },
+          {
+            "width": 348,
+            "height": 1271.5,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "hierarchy"
+            ]
+          },
+          {
+            "width": 304,
+            "height": 1271.5,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "inspector"
+            ]
+          },
+          {
+            "width": 910,
+            "height": 1271.5,
+            "type": "dock-v",
+            "children": [
+              {
+                "width": 910,
+                "height": 862.65625,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "scene"
+                ]
+              },
+              {
+                "width": 910,
+                "height": 405.84375,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "console",
+                  "timeline",
+                  "game-window"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "panels": [
+        "assets",
+        "hierarchy",
+        "inspector",
+        "scene",
+        "console",
+        "timeline",
+        "game-window"
+      ]
+    }
+  },
+  "panels": {
+    "project-settings": {
+      "x": 1432,
+      "y": 420,
+      "width": 600,
+      "height": 565
+    },
+    "preferences": {
+      "x": 846,
+      "y": 205,
+      "width": 601,
+      "height": 566
+    },
+    "sprite-editor": {
+      "x": 1462,
+      "y": 420,
+      "width": 516,
+      "height": 539
+    }
+  },
+  "panelLabelWidth": {}
+}

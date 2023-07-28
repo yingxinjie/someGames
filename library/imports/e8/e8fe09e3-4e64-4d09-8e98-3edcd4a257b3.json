@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "最低入池率条",
+    "texture": "74b57c11-4f7b-4e77-acdb-a7c37290a615",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      588,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      588,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

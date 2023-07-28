@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "juelebu-menu",
+    "texture": "35986fae-77ff-4d4e-8469-33afa8e0893e",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      32,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      34,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

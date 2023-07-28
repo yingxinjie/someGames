@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "tanchu",
+    "texture": "c01d858d-1aa6-4a43-a975-db2883fbcdef",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      497,
+      387
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      497,
+      387
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

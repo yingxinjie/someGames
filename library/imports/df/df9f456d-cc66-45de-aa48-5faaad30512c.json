@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "座位引导提示",
+    "texture": "ce8b46c2-5e96-4490-bdcd-12572cb37b0c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      317,
+      105
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      317,
+      105
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

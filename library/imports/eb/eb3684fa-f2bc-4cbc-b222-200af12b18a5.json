@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "无牌-轮廓",
+    "texture": "ff7e3c5c-b4fa-44af-bd29-dc0fafee1bf2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      22,
+      40
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      22,
+      40
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

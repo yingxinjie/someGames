@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "小筹码背景输入框",
+    "texture": "6802e289-af82-4bbb-9756-a2f12de53a32",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      68,
+      27
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      68,
+      27
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

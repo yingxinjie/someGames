@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "看牌箭头",
+    "texture": "03b12e9e-a093-4f4b-81ed-bbeda6ee044e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      18,
+      34
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      18,
+      34
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

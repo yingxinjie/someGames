@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-share",
+    "texture": "4f140fc2-839d-4c39-b9f1-72b4043f30e6",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      30,
+      29
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      31,
+      30
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "0dcWCk98BMi65C6Tv8m0rJ"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "wo-cofirm",
+      "rect": [
+        0,
+        0,
+        347,
+        76
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        347,
+        76
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

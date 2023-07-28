@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Dicon",
+    "texture": "b01d06ee-9bd1-42e7-9307-d2f89e2b5fa8",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      23,
+      23
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      23,
+      23
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

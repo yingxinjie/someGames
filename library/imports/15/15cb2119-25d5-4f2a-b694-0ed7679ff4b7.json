@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "弹幕icon",
+    "texture": "1ac44464-ff54-4e39-953b-fa1f815e59f1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      47,
+      46
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      47,
+      46
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

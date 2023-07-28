@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "弹幕文字输入框",
+    "texture": "84acd639-9a55-483c-9819-43d40c7f8a2c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      558,
+      58
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      558,
+      58
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

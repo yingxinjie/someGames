@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-beizhu",
+    "texture": "4832238e-39a1-406b-950d-a6ab6d582b4e",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      322,
+      185
+    ],
+    "offset": [
+      0.5,
+      0.5
+    ],
+    "originalSize": [
+      323,
+      186
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

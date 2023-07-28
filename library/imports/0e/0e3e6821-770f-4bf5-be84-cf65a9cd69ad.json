@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-zhongdeng",
+    "texture": "930f7fcd-f6fc-4019-806a-41a0da7c517f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      278,
+      78
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      278,
+      78
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

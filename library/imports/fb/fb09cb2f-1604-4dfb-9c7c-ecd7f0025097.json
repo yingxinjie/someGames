@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-msg",
+    "texture": "3e9b68eb-970d-41fe-9147-2208a8a5e304",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      32,
+      34
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      32,
+      34
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

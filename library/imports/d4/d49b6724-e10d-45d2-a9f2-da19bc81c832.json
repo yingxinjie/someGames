@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "Allin头像旋转背景",
+    "texture": "ba96a28e-d2d5-4a53-a51f-f2e373568346",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      103,
+      98
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      103,
+      99
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

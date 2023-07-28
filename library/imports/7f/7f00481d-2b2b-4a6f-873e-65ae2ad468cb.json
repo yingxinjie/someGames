@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "关闭",
+    "texture": "d7bfa8b8-8a49-470b-8ec3-2c9dbe8de892",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      34,
+      34
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      34,
+      34
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

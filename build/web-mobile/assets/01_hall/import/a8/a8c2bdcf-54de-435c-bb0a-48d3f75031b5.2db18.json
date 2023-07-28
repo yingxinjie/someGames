@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "98emwP2aBDfIDdtjDGA/3u"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "home-icon2",
+      "rect": [
+        0,
+        0,
+        29,
+        25
+      ],
+      "offset": [
+        -0.5,
+        0.5
+      ],
+      "originalSize": [
+        30,
+        26
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

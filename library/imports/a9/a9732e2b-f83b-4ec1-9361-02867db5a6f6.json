@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-toggle0",
+    "texture": "b17896ab-27c1-4b0a-9460-2ba478853a23",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      33
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

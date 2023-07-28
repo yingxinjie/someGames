@@ -1,0 +1,137 @@
+[
+  1,
+  [
+    "07izPJCThB0pLKc7K/zj7c",
+    "1as+VBvCJDBqsRhB0+Co/Y",
+    "02WZ6fSehFzr8Y6YdyC22M"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    [
+      [
+        {
+          "name": "julebu-sort2",
+          "rect": [
+            0,
+            0,
+            10,
+            19
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            10,
+            19
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "julebu-sort0",
+          "rect": [
+            0,
+            0,
+            8,
+            19
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            8,
+            19
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      [
+        {
+          "name": "julebu-sort1",
+          "rect": [
+            0,
+            0,
+            8,
+            19
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            8,
+            19
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ]
+  ]
+]

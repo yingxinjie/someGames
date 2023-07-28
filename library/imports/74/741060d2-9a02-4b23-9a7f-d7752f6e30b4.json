@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "女性icon",
+    "texture": "41cb19e5-9237-4176-baad-36cb1fa2b0c2",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      15,
+      20
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      16,
+      21
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

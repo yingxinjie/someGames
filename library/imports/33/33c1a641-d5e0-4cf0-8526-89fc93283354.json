@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "人数",
+    "texture": "ff963c83-8346-4fd0-a8e6-f286d34eeac7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      29,
+      25
+    ],
+    "offset": [
+      -0.5,
+      0.5
+    ],
+    "originalSize": [
+      30,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

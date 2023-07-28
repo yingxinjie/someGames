@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "icon_mail1",
+    "texture": "1b598e04-5862-4479-a71c-1d025ad3d3ec",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      36,
+      28
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      36,
+      30
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

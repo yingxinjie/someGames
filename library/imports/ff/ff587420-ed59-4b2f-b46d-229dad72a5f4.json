@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "倒计时icon",
+    "texture": "a1e0593d-cc9e-4889-985c-7492816d8f57",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      54,
+      62
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      54,
+      62
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

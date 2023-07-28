@@ -1,0 +1,78 @@
+2023-07-27T06:17:07.499Z - success: protocol editor-framework registered
+2023-07-27T06:17:07.500Z - success: protocol app registered
+2023-07-27T06:17:07.500Z - success: protocol theme registered
+2023-07-27T06:17:07.500Z - success: protocol packages registered
+2023-07-27T06:17:07.517Z - normal: Load ~/.CocosCreator/settings.json
+2023-07-27T06:17:07.530Z - success: protocol uuid registerred
+2023-07-27T06:17:07.531Z - success: protocol db registerred
+2023-07-27T06:17:07.531Z - success: protocol thumbnail registerred
+2023-07-27T06:17:07.587Z - normal: Initializing Asset Database
+2023-07-27T06:17:07.596Z - normal: checking language setting...
+2023-07-27T06:17:07.596Z - normal: Language: zh
+2023-07-27T06:17:07.598Z - success: protocol unpack registerred
+2023-07-27T06:17:07.598Z - success: protocol disable-commonjs registerred
+2023-07-27T06:17:08.002Z - normal: connected!
+2023-07-27T06:17:08.253Z - normal: Check project D:\client\club
+2023-07-27T06:17:08.255Z - normal: Initializing project D:\client\club
+2023-07-27T06:17:08.718Z - success: adapters loaded
+2023-07-27T06:17:08.739Z - success: asset-db-debugger loaded
+2023-07-27T06:17:08.808Z - success: fb-audience-network loaded
+2023-07-27T06:17:08.854Z - success: fb-live-stream loaded
+2023-07-27T06:17:08.879Z - success: google-play-instant loaded
+2023-07-27T06:17:08.884Z - success: jsb-adapter loaded
+2023-07-27T06:17:08.907Z - success: package-manager loaded
+2023-07-27T06:17:08.914Z - success: runtime-adapters loaded
+2023-07-27T06:17:08.941Z - success: runtime-dev-tools loaded
+2023-07-27T06:17:08.958Z - success: ui-kit-preview-extra loaded
+2023-07-27T06:17:08.971Z - success: ui-kit-preview loaded
+2023-07-27T06:17:10.055Z - success: alipay-minigame loaded
+2023-07-27T06:17:10.060Z - success: assets loaded
+2023-07-27T06:17:10.063Z - success: baidugame-opendata loaded
+2023-07-27T06:17:10.065Z - success: baidugame loaded
+2023-07-27T06:17:10.080Z - success: builder loaded
+2023-07-27T06:17:10.082Z - success: bytedance-opendata loaded
+2023-07-27T06:17:10.085Z - success: bytedance loaded
+2023-07-27T06:17:10.089Z - success: channel-upload-tools loaded
+2023-07-27T06:17:10.211Z - success: cloud-function loaded
+2023-07-27T06:17:10.387Z - success: cocos-services loaded
+2023-07-27T06:17:10.390Z - success: console loaded
+2023-07-27T06:17:10.393Z - success: curve-editor loaded
+2023-07-27T06:17:10.401Z - success: fb-instant-games loaded
+2023-07-27T06:17:10.403Z - success: game-window loaded
+2023-07-27T06:17:10.404Z - success: google-instant-games loaded
+2023-07-27T06:17:10.408Z - success: hierarchy loaded
+2023-07-27T06:17:10.410Z - success: huawei-agc loaded
+2023-07-27T06:17:10.414Z - success: huawei-runtime loaded
+2023-07-27T06:17:10.417Z - success: inspector loaded
+2023-07-27T06:17:10.433Z - success: cpk-publish loaded
+2023-07-27T06:17:10.434Z - success: keystore loaded
+2023-07-27T06:17:10.450Z - success: link-sure-runtime loaded
+2023-07-27T06:17:10.463Z - success: node-library loaded
+2023-07-27T06:17:10.464Z - success: open-recent-items loaded
+2023-07-27T06:17:10.468Z - success: oppo-runtime loaded
+2023-07-27T06:17:10.470Z - success: package-asset loaded
+2023-07-27T06:17:10.470Z - success: preferences loaded
+2023-07-27T06:17:10.472Z - success: project-importer loaded
+2023-07-27T06:17:10.473Z - success: project-settings loaded
+2023-07-27T06:17:10.485Z - success: qtt-runtime loaded
+2023-07-27T06:17:10.487Z - success: scene loaded
+2023-07-27T06:17:10.488Z - success: simulator-debugger loaded
+2023-07-27T06:17:10.490Z - success: sprite-editor loaded
+2023-07-27T06:17:10.539Z - success: store loaded
+2023-07-27T06:17:10.542Z - success: taobao-creativeapp loaded
+2023-07-27T06:17:10.545Z - success: timeline loaded
+2023-07-27T06:17:10.550Z - success: vivo-runtime loaded
+2023-07-27T06:17:10.553Z - success: wechatgame-opendata loaded
+2023-07-27T06:17:10.557Z - success: wechatgame loaded
+2023-07-27T06:17:10.561Z - success: xiaomi-runtime loaded
+2023-07-27T06:17:10.780Z - success: im-plugin loaded
+2023-07-27T06:17:10.780Z - success: preview server running at http://localhost:7456
+2023-07-27T06:17:11.342Z - normal: Initializing Cocos2d
+2023-07-27T06:17:13.429Z - normal: Initializing engine extends
+2023-07-27T06:17:17.034Z - normal: Loading packages
+2023-07-27T06:17:17.036Z - normal: Run Application
+2023-07-27T06:17:18.143Z - info: Cocos Service load base data!
+2023-07-27T06:17:24.473Z - success: cloud-function unloaded
+2023-07-27T07:18:51.618Z - success: TypeScript Configuration file has been copied to D:\client\club\tsconfig.json
+2023-07-27T07:18:53.881Z - success: Chrome debug setting has been updated to .vscode/launch.json, please install Debugger for Chrome VS Code extension to debug your project.
+2023-07-28T01:55:56.779Z - info: 只有预制节点 "gameSetting" 及其子节点会被保存。

@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "af1c6297-e058-4395-9995-22f3ad5e870a",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 28,
+  "height": 39,
+  "platformSettings": {},
+  "subMetas": {
+    "持牌1张": {
+      "ver": "1.0.6",
+      "uuid": "286ba6fd-86da-48e6-a341-8d0c53e0dea9",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "af1c6297-e058-4395-9995-22f3ad5e870a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 28,
+      "height": 39,
+      "rawWidth": 28,
+      "rawHeight": 39,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

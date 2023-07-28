@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "msg-banner-bg",
+    "texture": "1c4f08d2-c719-422e-843a-9829148fa3db",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      702,
+      186
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      702,
+      186
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

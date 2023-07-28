@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "7、拉动条展示数据",
+    "texture": "688ae310-2a67-4e1a-9e86-2841c78b2b73",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      91,
+      30
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      91,
+      30
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

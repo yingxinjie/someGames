@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "高牌",
+    "texture": "02eaa528-a527-4686-8574-345a21664541",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

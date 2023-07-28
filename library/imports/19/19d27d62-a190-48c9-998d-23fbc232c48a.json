@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "键盘icon",
+    "texture": "34d7d825-496a-42ef-9652-0eed2f56724f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      52,
+      52
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      52,
+      52
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

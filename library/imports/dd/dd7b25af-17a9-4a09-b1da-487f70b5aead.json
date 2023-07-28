@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "备注标记icon",
+    "texture": "a888b606-4395-487c-a208-f7bf5ca3306d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      18,
+      20
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      19,
+      20
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

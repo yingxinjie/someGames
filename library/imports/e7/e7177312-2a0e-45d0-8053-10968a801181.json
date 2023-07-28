@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "未选中icon2",
+    "texture": "81dcbc78-2b10-4824-8619-b502d10f68cf",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      33
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

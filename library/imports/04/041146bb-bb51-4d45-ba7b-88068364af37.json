@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "头像旁进度背景",
+    "texture": "fb5b0771-3842-40af-aced-23d98d0a0ccd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      27
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      27
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

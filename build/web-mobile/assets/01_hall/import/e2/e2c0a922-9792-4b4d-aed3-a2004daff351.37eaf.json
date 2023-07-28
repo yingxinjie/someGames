@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "5doNSNUcNI0os3onPPOL4a"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "julebu-lv2",
+      "rect": [
+        0,
+        0,
+        56,
+        25
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        56,
+        25
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

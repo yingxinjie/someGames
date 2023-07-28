@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "5f+i/X7OtOqIvwpWuKQiIJ"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "cell-bg",
+      "rect": [
+        0,
+        1,
+        45,
+        101
+      ],
+      "offset": [
+        0,
+        -0.5
+      ],
+      "originalSize": [
+        45,
+        102
+      ],
+      "capInsets": [
+        9,
+        7.5,
+        9,
+        9.5
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "持牌2张",
+    "texture": "625ba11b-04d8-4ec1-9130-60718148961e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      38,
+      39
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      38,
+      39
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

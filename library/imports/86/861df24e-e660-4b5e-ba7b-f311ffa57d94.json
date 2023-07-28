@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "alert-bg",
+    "texture": "6456c800-08d7-43c7-ab28-77ea4ce039f7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      511,
+      535
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      511,
+      535
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

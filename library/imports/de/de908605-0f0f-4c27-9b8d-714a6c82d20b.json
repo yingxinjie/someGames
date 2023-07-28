@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-icon4",
+    "texture": "ab079494-c37d-40ac-a74b-23e6624f0373",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      38,
+      37
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      38,
+      38
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

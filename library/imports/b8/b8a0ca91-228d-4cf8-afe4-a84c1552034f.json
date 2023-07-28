@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "allin标签",
+    "texture": "5666297f-93c8-4db8-89ef-c4116eaa557b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      25
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      25
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

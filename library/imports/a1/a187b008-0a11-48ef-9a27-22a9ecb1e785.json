@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-qianbao",
+    "texture": "a5a0b040-dca1-4b77-ac40-4b348b77aca5",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      27,
+      21
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      28,
+      22
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

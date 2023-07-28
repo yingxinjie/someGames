@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-cofirm",
+    "texture": "0d7160a4-f7c0-4c8b-ae42-e93bfc9b4ac9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      347,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      347,
+      76
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

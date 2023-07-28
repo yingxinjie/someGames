@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-fankui",
+    "texture": "b50f22e4-1bf7-4cf5-9e50-754c9269c79c",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      695,
+      757
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      695,
+      757
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

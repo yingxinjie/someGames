@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-toggle0",
+    "texture": "7da1caa0-e1d8-45fa-9c2b-1ae56f05f1d5",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      33,
+      33
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      33,
+      33
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

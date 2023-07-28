@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-chouma",
+    "texture": "bac4a539-c367-42ff-ac25-b8ab17ece3a0",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      18,
+      18
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      18,
+      18
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

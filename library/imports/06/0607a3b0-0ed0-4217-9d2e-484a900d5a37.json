@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "男性icon",
+    "texture": "e56e56be-6b86-4ec1-b15c-9d068b5647cc",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      21,
+      21
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      22,
+      22
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

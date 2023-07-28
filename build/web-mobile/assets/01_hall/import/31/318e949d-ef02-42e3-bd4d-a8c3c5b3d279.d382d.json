@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "28Fm2tiGlIUKQlTfjxjvD4"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "牌局设置条",
+      "rect": [
+        0,
+        0,
+        588,
+        26
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        588,
+        26
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

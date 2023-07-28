@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "c6epWakSBCZ7c3jnV340dj"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "julebu-headtips1",
+      "rect": [
+        0,
+        0,
+        27,
+        27
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        27,
+        27
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

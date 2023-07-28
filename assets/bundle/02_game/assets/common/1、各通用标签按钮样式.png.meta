@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "6e8117c9-d757-4123-94c9-74d4f09dcf98",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 61,
+  "height": 29,
+  "platformSettings": {},
+  "subMetas": {
+    "1、各通用标签按钮样式": {
+      "ver": "1.0.6",
+      "uuid": "f4522826-92ed-4cd1-ac2d-22ade7beab13",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "6e8117c9-d757-4123-94c9-74d4f09dcf98",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 61,
+      "height": 29,
+      "rawWidth": 61,
+      "rawHeight": 29,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

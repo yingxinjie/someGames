@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "b87da049-cd78-4087-a2ab-632e0b5f7162",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 55,
+  "height": 53,
+  "platformSettings": {},
+  "subMetas": {
+    "10、大筹码icon": {
+      "ver": "1.0.6",
+      "uuid": "43f1eb96-62ee-4d60-9703-432b626571d6",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "b87da049-cd78-4087-a2ab-632e0b5f7162",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 55,
+      "height": 53,
+      "rawWidth": 55,
+      "rawHeight": 53,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "牌提示标签",
+    "texture": "ded5ebf8-8795-4e92-b3d1-9cc47bd2f10e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

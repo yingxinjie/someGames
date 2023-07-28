@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-top-bg",
+    "texture": "b4c51198-d825-4ac6-8af9-c77e649f4890",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      757,
+      304
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      757,
+      304
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

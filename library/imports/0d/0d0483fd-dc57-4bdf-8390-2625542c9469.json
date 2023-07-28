@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-today",
+    "texture": "2899b7ab-7db6-41e3-8b2a-dfe30693809e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      148,
+      43
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      148,
+      43
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

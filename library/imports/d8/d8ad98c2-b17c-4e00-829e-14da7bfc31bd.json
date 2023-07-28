@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "带入记分牌条",
+    "texture": "4408db84-e11e-4eef-8f46-0362df2aacde",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      577,
+      14
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      577,
+      14
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "00-faxian",
+    "texture": "dc718cf5-38ed-4bdb-a723-ce66285f6fd9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      39,
+      36
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      39,
+      36
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

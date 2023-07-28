@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "倒计时2",
+    "texture": "58f42e3a-53f5-434c-8e6d-d30c02880373",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      82,
+      80
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      82,
+      80
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

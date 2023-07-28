@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "62zXZqVSVCCZRrkZLEzGFJ"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "蓝卡",
+      "rect": [
+        0,
+        0,
+        757,
+        304
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        757,
+        304
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

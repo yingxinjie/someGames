@@ -1,0 +1,51 @@
+[
+  1,
+  [
+    "29G9yEwEVFdJePFZnaYuLl"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    {
+      "name": "主页与登录注册7",
+      "rect": [
+        0,
+        0,
+        7022,
+        2830
+      ],
+      "offset": [
+        0,
+        0
+      ],
+      "originalSize": [
+        7022,
+        2830
+      ],
+      "capInsets": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  [
+    0
+  ],
+  0,
+  [
+    0
+  ],
+  [
+    0
+  ],
+  [
+    0
+  ]
+]

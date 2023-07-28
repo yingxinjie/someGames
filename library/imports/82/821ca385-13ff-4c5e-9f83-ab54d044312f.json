@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "牌桌",
+    "texture": "9e9c8464-c2f6-4cc4-b4ed-84d854411e7d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      734,
+      908
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      734,
+      908
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

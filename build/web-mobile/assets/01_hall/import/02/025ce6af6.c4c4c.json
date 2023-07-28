@@ -1,0 +1,219 @@
+[
+  1,
+  [
+    "34IBz9FkZAbp5U0grh0zpM",
+    "1bWY4EWGJEeaccHQJa09Ps",
+    "33ydHJ2JlIaaoh9CXE+HAL",
+    "4epbN6U3pH043bjG3Yiv1o",
+    "96/M4dTZZGTIitsnae7iHY"
+  ],
+  [
+    "_textureSetter"
+  ],
+  [
+    "cc.SpriteFrame"
+  ],
+  0,
+  [
+    [
+      [
+        {
+          "name": "icon_mail0",
+          "rect": [
+            0,
+            0,
+            26,
+            22
+          ],
+          "offset": [
+            0,
+            0.5
+          ],
+          "originalSize": [
+            26,
+            23
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        {
+          "name": "icon_mail1",
+          "rect": [
+            0,
+            1,
+            36,
+            28
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            36,
+            30
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    [
+      [
+        {
+          "name": "btn-big-next",
+          "rect": [
+            0,
+            0,
+            697,
+            194
+          ],
+          "offset": [
+            0,
+            0
+          ],
+          "originalSize": [
+            697,
+            194
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        2
+      ]
+    ],
+    [
+      [
+        {
+          "name": "icon_phone",
+          "rect": [
+            1,
+            1,
+            19,
+            28
+          ],
+          "offset": [
+            0.5,
+            -0.5
+          ],
+          "originalSize": [
+            20,
+            29
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        3
+      ]
+    ],
+    [
+      [
+        {
+          "name": "icon_pwd",
+          "rect": [
+            0,
+            0,
+            28,
+            37
+          ],
+          "offset": [
+            0,
+            0.5
+          ],
+          "originalSize": [
+            28,
+            38
+          ],
+          "capInsets": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      [
+        0
+      ],
+      0,
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        4
+      ]
+    ]
+  ]
+]

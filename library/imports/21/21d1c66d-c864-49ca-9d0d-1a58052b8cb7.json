@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "3msg-huojiang",
+    "texture": "6da594cb-7d72-4db8-bb11-3bf7704a61c7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      70,
+      70
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      70,
+      70
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

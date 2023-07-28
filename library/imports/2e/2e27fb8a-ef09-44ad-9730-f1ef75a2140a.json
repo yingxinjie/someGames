@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-tuhao",
+    "texture": "d672f7ba-661b-498c-9412-47decc9147ba",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      56
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      56
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "金卡",
+    "texture": "9a491a33-5eaf-4c08-a18d-93e731d47f4d",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      757,
+      304
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      757,
+      304
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

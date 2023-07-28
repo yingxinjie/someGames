@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wo-card-bg",
+    "texture": "667c0364-36c7-4773-968f-dac07d17019a",
+    "atlas": "",
+    "rect": [
+      0,
+      1,
+      676,
+      102
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      676,
+      104
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

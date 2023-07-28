@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "3、头像上下显示内容框",
+    "texture": "d039da2e-a534-42ad-9335-5393c73bbfdf",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      76,
+      19
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      76,
+      19
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

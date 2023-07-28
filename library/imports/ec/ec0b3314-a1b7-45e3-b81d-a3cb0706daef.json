@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "msg-enger-bg",
+    "texture": "39649c79-0de9-49f0-8612-8de5884c3eb1",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      692,
+      134
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      692,
+      134
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "拉动条背景",
+    "texture": "be39eeef-a530-4a69-adc1-67161b293fa2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      284,
+      4
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      284,
+      4
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "9、两对",
+    "texture": "c7eb03dc-6a18-4932-96cc-40a02f5d852e",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      61,
+      29
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      61,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "julebu-bottom-del0",
+    "texture": "eece6716-bb91-4de4-af06-7d1f54c42492",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      276,
+      76
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      276,
+      76
+    ],
+    "capInsets": [
+      52,
+      0,
+      43,
+      0
+    ]
+  }
+}

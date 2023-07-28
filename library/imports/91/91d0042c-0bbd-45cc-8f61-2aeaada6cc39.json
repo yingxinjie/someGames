@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "弹窗背景条大2",
+    "texture": "61efec2b-ce62-489f-9c1a-7ac45fd8d29f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      676,
+      97
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      676,
+      97
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

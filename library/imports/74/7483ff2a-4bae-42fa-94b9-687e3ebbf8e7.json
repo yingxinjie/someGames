@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "home-join-tag",
+    "texture": "60973631-5b3f-40e4-b593-860511b27419",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      57,
+      35
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      58,
+      35
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
