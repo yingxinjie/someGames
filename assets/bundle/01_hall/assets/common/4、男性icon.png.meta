@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "de684aae-cd11-4513-887e-2c9367fef275",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 29,
+  "height": 29,
+  "platformSettings": {},
+  "subMetas": {
+    "4、男性icon": {
+      "ver": "1.0.6",
+      "uuid": "7339745d-2a6e-41c0-ac5d-6ad2a7dbc486",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "de684aae-cd11-4513-887e-2c9367fef275",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 29,
+      "height": 29,
+      "rawWidth": 29,
+      "rawHeight": 29,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

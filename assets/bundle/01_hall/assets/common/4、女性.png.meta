@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "1ee0eed8-40f8-46d8-801f-3fd4e0636077",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 22,
+  "height": 29,
+  "platformSettings": {},
+  "subMetas": {
+    "4、女性": {
+      "ver": "1.0.6",
+      "uuid": "60882fae-d552-4e2d-ba55-954089efd627",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "1ee0eed8-40f8-46d8-801f-3fd4e0636077",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 21,
+      "height": 29,
+      "rawWidth": 22,
+      "rawHeight": 29,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

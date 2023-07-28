@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "2、牌桌标签-绿色",
+    "texture": "f5102e24-9e67-4cf0-9cd1-40f0ee405635",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

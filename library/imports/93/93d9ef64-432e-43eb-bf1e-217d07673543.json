@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "2、牌桌标签-灰色",
+    "texture": "fe69e037-ea22-4161-bc85-e400ecdfbfcd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      56,
+      26
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      56,
+      26
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

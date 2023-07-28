@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "6、已选择圆圈",
+    "texture": "f7ba703c-f59a-478f-97e9-76f2728816b2",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      31,
+      31
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      31,
+      31
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

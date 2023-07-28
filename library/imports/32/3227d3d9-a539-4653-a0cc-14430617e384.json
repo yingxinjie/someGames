@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "3、输入框",
+    "texture": "9cce5bfb-14f4-4972-ade5-684ed4eb8122",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      694,
+      190
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      694,
+      190
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

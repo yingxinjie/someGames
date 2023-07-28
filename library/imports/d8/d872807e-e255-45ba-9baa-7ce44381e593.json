@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "3、输入框小",
+    "texture": "449fd4ff-fb6a-41fe-b002-9c6ae5d5cca4",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      694,
+      84
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      694,
+      84
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

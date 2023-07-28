@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "4、女性",
+    "texture": "1ee0eed8-40f8-46d8-801f-3fd4e0636077",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      21,
+      29
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      22,
+      29
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

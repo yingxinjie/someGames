@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1、提示框三角形",
+    "texture": "f2910160-4d36-47be-91a4-99795b66d810",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      16,
+      11
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      16,
+      11
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

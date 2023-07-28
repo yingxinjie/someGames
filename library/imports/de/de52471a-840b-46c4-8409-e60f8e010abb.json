@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "5、弱提示弹窗背景",
+    "texture": "a0fa0fc5-d6a3-49ea-8ebf-ecd96f1e0cd9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      373,
+      123
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      373,
+      123
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

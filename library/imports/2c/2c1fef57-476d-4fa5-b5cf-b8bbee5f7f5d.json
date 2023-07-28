@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "1、筹码S",
+    "texture": "848e7d5e-293f-45e5-812f-724f690a999f",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      35,
+      35
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      35,
+      35
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

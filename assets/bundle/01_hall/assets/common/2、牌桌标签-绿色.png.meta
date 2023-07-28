@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "f5102e24-9e67-4cf0-9cd1-40f0ee405635",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 56,
+  "height": 26,
+  "platformSettings": {},
+  "subMetas": {
+    "2、牌桌标签-绿色": {
+      "ver": "1.0.6",
+      "uuid": "7ed2b83c-9334-40f6-a6be-15f90dc07025",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "f5102e24-9e67-4cf0-9cd1-40f0ee405635",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 56,
+      "height": 26,
+      "rawWidth": 56,
+      "rawHeight": 26,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

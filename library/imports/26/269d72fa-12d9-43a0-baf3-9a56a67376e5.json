@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "3、通用金币",
+    "texture": "df992ae4-0b22-4f82-941c-e0b7fc542217",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      41,
+      42
+    ],
+    "offset": [
+      0.5,
+      -0.5
+    ],
+    "originalSize": [
+      42,
+      43
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
