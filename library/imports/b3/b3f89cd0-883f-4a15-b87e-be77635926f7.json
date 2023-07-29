@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "slider2",
-    "texture": "cf4c65ef-b2f1-497e-8e6f-413664c1edf3",
+    "name": "cbet",
+    "texture": "fd980a3f-4422-454f-bc45-540bd70f7aa0",
     "atlas": "",
     "rect": [
       0,
       0,
-      89,
-      28
+      35,
+      35
     ],
     "offset": [
       0,
       0
     ],
     "originalSize": [
-      89,
-      28
+      35,
+      35
     ],
     "capInsets": [
       0,

@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "8、拉动条拉满",
+    "name": "max",
     "texture": "17210506-85ff-461e-a5c4-a00feb8b19ed",
     "atlas": "",
     "rect": [

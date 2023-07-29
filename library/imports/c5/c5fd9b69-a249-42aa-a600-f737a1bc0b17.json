@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "7、拉动条显示数字",
+    "name": "slider0",
     "texture": "2b459007-a812-4d3d-92ce-06a87507e771",
     "atlas": "",
     "rect": [

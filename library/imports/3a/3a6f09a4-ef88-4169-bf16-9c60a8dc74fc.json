@@ -1,13 +1,13 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "slider2",
-    "texture": "cf4c65ef-b2f1-497e-8e6f-413664c1edf3",
+    "name": "小筹码",
+    "texture": "66167a68-3726-40d7-8d9f-46a60b8473dc",
     "atlas": "",
     "rect": [
       0,
       0,
-      89,
+      29,
       28
     ],
     "offset": [
@@ -15,7 +15,7 @@
       0
     ],
     "originalSize": [
-      89,
+      29,
       28
     ],
     "capInsets": [

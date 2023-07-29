@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "a2571566-c1e3-4d02-98f7-cce80269b306",
+  "uuid": "773d1d85-1566-4ca9-8a4e-b371c387c51b",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -12,11 +12,11 @@
   "height": 35,
   "platformSettings": {},
   "subMetas": {
-    "1、通用筹码": {
+    "bbet": {
       "ver": "1.0.6",
-      "uuid": "f0db931e-b40e-4855-9144-4eee6ef82133",
+      "uuid": "f4b9e576-da9d-4972-999c-b558779c0f18",
       "importer": "sprite-frame",
-      "rawTextureUuid": "a2571566-c1e3-4d02-98f7-cce80269b306",
+      "rawTextureUuid": "773d1d85-1566-4ca9-8a4e-b371c387c51b",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

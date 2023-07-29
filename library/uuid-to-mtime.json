@@ -20,8 +20,8 @@
     "relativePath": "script"
   },
   "5c0e6824-408a-4314-ad79-c69ae5e0752a": {
-    "asset": 1690524928778,
-    "meta": 1690525930375,
+    "asset": 1690596613875,
+    "meta": 1690596683907,
     "relativePath": "bundle\\00_base"
   },
   "e2f60089-6f4c-45cd-a1d9-e426c5f6f4af": {
@@ -55,8 +55,8 @@
     "relativePath": "bundle\\00_base\\texture"
   },
   "cce5dd72-a986-43bf-8cd1-9dd864c2e93f": {
-    "asset": 1690536301632,
-    "meta": 1690536386172,
+    "asset": 1690596613875,
+    "meta": 1690596683909,
     "relativePath": "bundle\\01_hall\\assets"
   },
   "386b91a9-a4c5-4abf-ae28-652377f1511c": {
@@ -207,12 +207,12 @@
   "b87da049-cd78-4087-a2ab-632e0b5f7162": {
     "asset": 1688993496000,
     "meta": 1690293107084,
-    "relativePath": "bundle\\01_hall\\assets\\common\\10、大筹码icon.png"
+    "relativePath": "bundle\\02_game\\assets\\deskicon\\10、大筹码icon.png"
   },
   "6e8117c9-d757-4123-94c9-74d4f09dcf98": {
     "asset": 1688993388000,
     "meta": 1690293107091,
-    "relativePath": "bundle\\01_hall\\assets\\common\\1、各通用标签按钮样式.png"
+    "relativePath": "bundle\\00_base\\common\\1、各通用标签按钮样式.png"
   },
   "95999581-24f7-4eee-a5a2-5fc64626ad3e": {
     "asset": 1689408454000,
@@ -222,7 +222,7 @@
   "cdced734-8a1e-47ac-aebc-7386e414536b": {
     "asset": 1688992976000,
     "meta": 1690293107215,
-    "relativePath": "bundle\\01_hall\\assets\\common\\5、通用筹码.png"
+    "relativePath": "bundle\\00_base\\common\\5、通用筹码.png"
   },
   "065ebc40-2bb2-412b-9955-cb312b91af13": {
     "asset": 1688483516000,
@@ -232,32 +232,32 @@
   "61dc1437-2796-42fa-bcc9-c9b8eeec7c81": {
     "asset": 1689167970000,
     "meta": 1690293107475,
-    "relativePath": "bundle\\01_hall\\assets\\common\\俱乐部币.png"
+    "relativePath": "bundle\\00_base\\common\\俱乐部币.png"
   },
   "83e0a027-f41e-470b-b607-41071b46d69f": {
     "asset": 1688731280000,
     "meta": 1690293107961,
-    "relativePath": "bundle\\01_hall\\assets\\common\\拉动圆.png"
+    "relativePath": "bundle\\00_base\\common\\拉动圆.png"
   },
   "be39eeef-a530-4a69-adc1-67161b293fa2": {
     "asset": 1688731272000,
     "meta": 1690293107994,
-    "relativePath": "bundle\\01_hall\\assets\\common\\拉动条背景.png"
+    "relativePath": "bundle\\00_base\\common\\拉动条背景.png"
   },
   "5089d188-9547-4810-90b0-4614564fe0f9": {
     "asset": 1689167914000,
     "meta": 1690531615548,
-    "relativePath": "bundle\\01_hall\\assets\\common\\拉动条.png"
+    "relativePath": "bundle\\00_base\\common\\拉动条.png"
   },
   "700e1e73-3a5a-49ba-a7a0-0391ab42f5ff": {
     "asset": 1689167932000,
     "meta": 1690293108078,
-    "relativePath": "bundle\\01_hall\\assets\\common\\未选中.png"
+    "relativePath": "bundle\\00_base\\common\\未选中.png"
   },
   "81dcbc78-2b10-4824-8619-b502d10f68cf": {
     "asset": 1689168050000,
     "meta": 1690293108086,
-    "relativePath": "bundle\\01_hall\\assets\\common\\未选中icon2.png"
+    "relativePath": "bundle\\00_base\\common\\未选中icon2.png"
   },
   "0929bf0d-6a2c-486c-ab05-d92da920a928": {
     "asset": 1690100922000,
@@ -312,22 +312,22 @@
   "822a56a1-b7f2-41c9-823e-44240947be57": {
     "asset": 1689167932000,
     "meta": 1690293108216,
-    "relativePath": "bundle\\01_hall\\assets\\common\\选中.png"
+    "relativePath": "bundle\\00_base\\common\\选中.png"
   },
   "583d93ba-2b41-4626-9b68-48b6a97c4b48": {
     "asset": 1689168050000,
     "meta": 1690293108234,
-    "relativePath": "bundle\\01_hall\\assets\\common\\选中icon2.png"
+    "relativePath": "bundle\\00_base\\common\\选中icon2.png"
   },
   "6d968d0c-6744-4370-9408-ad66f1f244de": {
     "asset": 1689167974000,
     "meta": 1690293108261,
-    "relativePath": "bundle\\01_hall\\assets\\common\\金币.png"
+    "relativePath": "bundle\\00_base\\common\\金币.png"
   },
   "88924eee-83b3-4968-8a8a-9506b7c34573": {
     "asset": 1688992856000,
     "meta": 1690293108284,
-    "relativePath": "bundle\\01_hall\\assets\\common\\钻石.png"
+    "relativePath": "bundle\\00_base\\common\\钻石.png"
   },
   "f14ca888-b8cf-4500-8a06-2589ce9584cf": {
     "asset": 1688991130000,
@@ -1342,107 +1342,102 @@
   "745ae384-0583-432e-b403-59e69eaa46ce": {
     "asset": 1689767808000,
     "meta": 1690459396723,
-    "relativePath": "bundle\\01_hall\\assets\\common\\5、通用弹窗背景.png"
+    "relativePath": "bundle\\00_base\\common\\5、通用弹窗背景.png"
   },
   "7b2736e0-4ebc-4dc0-95c1-8333f1646653": {
-    "asset": 1690528913703,
-    "meta": 1690529450828,
-    "relativePath": "bundle\\01_hall\\assets\\common"
+    "asset": 1690596673353,
+    "meta": 1690596683908,
+    "relativePath": "bundle\\00_base\\common"
   },
   "691cc32b-6148-4d2d-8bca-91203afa1a86": {
     "asset": 1690514029808,
     "meta": 1690514029837,
-    "relativePath": "bundle\\01_hall\\assets\\common\\默认头像.png"
-  },
-  "a2571566-c1e3-4d02-98f7-cce80269b306": {
-    "asset": 1690528913690,
-    "meta": 1690528913734,
-    "relativePath": "bundle\\01_hall\\assets\\common\\1、通用筹码.png"
+    "relativePath": "bundle\\00_base\\common\\默认头像.png"
   },
   "1ee0eed8-40f8-46d8-801f-3fd4e0636077": {
     "asset": 1690528913690,
     "meta": 1690528913735,
-    "relativePath": "bundle\\01_hall\\assets\\common\\4、女性.png"
+    "relativePath": "bundle\\00_base\\common\\4、女性.png"
   },
   "848e7d5e-293f-45e5-812f-724f690a999f": {
     "asset": 1690528913690,
     "meta": 1690528913736,
-    "relativePath": "bundle\\01_hall\\assets\\common\\1、筹码S.png"
+    "relativePath": "bundle\\00_base\\common\\1、筹码S.png"
   },
   "202a663e-9465-4fa8-bfb2-769189cade1a": {
     "asset": 1690528913690,
     "meta": 1690528913738,
-    "relativePath": "bundle\\01_hall\\assets\\common\\5、弹窗按钮.png"
+    "relativePath": "bundle\\00_base\\common\\5、弹窗按钮.png"
   },
   "5cc05cde-544c-4884-b660-66bddb24d52c": {
     "asset": 1690528913690,
     "meta": 1690528913741,
-    "relativePath": "bundle\\01_hall\\assets\\common\\3、通用俱乐部币.png"
+    "relativePath": "bundle\\00_base\\common\\3、通用俱乐部币.png"
   },
   "f7ba703c-f59a-478f-97e9-76f2728816b2": {
     "asset": 1690528913689,
     "meta": 1690528913743,
-    "relativePath": "bundle\\01_hall\\assets\\common\\6、已选择圆圈.png"
+    "relativePath": "bundle\\00_base\\common\\6、已选择圆圈.png"
   },
   "f5102e24-9e67-4cf0-9cd1-40f0ee405635": {
     "asset": 1690528913690,
     "meta": 1690528913745,
-    "relativePath": "bundle\\01_hall\\assets\\common\\2、牌桌标签-绿色.png"
+    "relativePath": "bundle\\00_base\\common\\2、牌桌标签-绿色.png"
   },
   "a2885f97-2504-4a6c-897d-411ce1f54dfa": {
     "asset": 1690528913690,
     "meta": 1690528913747,
-    "relativePath": "bundle\\01_hall\\assets\\common\\6、未选中圆圈.png"
+    "relativePath": "bundle\\00_base\\common\\6、未选中圆圈.png"
   },
   "046b6ee3-bbea-449d-892c-d0599c219510": {
     "asset": 1690528913690,
     "meta": 1690528913748,
-    "relativePath": "bundle\\01_hall\\assets\\common\\1、红点筹码.png"
+    "relativePath": "bundle\\00_base\\common\\1、红点筹码.png"
   },
   "de684aae-cd11-4513-887e-2c9367fef275": {
     "asset": 1690528913689,
     "meta": 1690528913749,
-    "relativePath": "bundle\\01_hall\\assets\\common\\4、男性icon.png"
+    "relativePath": "bundle\\00_base\\common\\4、男性icon.png"
   },
   "fe69e037-ea22-4161-bc85-e400ecdfbfcd": {
     "asset": 1690528913690,
     "meta": 1690528913751,
-    "relativePath": "bundle\\01_hall\\assets\\common\\2、牌桌标签-灰色.png"
+    "relativePath": "bundle\\00_base\\common\\2、牌桌标签-灰色.png"
   },
   "54f16099-57b0-43c0-94bf-5a27a2818fda": {
     "asset": 1690528913690,
     "meta": 1690528913752,
-    "relativePath": "bundle\\01_hall\\assets\\common\\2、牌桌标签-金色.png"
+    "relativePath": "bundle\\00_base\\common\\2、牌桌标签-金色.png"
   },
   "df992ae4-0b22-4f82-941c-e0b7fc542217": {
     "asset": 1690528913690,
     "meta": 1690528913768,
-    "relativePath": "bundle\\01_hall\\assets\\common\\3、通用金币.png"
+    "relativePath": "bundle\\00_base\\common\\3、通用金币.png"
   },
   "6f1916eb-ff48-4955-8a2d-2bdae2a3bc22": {
     "asset": 1690528913690,
     "meta": 1690528913771,
-    "relativePath": "bundle\\01_hall\\assets\\common\\2、牌桌标签-红色.png"
+    "relativePath": "bundle\\00_base\\common\\2、牌桌标签-红色.png"
   },
   "b84fb196-6604-4302-8ba9-38edd1e5058b": {
     "asset": 1690528913695,
     "meta": 1690528913771,
-    "relativePath": "bundle\\01_hall\\assets\\common\\3、通用金色钻石.png"
+    "relativePath": "bundle\\00_base\\common\\3、通用金色钻石.png"
   },
   "9a26e3d0-3931-401b-adc7-7bf3bcdc70b9": {
     "asset": 1690528913690,
     "meta": 1690528913772,
-    "relativePath": "bundle\\01_hall\\assets\\common\\3、通用蓝色钻石.png"
+    "relativePath": "bundle\\00_base\\common\\3、通用蓝色钻石.png"
   },
   "0b40b5f3-2ff8-472f-bffb-f7fac63cd8a7": {
     "asset": 1690528913695,
     "meta": 1690528913774,
-    "relativePath": "bundle\\01_hall\\assets\\common\\1、筹码B.png"
+    "relativePath": "bundle\\00_base\\common\\1、筹码B.png"
   },
   "a0fa0fc5-d6a3-49ea-8ebf-ecd96f1e0cd9": {
     "asset": 1690528913690,
     "meta": 1690528913775,
-    "relativePath": "bundle\\01_hall\\assets\\common\\5、弱提示弹窗背景.png"
+    "relativePath": "bundle\\00_base\\common\\5、弱提示弹窗背景.png"
   },
   "9836134e-b892-4283-b6b2-78b5acf3ed45": {
     "asset": 1690292900628,
@@ -1880,13 +1875,13 @@
     "relativePath": "prefab\\light\\spot.prefab"
   },
   "73c0a5aa-f4ec-4dec-ad02-94a177d5ad7a": {
-    "asset": 1690539982522,
-    "meta": 1690545091797,
+    "asset": 1690595518861,
+    "meta": 1690596683907,
     "relativePath": "bundle\\02_game"
   },
   "397a8ebf-3b40-4115-954d-6187bc874f5a": {
-    "asset": 1690543236401,
-    "meta": 1690545091797,
+    "asset": 1690596486300,
+    "meta": 1690596683909,
     "relativePath": "bundle\\02_game\\assets"
   },
   "ac032ded-8e05-40cb-b659-96ac446ec206": {
@@ -1985,8 +1980,8 @@
     "relativePath": "bundle\\02_game\\assets\\10、小框背景.png"
   },
   "010536c0-c339-4369-a3d4-a98456c78354": {
-    "asset": 1690540022996,
-    "meta": 1690545091866,
+    "asset": 1690594213528,
+    "meta": 1690596683910,
     "relativePath": "bundle\\02_game\\assets\\deskicon"
   },
   "51c45cf9-f64d-4cb8-a59b-8f8a6537a14b": {
@@ -2641,23 +2636,23 @@
   },
   "688ae310-2a67-4e1a-9e86-2841c78b2b73": {
     "asset": 1688993244000,
-    "meta": 1690545092536,
-    "relativePath": "bundle\\02_game\\assets\\deskicon\\7、拉动条展示数据.png"
+    "meta": 1690594253644,
+    "relativePath": "bundle\\02_game\\slider\\slider1.png"
   },
   "cf4c65ef-b2f1-497e-8e6f-413664c1edf3": {
     "asset": 1688993288000,
-    "meta": 1690545092537,
-    "relativePath": "bundle\\02_game\\assets\\deskicon\\8、allin.png"
+    "meta": 1690594263502,
+    "relativePath": "bundle\\02_game\\slider\\slider2.png"
   },
   "2b459007-a812-4d3d-92ce-06a87507e771": {
     "asset": 1688993226000,
-    "meta": 1690545092541,
-    "relativePath": "bundle\\02_game\\assets\\deskicon\\7、拉动条显示数字.png"
+    "meta": 1690594242175,
+    "relativePath": "bundle\\02_game\\slider\\slider0.png"
   },
   "17210506-85ff-461e-a5c4-a00feb8b19ed": {
     "asset": 1688993304000,
-    "meta": 1690545092544,
-    "relativePath": "bundle\\02_game\\assets\\deskicon\\8、拉动条拉满.png"
+    "meta": 1690594276510,
+    "relativePath": "bundle\\02_game\\slider\\max.png"
   },
   "ba96a28e-d2d5-4a53-a51f-f2e373568346": {
     "asset": 1689167578000,
@@ -2725,14 +2720,14 @@
     "relativePath": "bundle\\02_game\\assets\\person\\备注标记icon.png"
   },
   "c7bb94eb-9aed-49d2-b0d5-0b925701dd0f": {
-    "asset": 1690547641479,
-    "meta": 1690547641509,
+    "asset": 1690598310528,
+    "meta": 1690598310547,
     "relativePath": "bundle\\02_game\\prefab\\view\\game.prefab"
   },
   "afa796dd-66cd-4d30-ae8a-ba8d53b12f2b": {
     "asset": 1690513939038,
-    "meta": 1690545092621,
-    "relativePath": "bundle\\02_game\\assets\\deskicon\\矩形589.png"
+    "meta": 1690594363312,
+    "relativePath": "bundle\\02_game\\slider\\normal.png"
   },
   "03b12e9e-a093-4f4b-81ed-bbeda6ee044e": {
     "asset": 1690514091652,
@@ -2813,5 +2808,40 @@
     "asset": 1690292900717,
     "meta": 1690545094461,
     "relativePath": "model\\primitives.fbx"
+  },
+  "9d5d5301-105c-4195-a9aa-25437b7536d3": {
+    "asset": 1690594363303,
+    "meta": 1690596683909,
+    "relativePath": "bundle\\02_game\\slider"
+  },
+  "1ad53670-92c1-482f-bdfd-64dbdb5fe638": {
+    "asset": 1690595627030,
+    "meta": 1690595627048,
+    "relativePath": "bundle\\02_game\\allin.anim"
+  },
+  "5edb8d24-b6f4-42fc-9ad5-a2ce6694a98e": {
+    "asset": 1690596711862,
+    "meta": 1690596711863,
+    "relativePath": "bundle\\02_game\\bet"
+  },
+  "fd980a3f-4422-454f-bc45-540bd70f7aa0": {
+    "asset": 1690596822853,
+    "meta": 1690596969978,
+    "relativePath": "bundle\\02_game\\bet\\cbet.png"
+  },
+  "773d1d85-1566-4ca9-8a4e-b371c387c51b": {
+    "asset": 1690596830600,
+    "meta": 1690596962500,
+    "relativePath": "bundle\\02_game\\bet\\bbet.png"
+  },
+  "32302fd7-8fe5-4733-963e-5625fdda2690": {
+    "asset": 1690596830709,
+    "meta": 1690596978741,
+    "relativePath": "bundle\\02_game\\bet\\sbet.png"
+  },
+  "66167a68-3726-40d7-8d9f-46a60b8473dc": {
+    "asset": 1690596879643,
+    "meta": 1690596879658,
+    "relativePath": "bundle\\02_game\\assets\\deskicon\\小筹码.png"
   }
 }
