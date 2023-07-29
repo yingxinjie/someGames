@@ -2,6 +2,7 @@
 cc._RF.push(module, '0146dnqm/FPs5vCwEWDHeeU', 'UserInfo');
 // bundle/01_hall/script/config/UserInfo.ts
 
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserInfo = void 0;
 var userInfo = /** @class */ (function () {
