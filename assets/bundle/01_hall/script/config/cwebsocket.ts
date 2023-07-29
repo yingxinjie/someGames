@@ -104,7 +104,7 @@ export class cwebsocket {
         this.ws.send(info);
     }
 
-    clientSend(event: string, requestData: any, requestType: cmdClientType.CLIENTTOSERVER, taskId?: number) {
+    clientSend(event: string, requestData: any, requestType= cmdClientType.CLIENTTOSERVER, taskId?: number) {
         let info = {
             event,
             requestData,

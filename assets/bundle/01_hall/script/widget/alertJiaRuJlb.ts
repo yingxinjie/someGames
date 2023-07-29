@@ -1,8 +1,12 @@
 
 import { bundleLoader } from "../../../../script/bundleLoader";
 import ComponentBase from "../../../00_base/script/common/ComponentBase";
+import { cmdClientEvent, cmdClientType } from "../../../02_game/script/config/cmdClient";
+import { DeskInfo } from "../../../02_game/script/config/deskInfo";
+import { UserInfo } from "../config/UserInfo";
 import { ViewManager } from "../config/ViewManager";
 import { ViewEnum, WidgetEnum } from "../config/config";
+import { cwebsocket } from "../config/cwebsocket";
 
 const { ccclass, property } = cc._decorator;
 
@@ -20,13 +24,26 @@ export default class alertJiaRuJlb extends ComponentBase {
         this.TouchOn(this.closeBtn, this.alertDestory);
         this.TouchOn(this.jiaRuPaiJuBtn, this.onClickJiaRuPaiJu)
         this.TouchOn(this.jiaRuJuLeBuBtn, this.onClickJiaRuJuLeBu)
+        UserInfo.cwebsocket.on(cmdClientEvent.CONNECT, this.svr_connect, this)
+    }
+
+
+    private svr_connect(data: any) {
+        if (data.requestType == cmdClientType.SERVERRESPONSE) {
+            DeskInfo.setDeskInfo(data.requestData)
+            ViewManager.RemoveAlert(WidgetEnum.BottomToggle)
+            ViewManager.Open(ViewEnum.Game, bundleLoader.ENUM_BUNDLE.GAME)
+            this.node.destroy();
+        }
+    }
+
+    protected onLoad(): void {
+        UserInfo.cwebsocket = new cwebsocket("ws://192.168.31.188:4030/channel", 1)
     }
 
     private onClickJiaRuPaiJu() {
-        ViewManager.RemoveAlert(WidgetEnum.BottomToggle)
-        ViewManager.Open(ViewEnum.Game,bundleLoader.ENUM_BUNDLE.GAME)
-        this.node.destroy();
-        ViewManager.Alert("alertInputYzm");
+        UserInfo.cwebsocket.clientSend(cmdClientEvent.CONNECT, { playerToekn: UserInfo.testToken, deskId: 9 })
+        //  ViewManager.Alert("alertInputYzm");
     }
 
     private onClickJiaRuJuLeBu() {

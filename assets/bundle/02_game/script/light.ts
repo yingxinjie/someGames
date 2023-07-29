@@ -10,7 +10,7 @@ import { string } from "../../../../tools/packages/bundle-hotupdate/jszip";
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class light extends cc.Component {
 
     @property([cc.String])
     private angleNumArr: string[] = [];

@@ -45,11 +45,11 @@ class userInfo {
         return this._token;
     }
 
-    public testToken(){
+    public get testToken(){
         return "5711fc33df744a87380896b1ac3d11359c4dd1d368898d74fe81cdb74a1cccb7"
     }
 
-    public testuuid(){
+    public get testuuid(){
         return 42
     } 
 

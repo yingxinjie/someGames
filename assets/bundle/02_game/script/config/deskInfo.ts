@@ -14,7 +14,7 @@ class deskInfo {
 
     private seatPlayers: { [trueSeat: number]: DplayerInfo } = {}
 
-    private board: any[] = []
+    public board: any[] = []
 
     public deskId: number
 
