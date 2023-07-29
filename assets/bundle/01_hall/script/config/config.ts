@@ -12,6 +12,7 @@ export enum ViewEnum {
 export enum WidgetEnum {
     BottomToggle = "bottomtoggle",
     CountryCode = "countrycode",
+    JoinDesk = "joinDesk",
 }
 
 /** 全局配置参数 */

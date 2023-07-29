@@ -36,6 +36,10 @@ class deskInfo {
 
     public createDeskPlayerId: number
 
+    public seatLen: number = 9 //默认9（灯光角度数量与座位数一致
+
+    public readyPos: number = -1 //准备选择的位置
+
 
     public setDeskInfo(data: any) {
         this.deskId = data.deskId
