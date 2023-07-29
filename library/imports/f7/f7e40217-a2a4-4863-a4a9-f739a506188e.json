@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "扑克牌背面",
+    "name": "cardbg",
     "texture": "86d3386c-bbee-4f14-a0b1-1fceeb0479e3",
     "atlas": "",
     "rect": [

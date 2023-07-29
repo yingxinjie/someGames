@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "弃牌标签",
+    "name": "qipai",
     "texture": "e74de6d7-2dec-4a3b-be5c-07d62137e5d1",
     "atlas": "",
     "rect": [

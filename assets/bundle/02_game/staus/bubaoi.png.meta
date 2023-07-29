@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "0c7eade2-87da-4fb0-a5d9-2f9722ab269c",
+  "uuid": "ffc02acc-53e9-480b-b66a-2216bc402e5d",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -12,11 +12,11 @@
   "height": 25,
   "platformSettings": {},
   "subMetas": {
-    "看牌标签": {
+    "bubaoi": {
       "ver": "1.0.6",
-      "uuid": "8f6b2d6f-399d-46c5-8560-a662b07ae574",
+      "uuid": "a9aaaea7-297d-4559-bdd7-debe1632971c",
       "importer": "sprite-frame",
-      "rawTextureUuid": "0c7eade2-87da-4fb0-a5d9-2f9722ab269c",
+      "rawTextureUuid": "ffc02acc-53e9-480b-b66a-2216bc402e5d",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

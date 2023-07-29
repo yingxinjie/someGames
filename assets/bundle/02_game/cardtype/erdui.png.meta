@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "02eaa528-a527-4686-8574-345a21664541",
+  "uuid": "c7eb03dc-6a18-4932-96cc-40a02f5d852e",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -12,11 +12,11 @@
   "height": 29,
   "platformSettings": {},
   "subMetas": {
-    "高牌": {
+    "erdui": {
       "ver": "1.0.6",
-      "uuid": "77b2e2fc-c74a-468f-b126-ab1ea28815bf",
+      "uuid": "31eba53f-bdb1-4395-b726-afa3b60e94c5",
       "importer": "sprite-frame",
-      "rawTextureUuid": "02eaa528-a527-4686-8574-345a21664541",
+      "rawTextureUuid": "c7eb03dc-6a18-4932-96cc-40a02f5d852e",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

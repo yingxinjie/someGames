@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "射光效果",
+    "texture": "7debd089-9897-447a-87bb-3d094e4d6f23",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      391,
+      105
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      391,
+      105
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

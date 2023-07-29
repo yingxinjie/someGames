@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "5666297f-93c8-4db8-89ef-c4116eaa557b",
+  "uuid": "0c7eade2-87da-4fb0-a5d9-2f9722ab269c",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -12,11 +12,11 @@
   "height": 25,
   "platformSettings": {},
   "subMetas": {
-    "allin标签": {
+    "kanpai": {
       "ver": "1.0.6",
-      "uuid": "b8a0ca91-228d-4cf8-afe4-a84c1552034f",
+      "uuid": "8f6b2d6f-399d-46c5-8560-a662b07ae574",
       "importer": "sprite-frame",
-      "rawTextureUuid": "5666297f-93c8-4db8-89ef-c4116eaa557b",
+      "rawTextureUuid": "0c7eade2-87da-4fb0-a5d9-2f9722ab269c",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

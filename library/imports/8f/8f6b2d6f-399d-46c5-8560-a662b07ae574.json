@@ -1,7 +1,7 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "看牌标签",
+    "name": "kanpai",
     "texture": "0c7eade2-87da-4fb0-a5d9-2f9722ab269c",
     "atlas": "",
     "rect": [

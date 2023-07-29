@@ -1,22 +1,22 @@
 {
   "__type__": "cc.SpriteFrame",
   "content": {
-    "name": "关闭",
-    "texture": "b519597b-5a94-427c-82af-56d5d2534933",
+    "name": "1",
+    "texture": "815e7855-612f-43cc-89d3-1b1ce6f8cc43",
     "atlas": "",
     "rect": [
       0,
       0,
-      26,
-      27
+      34,
+      37
     ],
     "offset": [
       0,
       0
     ],
     "originalSize": [
-      26,
-      27
+      34,
+      37
     ],
     "capInsets": [
       0,
