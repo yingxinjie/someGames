@@ -1,4 +1,5 @@
 import { Tips } from "../../../00_base/script/uiutils/tips";
+import { cmdClientType } from "../../../02_game/script/config/cmdClient";
 
 
 
@@ -44,6 +45,7 @@ export class cwebsocket {
 
         this.ws.onmessage = (event) => {
             console.log("收到消息: ", event.data);
+            this.handleMsg(event.data)
         };
 
         this.ws.onerror = (event) => {
@@ -102,32 +104,56 @@ export class cwebsocket {
         this.ws.send(info);
     }
 
+    clientSend(event: string, requestData: any, requestType: cmdClientType.CLIENTTOSERVER, taskId?: number) {
+        let info = {
+            event,
+            requestData,
+            requestType,
+            taskId
+        }
+        let packages = JSON.stringify(info)
+        this.send(packages)
+    }
 
-    private handleInfo: { id: number, func: Function, cbo: any }[] = []
+
+    handleMsg(data: any) {
+        let _data = JSON.parse(data)
+        this.readMsg(_data)
+    }
+
+    readMsg(data: any) {
+        this.handleInfo.forEach((item: { event: string, func: Function, cbo: any }, idx: number) => {
+            if (item.event == data.event) {
+                item.func.bind(item.cbo)(data)
+            }
+        })
+    }
+
+    private handleInfo: { event: string, func: Function, cbo: any }[] = []
 
 
-    on(id: number, func: Function, cbo: any) {
-        if (id <= 0) {
-            cc.error("消息id必须>0", id);
+    on(event: string, func: Function, cbo: any) {
+        if (event == '') {
+            cc.error("消息id必须>0", event);
             return;
         }
 
         if (!func) {
-            cc.error("消息注册回调不能为空", id);
+            cc.error("消息注册回调不能为空", event);
             return;
         }
 
         if (!cbo) {
-            cc.error("消息注册的函数句柄不能为空", id);
+            cc.error("消息注册的函数句柄不能为空", event);
             return;
         }
 
-        this.handleInfo.push({ id: id, func: func, cbo: cbo });
+        this.handleInfo.push({ event: event, func: func, cbo: cbo });
     }
 
-    off(id: number, func: Function, cbo: any) {
-        this.handleInfo.forEach((item: { id: number, func: Function, cbo: any }, idx: number) => {
-            if (item.id == id && item.func === func && item.cbo === cbo) {
+    off(event: string, func: Function, cbo: any) {
+        this.handleInfo.forEach((item: { event: string, func: Function, cbo: any }, idx: number) => {
+            if (item.event == event && item.func === func && item.cbo === cbo) {
                 this.handleInfo.splice(idx, 1)
             }
         })

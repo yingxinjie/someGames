@@ -17,7 +17,7 @@ export enum WidgetEnum {
 /** 全局配置参数 */
 export const GlobalConfig = {
     // IPort: "175.27.169.117:4000",
-    IPort: "http://192.168.31.39:4000",
+    IPort: "192.168.31.39:4000",
 
 }
 
