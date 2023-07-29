@@ -34,6 +34,8 @@ export default class alertJiaRuJlb extends ComponentBase {
             ViewManager.RemoveAlert(WidgetEnum.BottomToggle)
             ViewManager.Open(ViewEnum.Game, bundleLoader.ENUM_BUNDLE.GAME)
             this.node.destroy();
+        } else {
+            DeskInfo.setLplayer(data.requestData.position, data.requestData)
         }
     }
 
@@ -50,6 +52,12 @@ export default class alertJiaRuJlb extends ComponentBase {
         this.node.destroy();
         ViewManager.Alert("julebuliebiao");
     }
+
+    protected onDestroy(): void {
+        UserInfo.cwebsocket.off(cmdClientEvent.CONNECT, this.svr_connect, this)
+    }
+
+
 
 
 }

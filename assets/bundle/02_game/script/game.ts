@@ -1,5 +1,8 @@
 
 import ComponentBase from "../../00_base/script/common/ComponentBase";
+import { UserInfo } from "../../01_hall/script/config/UserInfo";
+import { cmdClientEvent, cmdClientType } from "./config/cmdClient";
+import { DeskInfo } from "./config/deskInfo";
 import light from "./light";
 
 const { ccclass, property } = cc._decorator;
@@ -33,4 +36,19 @@ export default class game extends ComponentBase {
 
     @property(cc.Node)
     choumas: cc.Node[] = [];
+
+
+    protected start(): void {
+
+    }
+
+    protected onLoad(): void {
+        UserInfo.cwebsocket.on(cmdClientEvent.CONNECT, this.svr_connect, this) // 只处理数据
+    }
+
+    private svr_connect(data: any) {
+        if (data.requestType == cmdClientType.SERVERTOCLIENT) {
+            DeskInfo.setLplayer(data.requestData.position, data.requestData)
+        }
+    }
 }

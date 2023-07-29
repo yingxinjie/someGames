@@ -36,6 +36,7 @@ class deskInfo {
 
     public createDeskPlayerId: number
 
+
     public setDeskInfo(data: any) {
         this.deskId = data.deskId
         this.deskName = data.deskName

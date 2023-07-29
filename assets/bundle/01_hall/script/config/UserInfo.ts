@@ -45,13 +45,13 @@ class userInfo {
         return this._token;
     }
 
-    public get testToken(){
-        return "5711fc33df744a87380896b1ac3d11359c4dd1d368898d74fe81cdb74a1cccb7"
+    public get testToken() {
+        return "46e442ebc26975a1c7861506d5b6c2104c852ab78cebfbd94823229f8fafac8c8c1f56d4f9b6685246a02273f064c3f7"
     }
 
-    public get testuuid(){
+    public get testuuid() {
         return 42
-    } 
+    }
 
     /** 昵称 */
     public nick: string = "";
@@ -111,6 +111,11 @@ class userInfo {
         cc.sys.localStorage.setItem("token", "");
         cc.sys.localStorage.setItem("uuid", "");
     }
+
+
+    public seatPJson: any
+
+    public lightPJson: any
 }
 
 /** 玩家信息 */
