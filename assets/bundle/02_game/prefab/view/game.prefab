@@ -111,14 +111,14 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 941
+        "__id__": 942
       },
       {
-        "__id__": 942
+        "__id__": 943
       }
     ],
     "_prefab": {
-      "__id__": 943
+      "__id__": 944
     },
     "_opacity": 255,
     "_color": {
@@ -32715,10 +32715,13 @@
     "_components": [
       {
         "__id__": 939
+      },
+      {
+        "__id__": 940
       }
     ],
     "_prefab": {
-      "__id__": 940
+      "__id__": 941
     },
     "_opacity": 255,
     "_color": {
@@ -33651,7 +33654,7 @@
       "__id__": 889
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 916
@@ -33722,9 +33725,7 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_spriteFrame": {
-      "__uuid__": "8f6b2d6f-399d-46c5-8560-a662b07ae574"
-    },
+    "_spriteFrame": null,
     "_type": 0,
     "_sizeMode": 1,
     "_fillType": 0,
@@ -34539,6 +34540,54 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
+    "_id": ""
+  },
+  {
+    "__type__": "a2749o+eLBBaKChRKiz5pXy",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 889
+    },
+    "_enabled": true,
+    "labName": {
+      "__id__": 910
+    },
+    "labAllscore": {
+      "__id__": 913
+    },
+    "pic": {
+      "__id__": 939
+    },
+    "sprStaus": {
+      "__id__": 916
+    },
+    "animAllin": {
+      "__id__": 892
+    },
+    "sprTwoCard": {
+      "__id__": 894
+    },
+    "sprTime": {
+      "__id__": 897
+    },
+    "top": {
+      "__id__": 918
+    },
+    "bottom": {
+      "__id__": 924
+    },
+    "Dicon": {
+      "__id__": 930
+    },
+    "cards": [
+      {
+        "__id__": 933
+      },
+      {
+        "__id__": 936
+      }
+    ],
     "_id": ""
   },
   {

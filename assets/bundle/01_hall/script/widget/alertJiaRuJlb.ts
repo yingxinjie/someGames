@@ -35,7 +35,7 @@ export default class alertJiaRuJlb extends ComponentBase {
             ViewManager.Open(ViewEnum.Game, bundleLoader.ENUM_BUNDLE.GAME)
             this.node.destroy();
         } else {
-            DeskInfo.setLplayer(data.requestData.position, data.requestData)
+            DeskInfo.setLplayer(data.requestData.id, data.requestData)
         }
     }
 

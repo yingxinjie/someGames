@@ -1,3 +1,4 @@
+import { UserInfo } from "../../../01_hall/script/config/UserInfo";
 
 
 class deskInfo {
@@ -10,7 +11,7 @@ class deskInfo {
         return this.sing;
     }
 
-    private players: { [trueSeat: number]: LplayerInfo } = {}
+    private players:  { [id: number]: LplayerInfo } = {}
 
     private seatPlayers: { [trueSeat: number]: DplayerInfo } = {}
 
@@ -55,11 +56,11 @@ class deskInfo {
         this.createDeskPlayerId = data.createDeskPlayerId
 
         data.playerList.forEach(lpalyer => {
-            this.setLplayer(lpalyer.position, lpalyer)
+            this.setLplayer(lpalyer.id, lpalyer)
         });
 
         data.seatPlayerList.forEach(dplayer => {
-            this.setLplayer(dplayer.position, dplayer)
+            this.setDplayer(dplayer.position, dplayer)
         });
     }
 
@@ -74,15 +75,31 @@ class deskInfo {
         return null
     }
 
-    public setLplayer(seat: number, data: LplayerInfo) {
-        this.players[seat] = data
+    public setLplayer(id: number, data: LplayerInfo) {
+        this.players[id] = data
     }
 
-    public getLplayer(seat: number) {
-        if (this.players[seat]) {
-            return this.players[seat]
+    public getLplayer(id: number) {
+        if (this.players[id]) {
+            return this.players[id]
         }
         return null
+    }
+
+    public getMylplayer() {
+        for (let seat in this.players) {
+            if (this.players[seat] && this.players[seat].id == UserInfo.testuuid) {
+                return this.players[seat]
+            }
+        }
+    }
+
+    public getMydplayer() {
+        for (let seat in this.seatPlayers) {
+            if (this.seatPlayers[seat] && this.seatPlayers[seat].playerId == UserInfo.testuuid) {
+                return this.seatPlayers[seat]
+            }
+        }
     }
 
 }
@@ -98,7 +115,7 @@ export interface LplayerInfo {   //
     headPic: string
     position: number//服务端真实玩家位置
     //coneverSeat: number//客服端玩家位置
-    bankRoll: number[],//玩家手牌
+    bankRoll: number,//金币
     status: string //操作状态
 }
 

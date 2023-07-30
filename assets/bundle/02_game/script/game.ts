@@ -7,6 +7,7 @@ import { ViewEnum, WidgetEnum } from "../../01_hall/script/config/config";
 import { cmdClientEvent, cmdClientType } from "./config/cmdClient";
 import { DeskInfo } from "./config/deskInfo";
 import { DeskSeatStatus } from "./config/gameConst";
+import head from "./head";
 import light from "./light";
 
 const { ccclass, property } = cc._decorator;
@@ -68,7 +69,7 @@ export default class game extends ComponentBase {
     //消息回调
     private svr_connect(data: any) {
         if (data.requestType == cmdClientType.SERVERTOCLIENT) {
-            DeskInfo.setLplayer(data.requestData.position, data.requestData)
+            DeskInfo.setLplayer(data.requestData.id, data.requestData)
         }
     }
 
@@ -86,7 +87,16 @@ export default class game extends ComponentBase {
 
     private svr_downup(data: any) {
         console.log("svr_bet")
-        ViewManager.Alert(WidgetEnum.JoinDesk, bundleLoader.ENUM_BUNDLE.GAME)
+        if (!data) return cc.error("数据错误")
+        let _data = data.requestData
+        if (_data.status == DeskSeatStatus.TEMPORARY) {
+            ViewManager.Alert(WidgetEnum.JoinDesk, bundleLoader.ENUM_BUNDLE.GAME)
+            this.craeteHead(_data.position, _data.playerId)
+        } else if (_data.status == DeskSeatStatus.SITDOWN) {
+
+        } else {
+
+        }
     }
 
     private svr_start(data: any) {
@@ -111,15 +121,19 @@ export default class game extends ComponentBase {
 
 
     //事件回调
-    private event_sitdown(e) {
-        console.log(e)
+    private event_sitdown(e: cc.Event.EventTouch) {
+        let name = e.currentTarget.name
+        let seat = Number(name.slice(-1)) + 1
+        DeskInfo.readyPos = seat
         let info = {
             playerId: UserInfo.testuuid,
             deskId: 9,
-            position: 8,
-            status: DeskSeatStatus.SITDOWN
+            position: DeskInfo.readyPos,
+            status: DeskSeatStatus.TEMPORARY
         }
         UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
+        //console.log(e)
+
     }
 
 
@@ -132,6 +146,21 @@ export default class game extends ComponentBase {
             this.seats[i].active = true
             this.TouchOn(this.seats[i], this.event_sitdown, this)
         }
+    }
+
+
+    craeteHead(seat: number, id: number) {
+        let seatNode = this.seats[seat - 1]
+        let _head = cc.instantiate(this.headItem)
+        let _ts = _head.getComponent(head)
+        _ts.init(id)
+        _head.parent = seatNode
+        _head.x = 0
+        _head.y = 0
+    }
+
+    tweenSeat() {
+
     }
 
     protected onDestroy(): void {

@@ -8,7 +8,8 @@
 import ComponentBase from "../../00_base/script/common/ComponentBase";
 import { UserInfo } from "../../01_hall/script/config/UserInfo";
 import { cmdClientEvent } from "./config/cmdClient";
-import { PlayerInfoStatus } from "./config/gameConst";
+import { DeskInfo } from "./config/deskInfo";
+import { DeskSeatStatus, PlayerInfoStatus } from "./config/gameConst";
 
 const { ccclass, property } = cc._decorator;
 
@@ -63,11 +64,19 @@ export default class joinDesk extends ComponentBase {
         this.TouchOn(this.btnCoinAdd, this.evt_CoinAdd);
         this.TouchOn(this.btnClubCoinAdd, this.evt_ClubCoinAdd);
         this.slider.node.on("slide", this.setJifen, this)
+        this.init()
     }
 
     init() {
         this.labtitle1.string = "" + UserInfo.nick
         this.labF.string = "" + 200
+        let info = {
+            playerId: UserInfo.testuuid,
+            deskId: 9,
+            bring: 200,
+            status: PlayerInfoStatus.OBSERVE
+        }
+        UserInfo.cwebsocket.clientSend(cmdClientEvent.BRING, info)
     }
 
     setJifen() {
@@ -88,10 +97,17 @@ export default class joinDesk extends ComponentBase {
         let info = {
             playerId: UserInfo.testuuid,
             deskId: 9,
-            bring: 200,
-            status: PlayerInfoStatus.OBSERVE
+            position: DeskInfo.readyPos,
+            status: DeskSeatStatus.SITDOWN
         }
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.BRING, info)
+        UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
+        // let info = {
+        //     playerId: UserInfo.testuuid,
+        //     deskId: 9,
+        //     bring: 200,
+        //     status: PlayerInfoStatus.OBSERVE
+        // }
+        // UserInfo.cwebsocket.clientSend(cmdClientEvent.BRING, info)
         this.node.destroy()
     }
 
