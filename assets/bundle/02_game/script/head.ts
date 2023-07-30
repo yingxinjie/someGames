@@ -47,6 +47,13 @@ export default class head extends ComponentBase {
     cards: cc.Node[] = [];
 
 
+    playerId: number
+
+    convertseat: number
+
+    seat: number
+
+
 
     // LIFE-CYCLE CALLBACKS:
 
@@ -56,12 +63,20 @@ export default class head extends ComponentBase {
 
     }
 
-    public async init(id: number) {
+    public async init(id: number, seat: number, coneverSeat?: number) {
+        this.playerId = id
+        this.seat = seat
+        this.convertseat = coneverSeat ? coneverSeat : seat
         let lpalyer = DeskInfo.getLplayer(id)
         if (!lpalyer) return
         this.labName.string = "" + lpalyer.name
         this.labAllscore.string = " " + lpalyer.bankRoll;
-        await this.headSpr(lpalyer.headPic);
+        //  await this.headSpr(lpalyer.headPic);
+    }
+
+
+    public setconvertSeat(seat: number) {
+        this.convertseat = seat
     }
 
 

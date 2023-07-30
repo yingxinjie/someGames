@@ -27,13 +27,13 @@ export enum TexasAction {
 
 /** 玩家信息状态 */
 export enum PlayerInfoStatus {
-    OBSERVE = "alertWin",
-    SITDOWN = 'alertSitdown',
-    TEMPORARY = "alertWin",
-    WAITINGTOSTART = 'alertSitdown',
-    INTHEGAME = "alertWin",
-    GAMEOVER = 'alertSitdown',
-    LEAVE = "alertWin",
+    OBSERVE = "OBSERVE",
+    SITDOWN = 'SITDOWN',
+    TEMPORARY = "TEMPORARY",
+    WAITINGTOSTART = 'WAITINGTOSTART',
+    INTHEGAME = "INTHEGAME",
+    GAMEOVER = 'GAMEOVER',
+    LEAVE = "LEAVE",
 }
 
 
@@ -45,3 +45,4 @@ export enum GamePlayerDeepRole {
     UNDERTHEGUN = 'UNDERTHEGUN',
     PLAYER = "PLAYER",
 }
+

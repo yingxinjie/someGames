@@ -1,4 +1,5 @@
 import { UserInfo } from "../../../01_hall/script/config/UserInfo";
+import { PlayerInfoStatus } from "./gameConst";
 
 
 class deskInfo {
@@ -11,7 +12,7 @@ class deskInfo {
         return this.sing;
     }
 
-    private players:  { [id: number]: LplayerInfo } = {}
+    private players: { [id: number]: LplayerInfo } = {}
 
     private seatPlayers: { [trueSeat: number]: DplayerInfo } = {}
 
@@ -69,10 +70,21 @@ class deskInfo {
     }
 
     public getDplayer(seat: number) {
-        if (this.players[seat]) {
+        if (this.seatPlayers[seat]) {
             return this.seatPlayers[seat]
         }
         return null
+    }
+
+    public clearDplayer(seat: number) {
+        let seatP = this.seatPlayers[seat]
+        if (seatP) {
+            seatP.pot = 0
+            seatP.handsCard = []
+            seatP.curPositionRole = ""
+            seatP.playerId = 0
+            seatP.status = PlayerInfoStatus.LEAVE
+        }
     }
 
     public setLplayer(id: number, data: LplayerInfo) {
@@ -126,6 +138,6 @@ export interface DplayerInfo {
     position: number//服务端真实玩家位置
     coneverSeat?: number//客服端玩家位置
     handsCard: number[],//玩家手牌
-    status: number //操作状态
+    status: string //操作状态
     curPositionRole: string//
 }
