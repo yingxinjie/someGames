@@ -19,6 +19,9 @@ export default class head extends ComponentBase {
     @property(cc.Label)
     labAllscore: cc.Label = null;
 
+    @property(cc.Label)
+    labSeat: cc.Label = null;
+
     @property(cc.Sprite)
     pic: cc.Sprite = null;
 
@@ -67,11 +70,25 @@ export default class head extends ComponentBase {
         this.playerId = id
         this.seat = seat
         this.convertseat = coneverSeat ? coneverSeat : seat
+        this.labSeat.string = "" + this.seat
+        this.setHeadInfo(id)
+    }
+
+    public setHeadInfo(id: number) {
         let lpalyer = DeskInfo.getLplayer(id)
         if (!lpalyer) return
+        this.playerId = id
         this.labName.string = "" + lpalyer.name
         this.labAllscore.string = " " + lpalyer.bankRoll;
         //  await this.headSpr(lpalyer.headPic);
+        // this.node.active = this.playerId > 0
+    }
+
+
+    public clearhead() {
+        this.playerId = 0
+        this.labName.string = "空位"
+        this.labAllscore.string = " "
     }
 
 

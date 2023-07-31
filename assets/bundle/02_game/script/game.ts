@@ -43,7 +43,7 @@ export default class game extends ComponentBase {
     @property(cc.Node)
     choumas: cc.Node[] = [];
 
-    private headArr: { [trueseat: number]: head } = {}
+    private heads: { [trueSeat: number]: cc.Node } = {}
 
 
     /** 桌子坐标 */
@@ -101,11 +101,15 @@ export default class game extends ComponentBase {
         if (_data.status == DeskSeatStatus.TEMPORARY) {
             if (UserInfo.testuuid == _data.playerId) {
                 ViewManager.Alert(WidgetEnum.JoinDesk, bundleLoader.ENUM_BUNDLE.GAME)
-                DeskMgr.setconvertNum(_data.position)
-                this.craeteHead(_data.position, _data.playerId)
+                let clientSeat = this.getSeatByHeadId(_data.position)
+                //DeskMgr.setconvertNum(DeskMgr.convert(_data.position))
+                DeskMgr.setconvertNum(clientSeat)
+                this.setMyHeadInfo(clientSeat, _data.playerId)
+                //this.craeteHead(_data.position, _data.playerId)
                 DeskMgr.TweenSeat(this.seats)
             } else {
-                this.craeteElseHead(_data.position, _data.playerId)
+                let clientSeat = this.getSeatByHeadId(_data.position)
+                this.setMyHeadInfo(clientSeat, _data.playerId)
             }
 
 
@@ -116,6 +120,7 @@ export default class game extends ComponentBase {
         } else if (_data.status == DeskSeatStatus.SITDOWN) {
 
         } else {
+
             this.removeHead(_data.position, _data.playerId)
         }
     }
@@ -144,7 +149,9 @@ export default class game extends ComponentBase {
     //事件回调
     private evt_sitdown(e: cc.Event.EventTouch) {
         let name = e.currentTarget.name
-        let seat = Number(name.slice(-1)) + 1
+        // let seat = DeskMgr.convertobj[Number(name.slice(-1)) + 1]
+        // let seat = Number(name.slice(-1)) + 1
+        let seat = this.getHeadBySeat(Number(name.slice(-1)) + 1)
         DeskInfo.readyPos = seat
         let info = {
             playerId: UserInfo.testuuid,
@@ -174,7 +181,7 @@ export default class game extends ComponentBase {
             this.seats[i].active = true
             this.TouchOn(this.seats[i], this.evt_sitdown, this)
             let dplayer = DeskInfo.getDplayer(i + 1)
-            if (dplayer && dplayer.playerId != 0 && dplayer.position == (i + 1)) {
+            if (dplayer) {
                 this.craeteHead(dplayer.position, dplayer.playerId)
             }
         }
@@ -182,6 +189,10 @@ export default class game extends ComponentBase {
         if (UserInfo.testuuid == DeskInfo.createDeskPlayerId) {
             this.switchAlert(2)
         }
+
+    }
+
+    setChoumaNum(index: number, Num: number) {
 
     }
 
@@ -197,41 +208,65 @@ export default class game extends ComponentBase {
         let seatNode = this.seats[seat - 1]
         let _head = cc.instantiate(this.headItem)
         let _ts = _head.getComponent(head)
-        _ts.init(id, seat)
+        _ts.init(id, seat, seat)
         _head.parent = seatNode
         _head.x = 0
         _head.y = 0
+        this.heads[seat] = _head
     }
 
 
-
-    craeteElseHead(seat: number, id: number) {
-        let convertSeat = DeskMgr.convertArr[seat - 1]
-        let seatNode = this.seats[convertSeat - 1]
-        let _head = cc.instantiate(this.headItem)
+    setMyHeadInfo(seat: number, id: number) {
+        let seatNode = this.seats[seat - 1]
+        let _head = seatNode.children[0]
         let _ts = _head.getComponent(head)
-        _ts.init(id, seat, convertSeat)
-        _head.parent = seatNode
-        _head.x = 0
-        _head.y = 0
+        _ts.setHeadInfo(id)
     }
 
 
 
+    // setElseHeadInfo(seat: number, id: number) {
+    //     let convertSeat = DeskMgr.convertArr[seat - 1]
+    //     let seatNode = this.seats[convertSeat - 1]
+    //     let _head = cc.instantiate(this.headItem)
+    //     let _ts = _head.getComponent(head)
+    //     _ts.init(id, seat, convertSeat)
+    //     _head.parent = seatNode
+    //     _head.x = 0
+    //     _head.y = 0
+    // }
 
-    removeHead(seat: number, id: number) {
+
+    getHeadBySeat(clientSeat: number) {
+        let trueSeat = 0
+        let seatNode = this.seats[clientSeat - 1]
+        let _head = seatNode.children[0]
+        let _ts = _head.getComponent(head)
+        trueSeat = _ts.seat
+        return trueSeat
+    }
+
+    getSeatByHeadId(trueSeat: number) {
+        let clientSeat = 0
+        let head = this.heads[trueSeat]
+        clientSeat = Number(head.parent.name.slice(-1)) + 1
+        return clientSeat
+    }
+
+    removeHead(trueSeat: number, id: number) {
         this.seats.forEach((seat, index) => {
             let _head = seat.children[0]
             if (_head) {
                 let _ts = _head.getComponent(head)
                 if (_ts.playerId == id) {
-                    _head.destroy()
-                } else {
-                    _ts.convertseat = index + 1
+                    _ts.clearhead()
+                    //_head.destroy()
                 }
+                _ts.convertseat = index + 1
             }
         });
-        DeskInfo.clearDplayer(seat)
+
+        DeskInfo.clearDplayer(trueSeat)
     }
 
 

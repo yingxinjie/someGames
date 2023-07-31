@@ -17,6 +17,10 @@ class deskMgr {
 
     public convertArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+    public convertdataArr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+ 
     public setconvertNum(seat: number) {
         this.convertNum = seat == 1 ? 0 : DeskInfo.seatLen - (seat - 1)
         console.log(`convertNum: ${this.convertNum}  } `)
@@ -34,7 +38,6 @@ class deskMgr {
         console.log(`tureSeat: ${seat}   convertSeat: ${_convertSeat} `)
         return _convertSeat
     }
-
 
     TweenSeat(seats: cc.Node[]) {
         //  let dir = DeskInfo.readyPos < Math.ceil(DeskInfo.seatLen / 2) ? -1 : 1 //0逆时针 1顺时针
