@@ -108,13 +108,6 @@ export default class joinDesk extends ComponentBase {
             status: DeskSeatStatus.SITDOWN
         }
         UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
-        // let info = {
-        //     playerId: UserInfo.testuuid,
-        //     deskId: 9,
-        //     bring: 200,
-        //     status: PlayerInfoStatus.OBSERVE
-        // }
-        // UserInfo.cwebsocket.clientSend(cmdClientEvent.BRING, info)
         this.node.destroy()
     }
 

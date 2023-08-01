@@ -13,6 +13,7 @@ export enum WidgetEnum {
     BottomToggle = "bottomtoggle",
     CountryCode = "countrycode",
     JoinDesk = "joinDesk",
+    GameSetting = "gameSetting",
 }
 
 /** 全局配置参数 */

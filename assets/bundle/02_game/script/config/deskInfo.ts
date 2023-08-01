@@ -26,7 +26,7 @@ class deskInfo {
 
     public boardNum: number
 
-    public pots: any
+    public pots: { [player: number]: number }[]
 
     public round: number
 
@@ -137,7 +137,17 @@ export interface DplayerInfo {
     pot: number
     position: number//服务端真实玩家位置
     coneverSeat?: number//客服端玩家位置
-    handsCard: number[],//玩家手牌
+    handsCard: { "suit": string, "value": number }[],//玩家手牌
     status: string //操作状态
     curPositionRole: string//
+}
+
+/** 游戏开始信息 */
+export interface S_GameStart {
+    curPlayerId: number
+    betTime: number
+    boardNum: number
+    deskId: number
+    playerPots: { [player: number]: number }[]
+    seatPlayerList: DplayerInfo[] //玩家数据
 }

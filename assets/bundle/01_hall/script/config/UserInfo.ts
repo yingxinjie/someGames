@@ -46,7 +46,7 @@ class userInfo {
     }
 
     public get testToken() {
-        return "46e442ebc26975a1c7861506d5b6c2104c852ab78cebfbd94823229f8fafac8c8c1f56d4f9b6685246a02273f064c3f7"
+        return "d382bbb47b16ff60211af01e08dfa36f6697e0e3b5bd95126ea374e4e6eadc468c1f56d4f9b6685246a02273f064c3f7"
     }
 
     public get testuuid() {
