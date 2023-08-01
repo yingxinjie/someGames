@@ -32,6 +32,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentBase_1 = require("../../00_base/script/common/ComponentBase");
 var C_User_1 = require("../../01_hall/script/config/C_User");
 var cmdClient_1 = require("./config/cmdClient");
+var deskInfo_1 = require("./config/deskInfo");
 var gameConst_1 = require("./config/gameConst");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var joinDesk = /** @class */ (function (_super) {
@@ -61,15 +62,30 @@ var joinDesk = /** @class */ (function (_super) {
         this.TouchOn(this.btnCoinAdd, this.evt_CoinAdd);
         this.TouchOn(this.btnClubCoinAdd, this.evt_ClubCoinAdd);
         this.slider.node.on("slide", this.setJifen, this);
+        this.init();
     };
     joinDesk.prototype.init = function () {
         this.labtitle1.string = "" + C_User_1.UserInfo.nick;
         this.labF.string = "" + 200;
+        var info = {
+            playerId: C_User_1.UserInfo.testuuid,
+            deskId: 9,
+            bring: 200,
+            status: gameConst_1.PlayerInfoStatus.OBSERVE
+        };
+        C_User_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BRING, info);
     };
     joinDesk.prototype.setJifen = function () {
         this.labF.string = "" + 200;
     };
     joinDesk.prototype.evt_Close = function () {
+        var info = {
+            playerId: C_User_1.UserInfo.testuuid,
+            deskId: 9,
+            position: deskInfo_1.DeskInfo.readyPos,
+            status: gameConst_1.DeskSeatStatus.LEAVESEAT
+        };
+        C_User_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
         this.node.destroy();
     };
     joinDesk.prototype.evt_Refrsh = function () {
@@ -79,10 +95,10 @@ var joinDesk = /** @class */ (function (_super) {
         var info = {
             playerId: C_User_1.UserInfo.testuuid,
             deskId: 9,
-            bring: 200,
-            status: gameConst_1.PlayerInfoStatus.OBSERVE
+            position: deskInfo_1.DeskInfo.readyPos,
+            status: gameConst_1.DeskSeatStatus.SITDOWN
         };
-        C_User_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BRING, info);
+        C_User_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
         this.node.destroy();
     };
     joinDesk.prototype.evt_CoinAdd = function () {

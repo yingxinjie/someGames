@@ -32,13 +32,13 @@ var TexasAction;
 /** 玩家信息状态 */
 var PlayerInfoStatus;
 (function (PlayerInfoStatus) {
-    PlayerInfoStatus["OBSERVE"] = "alertWin";
-    PlayerInfoStatus["SITDOWN"] = "alertSitdown";
-    PlayerInfoStatus["TEMPORARY"] = "alertWin";
-    PlayerInfoStatus["WAITINGTOSTART"] = "alertSitdown";
-    PlayerInfoStatus["INTHEGAME"] = "alertWin";
-    PlayerInfoStatus["GAMEOVER"] = "alertSitdown";
-    PlayerInfoStatus["LEAVE"] = "alertWin";
+    PlayerInfoStatus["OBSERVE"] = "OBSERVE";
+    PlayerInfoStatus["SITDOWN"] = "SITDOWN";
+    PlayerInfoStatus["TEMPORARY"] = "TEMPORARY";
+    PlayerInfoStatus["WAITINGTOSTART"] = "WAITINGTOSTART";
+    PlayerInfoStatus["INTHEGAME"] = "INTHEGAME";
+    PlayerInfoStatus["GAMEOVER"] = "GAMEOVER";
+    PlayerInfoStatus["LEAVE"] = "LEAVE";
 })(PlayerInfoStatus = exports.PlayerInfoStatus || (exports.PlayerInfoStatus = {}));
 /** 玩家角色 */
 var GamePlayerDeepRole;

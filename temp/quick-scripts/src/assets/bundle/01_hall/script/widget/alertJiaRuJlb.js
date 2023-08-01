@@ -55,7 +55,7 @@ var alertJiaRuJlb = /** @class */ (function (_super) {
             this.node.destroy();
         }
         else {
-            deskInfo_1.DeskInfo.setLplayer(data.requestData.position, data.requestData);
+            deskInfo_1.DeskInfo.setLplayer(data.requestData.id, data.requestData);
         }
     };
     alertJiaRuJlb.prototype.onLoad = function () {

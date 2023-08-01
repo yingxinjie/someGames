@@ -53,7 +53,7 @@ var i18n = /** @class */ (function (_super) {
         this.onChangeLanguage();
     };
     i18n.prototype.onChangeLanguage = function () {
-        var cfg = Languages_1.LanguagesCfg[C_User_1.UserInfo.language];
+        var cfg = Languages_1.LanguagesCfg[C_User_1.C_User.ins.language];
         if (this.node && this.node.getComponent(cc.Label)) {
             this.node.getComponent(cc.Label).string = cfg[this.lanKey];
         }

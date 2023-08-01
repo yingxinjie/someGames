@@ -42,6 +42,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.C_User = void 0;
 var config_1 = require("./config");
+var D_Set_1 = require("./D_Set");
 var D_User_1 = require("./D_User");
 var Utils_1 = require("./Utils");
 var C_User = /** @class */ (function () {
@@ -106,6 +107,16 @@ var C_User = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(C_User.prototype, "set", {
+        get: function () {
+            if (!this._set) {
+                this._set = new D_Set_1.D_Set();
+            }
+            return this._set;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Object.defineProperty(C_User.prototype, "language", {
         get: function () {
             var id = cc.sys.localStorage.getItem("language");
@@ -126,7 +137,6 @@ var C_User = /** @class */ (function () {
         cc.sys.localStorage.setItem("token", "");
         cc.sys.localStorage.setItem("uuid", "");
     };
-    //---------------------------------------server------------------------------------------
     /**修改备注 */
     C_User.prototype.sendUserRemark = function (remark) {
         return __awaiter(this, void 0, void 0, function () {
@@ -143,7 +153,7 @@ var C_User = /** @class */ (function () {
                         return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.userRemark, data)];
                     case 1:
                         res = _a.sent();
-                        C_User.ins.me.remark = res.data.remark;
+                        this.remark = res.data.remark;
                         return [2 /*return*/];
                 }
             });
@@ -164,13 +174,13 @@ var C_User = /** @class */ (function () {
                         return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.queryUserRemark, data)];
                     case 1:
                         res = _a.sent();
-                        C_User.ins.me.remark = res.data.remark;
+                        this.remark = res.data.remark;
                         return [2 /*return*/];
                 }
             });
         });
     };
-    /**查询备注 */
+    /**根据关键字查询用户信息，用户编号或用户名称*/
     C_User.prototype.sendUserSearch = function (keyWord) {
         return __awaiter(this, void 0, void 0, function () {
             var data, res;
@@ -185,7 +195,127 @@ var C_User = /** @class */ (function () {
                         return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.userSearch, data)];
                     case 1:
                         res = _a.sent();
-                        C_User.ins.me.remark = res.data.remark;
+                        this.searchUser = new D_User_1.D_User();
+                        this.searchUser.init(res.data.id, res.data.name, res.data.sex, res.data.handPic, res.data.vipValidityPeriod, res.data.vipType, res.data.email, res.data.code, res.data.description, res.data.phoneAreaCode, res.data.phoneNumber, Number(res.data.gold), Number(res.data.diamond), res.data.lastLoginTime, res.data.clubNum, res.data.joinClubNum);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**安全验证 验证码/手机国际地区,绑定手机的时候必填/手机,绑定手机的时候必填/email,绑定邮箱的时候必填/验证类型,(enums),PHONE=手机,EMAIL=邮箱*/
+    C_User.prototype.sendSafetyValidate = function (captcha, phoneAreaCode, phoneNumber, email, type) {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = {
+                            captcha: captcha,
+                            phoneAreaCode: phoneAreaCode,
+                            phoneNumber: phoneNumber,
+                            email: email,
+                            type: type
+                        };
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.safetyValidate, data)];
+                    case 1:
+                        res = _a.sent();
+                        this.operateCode = res.data.operateCode;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**个人信息查询 */
+    C_User.prototype.sendUserQuery = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = {};
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.userQuery, data)];
+                    case 1:
+                        res = _a.sent();
+                        C_User.ins.me.init(res.data.id, res.data.name, res.data.sex, res.data.handPic, res.data.vipValidityPeriod, res.data.vipType, res.data.email, res.data.code, res.data.description, res.data.phoneAreaCode, res.data.phoneNumber, Number(res.data.gold), Number(res.data.diamond), res.data.lastLoginTime, res.data.clubNum, res.data.joinClubNum);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**个人设置查询 */
+    C_User.prototype.sendQueryConfig = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = {};
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.userQueryConfig, data)];
+                    case 1:
+                        res = _a.sent();
+                        C_User.ins.set.init(res.data.language, res.data.languageDesc, res.data.safetyPasswordProtection, res.data.safetyLogin, res.data.allowEveryoneFriending, res.data.soundEffect, res.data.messageSound, res.data.messageVibration, res.data.competitionRegConfirmation);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**App用户手机注册请求 区号/手机号码/密码/验证码/经度/纬度/设备类型,(enums),ANDROID=安卓,IOS=苹果,WEB=网页/设备详情/浏览器User Agent*/
+    C_User.prototype.sendPhoneRegister = function (phoneAreaCode, phoneNumber, loginPwd, captcha, longitude, latitude, device, deviceInfo, userAgent) {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = {
+                            phoneAreaCode: phoneAreaCode,
+                            phoneNumber: phoneNumber,
+                            loginPwd: loginPwd,
+                            captcha: captcha,
+                            longitude: longitude,
+                            latitude: latitude,
+                            device: device,
+                            deviceInfo: deviceInfo,
+                            userAgent: userAgent
+                        };
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.phoneReg, data)];
+                    case 1:
+                        res = _a.sent();
+                        C_User.ins.token = res.data.token;
+                        C_User.ins.me.name = res.data.name;
+                        C_User.ins.me.headPic = res.data.headPic;
+                        C_User.ins.me.sex = res.data.sex;
+                        C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+                        C_User.ins.me.vipType = res.data.vipType;
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    /**手机登录 */
+    C_User.prototype.sendPhoneLogin = function (phoneAreaCode, phoneNumber, loginPwd, device, deviceInfo, longitude, latitude) {
+        return __awaiter(this, void 0, void 0, function () {
+            var data, res;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        data = {
+                            phoneAreaCode: phoneAreaCode,
+                            phoneNumber: phoneNumber,
+                            loginPwd: loginPwd,
+                            device: device,
+                            deviceInfo: deviceInfo,
+                            longitude: longitude,
+                            latitude: latitude
+                        };
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.phoneLogin, data)];
+                    case 1:
+                        res = _a.sent();
+                        C_User.ins.token = res.data.token;
+                        C_User.ins.me.name = res.data.name;
+                        C_User.ins.me.headPic = res.data.headPic;
+                        C_User.ins.me.sex = res.data.sex;
+                        C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+                        C_User.ins.me.vipType = res.data.vipType;
                         return [2 /*return*/];
                 }
             });

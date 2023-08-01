@@ -43,7 +43,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.C_Hall = void 0;
 var config_1 = require("../config/config");
 var ViewManager_1 = require("../config/ViewManager");
-var C_Tip_1 = require("../tip/C_Tip");
 var C_Hall = /** @class */ (function () {
     function C_Hall() {
     }
@@ -81,7 +80,7 @@ var C_Hall = /** @class */ (function () {
             console.log("账户异常");
         }
         if (code == 500 || code == 501) {
-            C_Tip_1.C_Tip.instance.showTip(config_1.config.instance.getLang(0), function () { return __awaiter(_this, void 0, void 0, function () {
+            C_Tip.instance.showTip(config_1.config.instance.getLang(0), function () { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0: return [4 /*yield*/, ViewManager_1.ViewManager.Open(config_1.ViewEnum.Login)];

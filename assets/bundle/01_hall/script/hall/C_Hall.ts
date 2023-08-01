@@ -1,6 +1,5 @@
 import { config, ViewEnum } from "../config/config";
 import { ViewManager } from "../config/ViewManager";
-import { C_Tip } from "../tip/C_Tip";
 
 export class C_Hall{
     public static _instance: C_Hall = null;
