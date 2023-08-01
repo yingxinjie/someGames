@@ -1,8 +1,9 @@
 import ComponentBase from "../../../../00_base/script/common/ComponentBase";
 import { Utils } from "../../config/Utils";
-import { HttpPath } from "../../config/config";
+import { HttpPath, WidgetEnum } from "../../config/config";
 import yiChuangJianJuLeBuItem from "../items/yiChuangJianJuLeBuItem";
 import yiJiaRuJuLeBuItem from "../items/yiJiaRuJuLeBuItem";
+import { ViewManager } from "../../config/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -41,7 +42,7 @@ export default class julebu extends ComponentBase {
 
 
     private async queryJiaRuInfo() {
-        let res: any = await Utils.Post(HttpPath.queryAddedJuLeBu, { current: 0, size: 20 });
+        let res: any = await Utils.Post(HttpPath.clubListQuery, { current: 0, size: 20 });
 
         if (res.code != 200) {
             return;
@@ -65,7 +66,7 @@ export default class julebu extends ComponentBase {
     }
 
     private async queryYiChuangJian() {
-        let res: any = await Utils.Post(HttpPath.queryCreatedJuLeBu, { current: 0, size: 20 });
+        let res: any = await Utils.Post(HttpPath.clubListQuery, { current: 0, size: 20 });
 
         if (res.code != 200) {
             return;
@@ -87,4 +88,8 @@ export default class julebu extends ComponentBase {
         }
     }
 
+    private async add(e: cc.Event.EventTouch){
+        console.log("add");
+        ViewManager.Alert(WidgetEnum.AlertAddClub);
+    }
 }

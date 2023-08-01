@@ -2,6 +2,7 @@
 cc._RF.push(module, '565e8x6PUdFsZ8dYBtsAcdx', 'Languages');
 // res/i18n/Languages.ts
 
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LanguagesCfg = void 0;
 exports.LanguagesCfg = {

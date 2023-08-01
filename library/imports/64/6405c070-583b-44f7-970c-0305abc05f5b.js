@@ -10,6 +10,8 @@ var deskInfo = /** @class */ (function () {
         this.players = {};
         this.seatPlayers = {};
         this.board = [];
+        this.seatLen = 9; //默认9（灯光角度数量与座位数一致
+        this.readyPos = -1; //准备选择的位置
     }
     Object.defineProperty(deskInfo, "ins", {
         get: function () {

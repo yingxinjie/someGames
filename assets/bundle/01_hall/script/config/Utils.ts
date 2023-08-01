@@ -1,5 +1,5 @@
-import { UserInfo } from "./UserInfo";
 import { DeviceType, GlobalConfig } from "./config";
+import { C_User } from "./C_User";
 
 export class Utils {
     /**
@@ -74,7 +74,7 @@ export class Utils {
             const xhr = new XMLHttpRequest();
             xhr.open('POST', url);
             xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
-            xhr.setRequestHeader("token", UserInfo.token);
+            xhr.setRequestHeader("token", C_User.ins.token);
             xhr.onload = () => {
                 if (xhr.status === 200) {
                     let res: any;

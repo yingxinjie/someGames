@@ -1,5 +1,5 @@
 import { LanguagesCfg } from "../../../../res/i18n/Languages";
-import { UserInfo } from "./UserInfo";
+import { UserInfo } from "./C_User";
 import { Utils } from "./Utils";
 import { EventManger } from "../../../00_base/script/common/EventManger";
 

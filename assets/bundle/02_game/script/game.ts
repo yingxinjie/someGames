@@ -1,7 +1,7 @@
 
 import { bundleLoader } from "../../../script/bundleLoader";
 import ComponentBase from "../../00_base/script/common/ComponentBase";
-import { UserInfo } from "../../01_hall/script/config/UserInfo";
+import { UserInfo } from "../../01_hall/script/config/C_User";
 import { ViewManager } from "../../01_hall/script/config/ViewManager";
 import { ViewEnum, WidgetEnum } from "../../01_hall/script/config/config";
 import { cmdClientEvent, cmdClientType } from "./config/cmdClient";

@@ -40,7 +40,7 @@ export default class chuangjianjulebu extends ComponentBase {
             "area": "2",
         }
 
-        let res: any = await Utils.Post(HttpPath.createJuLeBu, info);
+        let res: any = await Utils.Post(HttpPath.clubCreate, info);
         if (res.code !== 200) {
             return;
         }

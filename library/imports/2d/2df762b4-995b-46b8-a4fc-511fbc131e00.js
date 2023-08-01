@@ -30,7 +30,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentBase_1 = require("../../../00_base/script/common/ComponentBase");
-var UserInfo_1 = require("../config/UserInfo");
+var C_User_1 = require("../config/C_User");
 var ViewManager_1 = require("../config/ViewManager");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var NewClass = /** @class */ (function (_super) {
@@ -53,7 +53,7 @@ var NewClass = /** @class */ (function (_super) {
             .start();
     };
     NewClass.prototype.onExit = function () {
-        UserInfo_1.UserInfo.clearLogin();
+        C_User_1.UserInfo.clearLogin();
         ViewManager_1.ViewManager.RemoveAllView();
         ViewManager_1.ViewManager.Open("login");
     };
