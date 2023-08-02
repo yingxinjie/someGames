@@ -5,6 +5,7 @@ cc._RF.push(module, '19dc79Qod5Gh4WzpZHF7EDb', 'D_User');
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.D_User = void 0;
+var C_User_1 = require("./C_User");
 var D_User = /** @class */ (function () {
     function D_User() {
     }
@@ -26,6 +27,14 @@ var D_User = /** @class */ (function () {
         this.clubNum = clubNum;
         this.joinClubNum = joinClubNum;
     };
+    Object.defineProperty(D_User.prototype, "isMe", {
+        /**是否是玩家本人 */
+        get: function () {
+            return C_User_1.C_User.ins.uid == this.uid;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return D_User;
 }());
 exports.D_User = D_User;

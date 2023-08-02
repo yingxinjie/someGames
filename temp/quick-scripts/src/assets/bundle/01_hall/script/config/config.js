@@ -65,6 +65,7 @@ var WidgetEnum;
     WidgetEnum["BottomToggle"] = "bottomtoggle";
     WidgetEnum["CountryCode"] = "countrycode";
     WidgetEnum["JoinDesk"] = "joinDesk";
+    WidgetEnum["GameSetting"] = "gameSetting";
     WidgetEnum["AlertAddClub"] = "alertAddClub";
 })(WidgetEnum = exports.WidgetEnum || (exports.WidgetEnum = {}));
 /** 全局配置参数 */

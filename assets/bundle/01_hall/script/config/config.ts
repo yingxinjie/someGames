@@ -58,12 +58,8 @@ export enum WidgetEnum {
     BottomToggle = "bottomtoggle",
     CountryCode = "countrycode",
     JoinDesk = "joinDesk",
-<<<<<<< Updated upstream
     GameSetting = "gameSetting",
-=======
     AlertAddClub = "alertAddClub",
-    
->>>>>>> Stashed changes
 }
 
 /** 全局配置参数 */
@@ -215,4 +211,11 @@ export enum DeviceType {
     Android = "ANDROID",
     Ios = "IOS",
     Web = "WEB",
+}
+
+/** vip类型 */
+export enum VipType {
+    BLUE = "BLUE",
+    GOLD = "GOLD",
+    PLATINUM = "PLATINUM",
 }

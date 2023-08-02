@@ -1,4 +1,4 @@
-import { HttpPath } from "./config";
+import { DeviceType, HttpPath } from "./config";
 import { cwebsocket } from "./cwebsocket";
 import { D_Set } from "./D_Set";
 import { D_User } from "./D_User";
@@ -155,14 +155,57 @@ export class C_User {
     }
 
     /**个人设置查询 */
-    async sendUserQueryConfig() {
+    async sendQueryConfig() {
         let data = {
         }
         let res: any = await Utils.Post(HttpPath.userQueryConfig, data);
-        C_User.ins.set.init(res.data.language,res.data.languageDesc,res.data.safetyPasswordProtection,res.data.safetyLogin,
-            res.data.allowEveryoneFriending,res.data.soundEffect,res.data.messageSound,res.data.messageVibration,
+        C_User.ins.set.init(res.data.language, res.data.languageDesc, res.data.safetyPasswordProtection, res.data.safetyLogin,
+            res.data.allowEveryoneFriending, res.data.soundEffect, res.data.messageSound, res.data.messageVibration,
             res.data.competitionRegConfirmation);
     }
-    
-    
+
+    /**App用户手机注册请求 区号/手机号码/密码/验证码/经度/纬度/设备类型,(enums),ANDROID=安卓,IOS=苹果,WEB=网页/设备详情/浏览器User Agent*/
+    async sendPhoneRegister(phoneAreaCode: string, phoneNumber: string, loginPwd: string, captcha: string, longitude: string, latitude: string,
+        device: DeviceType, deviceInfo: string, userAgent: string) {
+        let data = {
+            phoneAreaCode: phoneAreaCode,
+            phoneNumber: phoneNumber,
+            loginPwd: loginPwd,
+            captcha: captcha,
+            longitude: longitude,
+            latitude: latitude,
+            device: device,
+            deviceInfo: deviceInfo,
+            userAgent: userAgent
+        }
+        let res: any = await Utils.Post(HttpPath.phoneReg, data);
+        C_User.ins.token = res.data.token;
+        C_User.ins.me.name = res.data.name;
+        C_User.ins.me.headPic = res.data.headPic;
+        C_User.ins.me.sex = res.data.sex;
+        C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+        C_User.ins.me.vipType = res.data.vipType;
+    }
+
+    /**手机登录 */
+    async sendPhoneLogin(phoneAreaCode: string,phoneNumber: string,loginPwd: string,device: DeviceType,deviceInfo: string,
+        longitude: string,latitude: string) {
+        let data = {
+            phoneAreaCode: phoneAreaCode,
+            phoneNumber: phoneNumber,
+            loginPwd: loginPwd,
+            device: device,
+            deviceInfo: deviceInfo,
+            longitude: longitude,
+            latitude: latitude
+        }
+        let res: any = await Utils.Post(HttpPath.phoneLogin, data);
+        C_User.ins.token = res.data.token;
+        C_User.ins.me.name = res.data.name;
+        C_User.ins.me.headPic = res.data.headPic;
+        C_User.ins.me.sex = res.data.sex;
+        C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+        C_User.ins.me.vipType = res.data.vipType;
+    }
 }
+
