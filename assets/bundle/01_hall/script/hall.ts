@@ -1,7 +1,7 @@
 import { ViewManager } from "./config/ViewManager";
 import { Utils } from "./config/Utils";
 import { ComUseStr, config, GlobalConfig, ViewEnum, WidgetEnum } from "./config/config";
-import { C_User } from "./config/C_User";
+import { C_User } from "./user/C_User";
 import { EventManger } from "../../00_base/script/common/EventManger";
 import { bundleLoader } from "../../../script/bundleLoader";
 

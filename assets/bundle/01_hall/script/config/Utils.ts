@@ -1,5 +1,7 @@
-import { DeviceType, GlobalConfig } from "./config";
-import { C_User } from "./C_User";
+import { C_Tip } from "../tip/C_Tip";
+import { config, DeviceType, GlobalConfig, ViewEnum } from "./config";
+import { C_User } from "../user/C_User";
+import { ViewManager } from "./ViewManager";
 
 export class Utils {
     /**
@@ -153,14 +155,35 @@ export class Utils {
         }
 
         if (BrowserInfo.isAndroid) {
-            return DeviceType.Android;
+            return DeviceType.ANDROID;
         } else if (BrowserInfo.isIpad || BrowserInfo.isIphone) {
-            return DeviceType.Ios;
+            return DeviceType.IOS;
         } else {
-            return DeviceType.Web;
+            return DeviceType.WEB;
         }
     }
 
-
+    static serverCode(code:number):boolean{
+        if(code == 200){
+            console.log("成功")
+            return true;
+        }else if(code == 400){
+            console.log("系统异常")
+        }else if(code == 405){
+            console.log("请求方式异常")
+        }else if(code == 415){
+            console.log("Content-Type不正确")
+        }else if(code == 500){
+            console.log("登录过期")
+        }else if(code == 501){
+            console.log("账户异常")
+        }
+        if(code == 500 || code == 501){
+            C_Tip.instance.showTip(config.instance.getLang(0),async () => {
+                await ViewManager.Open(ViewEnum.Login);
+            })
+        }
+        return false;
+    }
 }
 

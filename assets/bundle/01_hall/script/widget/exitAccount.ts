@@ -7,7 +7,7 @@
 
 import ComponentBase from "../../../00_base/script/common/ComponentBase";
 import { EventManger } from "../../../00_base/script/common/EventManger";
-import { UserInfo } from "../config/C_User";
+import { UserInfo } from "../user/C_User";
 import { ViewManager } from "../config/ViewManager";
 
 const { ccclass, property } = cc._decorator;

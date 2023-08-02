@@ -1,6 +1,6 @@
 import ComponentBase from "../../../../00_base/script/common/ComponentBase";
 import { HttpPath, ViewEnum } from "../../config/config";
-import { C_User } from "../../config/C_User";
+import { C_User } from "../../user/C_User";
 import { Utils } from "../../config/Utils";
 import { ViewManager } from "../../config/ViewManager";
 import open from "../../open";

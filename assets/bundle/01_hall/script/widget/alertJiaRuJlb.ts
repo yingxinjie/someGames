@@ -3,7 +3,7 @@ import { bundleLoader } from "../../../../script/bundleLoader";
 import ComponentBase from "../../../00_base/script/common/ComponentBase";
 import { cmdClientEvent, cmdClientType } from "../../../02_game/script/config/cmdClient";
 import { DeskInfo } from "../../../02_game/script/config/deskInfo";
-import { UserInfo } from "../config/C_User";
+import { UserInfo } from "../user/C_User";
 import { ViewManager } from "../config/ViewManager";
 import { ViewEnum, WidgetEnum } from "../config/config";
 import { cwebsocket } from "../config/cwebsocket";

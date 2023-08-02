@@ -1,4 +1,4 @@
-import { UserSex, VipType } from "./config";
+import { SexType, VipType } from "../config/config";
 import { C_User } from "./C_User";
 
 export class D_User {
@@ -7,7 +7,7 @@ export class D_User {
     /**昵称 */
     public name: string;
     /**性别 [ BOY, GRIL ]*/
-    public sex: UserSex;
+    public sex: SexType;
     /**头像 */
     public headPic: string;
     /**会员到期时间*/
@@ -39,7 +39,7 @@ export class D_User {
 
     }
 
-    init(uid: string, name: string, sex: UserSex, headPic: string, vipValidityPeriod: string, vipType: VipType,
+    init(uid: string, name: string, sex: SexType, headPic: string, vipValidityPeriod: string, vipType: VipType,
         email: string, code: string, description: string, phoneAreaCode: string, phoneNumber: string, gold: number,
         diamond: number, lastLoginTime: string, clubNum: number, joinClubNum: number) {
         this.uid = uid;

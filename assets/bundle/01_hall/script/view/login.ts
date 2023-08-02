@@ -3,7 +3,7 @@ import { Utils } from "../config/Utils";
 import ComponentBase from "../../../00_base/script/common/ComponentBase";
 import { AccountType, EventName, HttpPath, ViewEnum, WidgetEnum } from "../config/config";
 import { CodeStruct, CountryCodeData } from "../../../00_base/script/common/CountryCode";
-import { C_User } from "../config/C_User";
+import { C_User } from "../user/C_User";
 import { Tips } from "../../../00_base/script/uiutils/tips";
 
 const { ccclass, property } = cc._decorator;
