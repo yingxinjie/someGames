@@ -46,7 +46,7 @@ var viewManager = /** @class */ (function () {
             });
         });
     };
-    viewManager.prototype.Alert = function (view, bundleIndex) {
+    viewManager.prototype.Alert = function (view, cb, bundleIndex) {
         if (bundleIndex === void 0) { bundleIndex = bundleLoader_1.bundleLoader.ENUM_BUNDLE.HALL; }
         console.log("打开界面", view);
         return new Promise(function (resolve, reject) {
@@ -67,6 +67,7 @@ var viewManager = /** @class */ (function () {
                 var view = canvas.node.getChildByName("widget");
                 if (view) {
                     view.addChild(node);
+                    cb && cb(node);
                 }
                 else {
                     cc.error('hall场景不存在 view 的节点,无法显示预制体');

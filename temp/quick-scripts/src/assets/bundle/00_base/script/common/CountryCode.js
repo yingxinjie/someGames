@@ -2,6 +2,7 @@
 cc._RF.push(module, '8b705y6DG9HaoJWFQiyJjvB', 'CountryCode');
 // bundle/00_base/script/common/CountryCode.ts
 
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CountryCodeData = void 0;
 exports.CountryCodeData = [

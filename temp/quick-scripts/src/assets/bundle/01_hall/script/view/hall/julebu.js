@@ -64,6 +64,7 @@ var Utils_1 = require("../../config/Utils");
 var config_1 = require("../../config/config");
 var yiChuangJianJuLeBuItem_1 = require("../items/yiChuangJianJuLeBuItem");
 var yiJiaRuJuLeBuItem_1 = require("../items/yiJiaRuJuLeBuItem");
+var ViewManager_1 = require("../../config/ViewManager");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var julebu = /** @class */ (function (_super) {
     __extends(julebu, _super);
@@ -91,7 +92,7 @@ var julebu = /** @class */ (function (_super) {
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.queryAddedJuLeBu, { current: 0, size: 20 })];
+                    case 0: return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.clubListQuery, { current: 0, size: 20 })];
                     case 1:
                         res = _a.sent();
                         if (res.code != 200) {
@@ -121,7 +122,7 @@ var julebu = /** @class */ (function (_super) {
             var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.queryCreatedJuLeBu, { current: 0, size: 20 })];
+                    case 0: return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.clubListQuery, { current: 0, size: 20 })];
                     case 1:
                         res = _a.sent();
                         if (res.code != 200) {
@@ -142,6 +143,15 @@ var julebu = /** @class */ (function (_super) {
                         }
                         return [2 /*return*/];
                 }
+            });
+        });
+    };
+    julebu.prototype.add = function (e) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                console.log("add");
+                ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.AlertAddClub);
+                return [2 /*return*/];
             });
         });
     };

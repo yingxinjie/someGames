@@ -37,7 +37,7 @@ class viewManager {
         });
     }
 
-    public Alert(view: string , bundleIndex: string = bundleLoader.ENUM_BUNDLE.HALL) {
+    public Alert(view: string ,cb?: (node: cc.Node) => void, bundleIndex: string = bundleLoader.ENUM_BUNDLE.HALL) {
         console.log("打开界面", view)
         return new Promise((resolve, reject) => {
             let bundle = bundleLoader.ENUM_BUNDLE_SAVE[bundleIndex];
@@ -60,10 +60,10 @@ class viewManager {
                 let view = canvas.node.getChildByName("widget");
                 if (view) {
                     view.addChild(node);
+                    cb && cb(node);
                 } else {
                     cc.error('hall场景不存在 view 的节点,无法显示预制体');
                 }
-
             });
         });
     }
@@ -94,10 +94,6 @@ class viewManager {
             cc.error('hall场景不存在 view 的节点,无法显示预制体');
         }
     }
-
-
-
-
 
     public RemoveAlert(alertName: string) {
         let canvas = cc.director.getScene().getComponentInChildren(cc.Canvas);

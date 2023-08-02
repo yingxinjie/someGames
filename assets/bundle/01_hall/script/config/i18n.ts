@@ -1,5 +1,5 @@
 import { LanguagesCfg } from "../../../../res/i18n/Languages";
-import { UserInfo } from "./UserInfo";
+import { C_User } from "./C_User";
 import { Utils } from "./Utils";
 import { EventManger } from "../../../00_base/script/common/EventManger";
 
@@ -36,7 +36,7 @@ export default class i18n extends cc.Component {
 
 
     private onChangeLanguage() {
-        let cfg = LanguagesCfg[UserInfo.language];
+        let cfg = LanguagesCfg[C_User.ins.language];
         if (this.node && this.node.getComponent(cc.Label)) {
             this.node.getComponent(cc.Label).string = cfg[this.lanKey];
         }

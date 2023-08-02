@@ -3,7 +3,7 @@ import { Utils } from "../config/Utils";
 import ComponentBase from "../../../00_base/script/common/ComponentBase";
 import { AccountType, EventName, HttpPath, ViewEnum, WidgetEnum } from "../config/config";
 import { CodeStruct, CountryCodeData } from "../../../00_base/script/common/CountryCode";
-import { UserInfo } from "../config/UserInfo";
+import { C_User } from "../config/C_User";
 import { Tips } from "../../../00_base/script/uiutils/tips";
 
 const { ccclass, property } = cc._decorator;
@@ -99,14 +99,14 @@ export default class login extends ComponentBase {
             return;
         }
 
-        UserInfo.uuid = res.uuid;
-        UserInfo.nick = res.data.name;
-        UserInfo.headPic = res.data.headPic;
-        UserInfo.gender = res.data.sex;
-        UserInfo.vipValidityPeriod = res.data.vipValidityPeriod;
-        UserInfo.vipType = res.data.vipType;
-        UserInfo.uuid = res.uuid;
-        UserInfo.token = res.data.token;
+        C_User.ins.me.uid = res.uuid;
+        C_User.ins.me.name = res.data.name;
+        C_User.ins.me.headPic = res.data.headPic;
+        C_User.ins.me.sex = res.data.sex;
+        C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+        C_User.ins.me.vipType = res.data.vipType;
+        C_User.ins.uid = res.uuid;
+        C_User.ins.token = res.data.token;
 
         await ViewManager.Alert(WidgetEnum.BottomToggle);
         await ViewManager.Open(ViewEnum.FaXian);
@@ -148,14 +148,14 @@ export default class login extends ComponentBase {
             return;
         }
 
-        UserInfo.uuid = res.uuid;
-        UserInfo.nick = res.data.name;
-        UserInfo.headPic = res.data.headPic;
-        UserInfo.gender = res.data.sex;
-        UserInfo.vipValidityPeriod = res.data.vipValidityPeriod;
-        UserInfo.vipType = res.data.vipType;
-        UserInfo.uuid = res.uuid;
-        UserInfo.token = res.data.token;
+        C_User.ins.uid = res.uuid;
+        C_User.ins.me.name = res.data.name;
+        C_User.ins.me.headPic = res.data.headPic;
+        C_User.ins.me.sex = res.data.sex;
+        C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+        C_User.ins.me.vipType = res.data.vipType;
+        C_User.ins.me.uid = res.uuid;
+        C_User.ins.token = res.data.token;
 
         await ViewManager.Alert(WidgetEnum.BottomToggle);
         await ViewManager.Open(ViewEnum.FaXian);
