@@ -96,7 +96,7 @@ var chuangjianjulebu = /** @class */ (function (_super) {
                             "iconPic": "1",
                             "area": "2",
                         };
-                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.createJuLeBu, info)];
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.clubCreate, info)];
                     case 1:
                         res = _a.sent();
                         if (res.code !== 200) {

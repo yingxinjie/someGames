@@ -30,23 +30,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var light = /** @class */ (function (_super) {
+    __extends(light, _super);
+    function light() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.angleNumArr = [];
         return _this;
     }
-    NewClass.prototype.start = function () {
+    light.prototype.start = function () {
     };
     __decorate([
         property([cc.String])
-    ], NewClass.prototype, "angleNumArr", void 0);
-    NewClass = __decorate([
+    ], light.prototype, "angleNumArr", void 0);
+    light = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
+    ], light);
+    return light;
 }(cc.Component));
-exports.default = NewClass;
+exports.default = light;
 
 cc._RF.pop();

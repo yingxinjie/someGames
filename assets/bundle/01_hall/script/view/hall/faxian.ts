@@ -1,6 +1,6 @@
 import ComponentBase from "../../../../00_base/script/common/ComponentBase";
 import { HttpPath, ViewEnum } from "../../config/config";
-import { UserInfo } from "../../config/UserInfo";
+import { C_User } from "../../config/C_User";
 import { Utils } from "../../config/Utils";
 import { ViewManager } from "../../config/ViewManager";
 import open from "../../open";
@@ -33,28 +33,28 @@ export default class faxian extends ComponentBase {
 
     private async queryPerson() {
         let info: any = {
-            uuid: UserInfo.uuid,
-            token: UserInfo.token,
+            uuid: C_User.ins.uid,
+            token: C_User.ins.token,
         }
 
-        let res: any = await Utils.Post(HttpPath.queryPerson, info);
+        let res: any = await Utils.Post(HttpPath.userQuery, info);
 
         if (res.code != 200) {
             return;
         }
 
         let back: any = res.data;
-        UserInfo.uid = back.id;
-        UserInfo.gender = back.sex;
-        UserInfo.vipType = back.vipType;
-        UserInfo.code = back.code;
-        UserInfo.phoneAreaCode = back.phoneAreaCode;
-        UserInfo.phoneNumber = back.phoneNumber;
-        UserInfo.gold = Number(back.gold);
-        UserInfo.diamond = Number(back.diamond);
-        UserInfo.lastLoginTime = back.lastLoginTime;
-        UserInfo.clubNum = Number(back.clubNum);
-        UserInfo.joinClubNum = Number(back.joinClubNum);
+        C_User.ins.uid = back.id;
+        C_User.ins.me.sex = back.sex;
+        C_User.ins.me.vipType = back.vipType;
+        C_User.ins.me.code = back.code;
+        C_User.ins.me.phoneAreaCode = back.phoneAreaCode;
+        C_User.ins.me.phoneNumber = back.phoneNumber;
+        C_User.ins.me.gold = back.gold;
+        C_User.ins.me.diamond = back.diamond;
+        C_User.ins.me.lastLoginTime = back.lastLoginTime;
+        C_User.ins.me.clubNum = back.clubNum;
+        C_User.ins.me.joinClubNum = back.joinClubNum;
     }
 
 

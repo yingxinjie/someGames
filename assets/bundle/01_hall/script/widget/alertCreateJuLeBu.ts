@@ -33,14 +33,14 @@ export default class alertCreateJuLeBu extends ComponentBase {
     }
 
     private async onClickChuangJianJuLeBu() {
-        let res: any = await Utils.Post(HttpPath.queryCreatedJuLeBu, { current: 0, size: 20 });
+        let res: any = await Utils.Post(HttpPath.clubListQuery, { current: 1, size: 20 });
 
         if (res.code != 200) {
             return;
         }
 
         let list = res.data as any[];
-        if (list.length == 0) {
+        if (!list || list.length == 0) {
             ViewManager.Alert("chuangjianjulebu");
         } else {
             ViewManager.Alert("julebuzhuangtai");

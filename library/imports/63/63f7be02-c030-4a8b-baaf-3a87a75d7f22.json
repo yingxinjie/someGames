@@ -1,0 +1,9 @@
+{
+  "__type__": "cc.JsonAsset",
+  "_name": "club",
+  "_objFlags": 0,
+  "_native": "",
+  "json": {
+    "vipClubNum": "登录过期，请重新登录"
+  }
+}

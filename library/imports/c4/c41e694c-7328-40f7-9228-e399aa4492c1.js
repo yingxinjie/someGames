@@ -2,6 +2,7 @@
 cc._RF.push(module, 'c41e6lMcyhA95Io45mqRJLB', 'EventManger');
 // bundle/00_base/script/common/EventManger.ts
 
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EventManger = void 0;
 var eventManager = /** @class */ (function () {

@@ -24,7 +24,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Languages_1 = require("../../../../res/i18n/Languages");
-var UserInfo_1 = require("./UserInfo");
+var C_User_1 = require("./C_User");
 var Utils_1 = require("./Utils");
 var EventManger_1 = require("../../../00_base/script/common/EventManger");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -53,7 +53,7 @@ var i18n = /** @class */ (function (_super) {
         this.onChangeLanguage();
     };
     i18n.prototype.onChangeLanguage = function () {
-        var cfg = Languages_1.LanguagesCfg[UserInfo_1.UserInfo.language];
+        var cfg = Languages_1.LanguagesCfg[C_User_1.C_User.ins.language];
         if (this.node && this.node.getComponent(cc.Label)) {
             this.node.getComponent(cc.Label).string = cfg[this.lanKey];
         }

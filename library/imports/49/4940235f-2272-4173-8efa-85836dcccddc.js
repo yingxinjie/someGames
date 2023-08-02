@@ -2,6 +2,7 @@
 cc._RF.push(module, '49402NfInJBc476hYNtzM3c', 'tips');
 // bundle/00_base/script/uiutils/tips.ts
 
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tips = void 0;
 var Tips = /** @class */ (function () {

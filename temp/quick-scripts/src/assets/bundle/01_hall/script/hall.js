@@ -62,7 +62,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var ViewManager_1 = require("./config/ViewManager");
 var Utils_1 = require("./config/Utils");
 var config_1 = require("./config/config");
-var UserInfo_1 = require("./config/UserInfo");
+var C_User_1 = require("./config/C_User");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var hall = /** @class */ (function (_super) {
     __extends(hall, _super);
@@ -77,13 +77,14 @@ var hall = /** @class */ (function (_super) {
             config_1.GlobalConfig.IPort = httpServer;
         }
         this.load();
+        this.onloadJson();
     };
     hall.prototype.load = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (!(UserInfo_1.UserInfo.uuid && UserInfo_1.UserInfo.uuid.length > 0)) return [3 /*break*/, 3];
+                        if (!(C_User_1.C_User.ins.uid && C_User_1.C_User.ins.uid.length > 0)) return [3 /*break*/, 3];
                         return [4 /*yield*/, ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.BottomToggle)];
                     case 1:
                         _a.sent();
@@ -99,6 +100,9 @@ var hall = /** @class */ (function (_super) {
                 }
             });
         });
+    };
+    hall.prototype.onloadJson = function () {
+        config_1.config.instance.onloadConfig();
     };
     hall = __decorate([
         ccclass

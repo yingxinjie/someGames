@@ -41,8 +41,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = void 0;
-var UserInfo_1 = require("./UserInfo");
 var config_1 = require("./config");
+var C_User_1 = require("./C_User");
 var Utils = /** @class */ (function () {
     function Utils() {
     }
@@ -117,7 +117,7 @@ var Utils = /** @class */ (function () {
                         var xhr = new XMLHttpRequest();
                         xhr.open('POST', url);
                         xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
-                        xhr.setRequestHeader("token", UserInfo_1.UserInfo.token);
+                        xhr.setRequestHeader("token", C_User_1.C_User.ins.token);
                         xhr.onload = function () {
                             if (xhr.status === 200) {
                                 var res = void 0;

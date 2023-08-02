@@ -1,0 +1,9 @@
+{
+  "__type__": "cc.JsonAsset",
+  "_name": "lang",
+  "_objFlags": 0,
+  "_native": "",
+  "json": {
+    "0": "登录过期，请重新登录"
+  }
+}

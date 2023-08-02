@@ -6,7 +6,7 @@
 //  - https://docs.cocos.com/creator/2.4/manual/en/scripting/life-cycle-callbacks.html
 
 import ComponentBase from "../../00_base/script/common/ComponentBase";
-import { UserInfo } from "../../01_hall/script/config/UserInfo";
+import { UserInfo } from "../../01_hall/script/config/C_User";
 import { cmdClientEvent } from "./config/cmdClient";
 import { DeskInfo } from "./config/deskInfo";
 import { DeskSeatStatus, PlayerInfoStatus } from "./config/gameConst";
