@@ -7,6 +7,7 @@
 
 import ComponentBase from "../../00_base/script/common/ComponentBase";
 import { DeskInfo } from "./config/deskInfo";
+import timedown from "./timedown";
 
 const { ccclass, property } = cc._decorator;
 
@@ -49,6 +50,9 @@ export default class head extends ComponentBase {
     @property(cc.Node)
     cards: cc.Node[] = [];
 
+    @property(timedown)
+    timeDown:timedown = null
+
 
     playerId: number
 
@@ -74,6 +78,7 @@ export default class head extends ComponentBase {
         this.setHeadInfo(id)
     }
 
+
     public setHeadInfo(id: number) {
         let lpalyer = DeskInfo.getLplayer(id)
         if (!lpalyer) return
@@ -84,6 +89,13 @@ export default class head extends ComponentBase {
         // this.node.active = this.playerId > 0
     }
 
+    public setPlayTime(time:number){
+        this.timeDown.playTime(time)
+    }
+
+    public setStopTime(){
+        this.timeDown.stopTime()
+    }
 
     public clearhead() {
         this.playerId = 0

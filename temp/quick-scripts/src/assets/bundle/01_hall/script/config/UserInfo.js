@@ -80,6 +80,20 @@ var userInfo = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    Object.defineProperty(userInfo.prototype, "testToken", {
+        get: function () {
+            return "d382bbb47b16ff60211af01e08dfa36f6697e0e3b5bd95126ea374e4e6eadc468c1f56d4f9b6685246a02273f064c3f7";
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(userInfo.prototype, "testuuid", {
+        get: function () {
+            return 42;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Object.defineProperty(userInfo.prototype, "language", {
         get: function () {
             var id = cc.sys.localStorage.getItem("language");

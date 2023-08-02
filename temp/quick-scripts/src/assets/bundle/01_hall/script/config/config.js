@@ -20,11 +20,13 @@ var WidgetEnum;
 (function (WidgetEnum) {
     WidgetEnum["BottomToggle"] = "bottomtoggle";
     WidgetEnum["CountryCode"] = "countrycode";
+    WidgetEnum["JoinDesk"] = "joinDesk";
+    WidgetEnum["GameSetting"] = "gameSetting";
 })(WidgetEnum = exports.WidgetEnum || (exports.WidgetEnum = {}));
 /** 全局配置参数 */
 exports.GlobalConfig = {
     // IPort: "175.27.169.117:4000",
-    IPort: "http://192.168.31.39:4000",
+    IPort: "192.168.31.39:4000",
 };
 /** http请求的路径整理 */
 exports.HttpPath = {

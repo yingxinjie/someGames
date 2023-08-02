@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "头像倒计时边框",
+    "texture": "294bd381-9b73-4974-9a4e-9532f194f6d8",
+    "atlas": "",
+    "rect": [
+      1,
+      1,
+      76,
+      77
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      78,
+      78
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

@@ -63,6 +63,7 @@ var ViewManager_1 = require("./config/ViewManager");
 var Utils_1 = require("./config/Utils");
 var config_1 = require("./config/config");
 var UserInfo_1 = require("./config/UserInfo");
+var bundleLoader_1 = require("../../../script/bundleLoader");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var hall = /** @class */ (function (_super) {
     __extends(hall, _super);
@@ -77,6 +78,7 @@ var hall = /** @class */ (function (_super) {
             config_1.GlobalConfig.IPort = httpServer;
         }
         this.load();
+        this.onloadJson();
     };
     hall.prototype.load = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -98,6 +100,21 @@ var hall = /** @class */ (function (_super) {
                     case 5: return [2 /*return*/];
                 }
             });
+        });
+    };
+    hall.prototype.onloadJson = function () {
+        var bundle = bundleLoader_1.bundleLoader.ENUM_BUNDLE_SAVE[bundleLoader_1.bundleLoader.ENUM_BUNDLE.HALL];
+        bundle.load("json/seatpos", function (err, asset) {
+            if (err) {
+                return cc.error(err);
+            }
+            UserInfo_1.UserInfo.seatPJson = asset.json;
+        });
+        bundle.load("json/lightpos", function (err, asset) {
+            if (err) {
+                return cc.error(err);
+            }
+            UserInfo_1.UserInfo.lightPJson = asset.json;
         });
     };
     hall = __decorate([

@@ -131,6 +131,18 @@ class deskMgr {
         return totalpot
     }
 
+    async setCard(targetArr: cc.Node[], index: number, value: number) {
+        let _targets = targetArr
+        _targets[index].active = true
+        _targets[index].getChildByName("cardbg").active = true
+        _targets[index].getChildByName("card").getComponent(cc.Sprite).spriteFrame = await DeskMgr.convertPoker(value)
+    }
+
+
+    setLightDir(){
+        
+    }  
+
 
 
     TweenSendCard(target: cc.Node, callback: Function, parent: any) {
@@ -142,6 +154,7 @@ class deskMgr {
         flyCard.opacity = 122
         let twotaget = target.getChildByName('sprTwoCard')
         let { x, y } = target.parent
+        cc.Tween.stopAllByTarget(flyCard)
         cc.tween(flyCard).to(0.3, { x: x + twotaget.x, y: y + twotaget.y, scale: 1, opacity: 255 }).call(() => {
             callback && callback()
             NodeDZpool.recovery(POOLTYPE.CARD, flyCard)
@@ -149,9 +162,19 @@ class deskMgr {
     }
 
 
-    TweenTurnCard(target: cc.Node) {
-       //cc.tween(target).flipY().start()
+    TweenTurnCard(target: cc.Node, callback: Function) {
+        target.scaleX = 1
+        cc.Tween.stopAllByTarget(target)
+        cc.tween(target).to(0.15, { scaleX: 0.1 }).call(callback).to(0.15, { scaleX: 1 }).start()
     }
+
+
+    TweenThreeBoard(target: cc.Node, callback: Function) {
+        target.scaleX = 1
+        cc.Tween.stopAllByTarget(target)
+        cc.tween(target).to(0.15, { scaleX: 0.1 }).call(callback).to(0.15, { scaleX: 1 }).start()
+    }
+
 
 
 

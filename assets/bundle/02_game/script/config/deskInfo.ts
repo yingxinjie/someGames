@@ -1,5 +1,5 @@
 import { UserInfo } from "../../../01_hall/script/config/UserInfo";
-import { PlayerInfoStatus } from "./gameConst";
+import { GamePlayerDeepRole, GamePlayerOverStatus, PlayerInfoStatus, TexasAction, TexasRound } from "./gameConst";
 
 
 class deskInfo {
@@ -42,6 +42,8 @@ class deskInfo {
 
     public readyPos: number = -1 //准备选择的位置
 
+    public curMyAcitons: { [action: string]: number } = {}
+
 
     public setDeskInfo(data: any) {
         this.deskId = data.deskId
@@ -76,12 +78,13 @@ class deskInfo {
         return null
     }
 
+
     public clearDplayer(seat: number) {
         let seatP = this.seatPlayers[seat]
         if (seatP) {
             seatP.pot = 0
             seatP.handsCard = []
-            seatP.curPositionRole = ""
+            seatP.curPositionRole = null
             seatP.playerId = 0
             seatP.status = PlayerInfoStatus.LEAVE
         }
@@ -114,6 +117,18 @@ class deskInfo {
         }
     }
 
+    public setplayerInfo(id: number, trueSeat: number, status: PlayerInfoStatus) {
+        let dplayer = DeskInfo.getDplayer(trueSeat)
+        dplayer.position = trueSeat
+        dplayer.status = status
+
+        let lpalyer = DeskInfo.getLplayer(id)
+        lpalyer.position = trueSeat
+        lpalyer.status = status
+    }
+
+
+
 }
 
 /** 桌内信息 */
@@ -137,9 +152,9 @@ export interface DplayerInfo {
     pot: number
     position: number//服务端真实玩家位置
     coneverSeat?: number//客服端玩家位置
-    handsCard: { "suit": string, "value": number }[],//玩家手牌
+    handsCard: Card[],//玩家手牌
     status: string //操作状态
-    curPositionRole: string//
+    curPositionRole: GamePlayerDeepRole//
 }
 
 /** 游戏开始信息 */
@@ -150,4 +165,69 @@ export interface S_GameStart {
     deskId: number
     playerPots: { [player: number]: number }[]
     seatPlayerList: DplayerInfo[] //玩家数据
+    actions: Action[]
 }
+
+
+/** 公共牌信息 */
+export interface S_Board {
+    board: Card[]
+    nextPlayerId: number
+    nextBetTime: number
+    deskId: number
+    actions: Action[] //可操作行为
+    cardRankingInfo: Board_CardType //卡牌信息
+}
+
+interface Board_CardType {
+    ranking: string//牌型信息（高牌等
+    cards: Card[] //对应牌型信息
+    winRate: number //赢率，万份制，ALLIN时才有该字段
+}
+
+/** 下注操作信息 */
+export interface S_Bet {
+    round: TexasRound //当前回合 PRE_FLOP(\"翻牌前\"), FLOP(\"翻牌圈\"), TURN(\"转牌圈\"), RIVER(\"河牌圈\
+    playerId: number //当前操作人
+    bankRoll: number
+    action: TexasAction // 当前操作
+    nextPlayerId: number //下位操作人（
+    nextBetTime: number
+    bet: number // 下注金额
+    deskId: number
+    actions: Action[] //可操作行为
+    playerPots: { [player: number]: number }[] //用户下注池
+    pots: number[] //总下注池
+
+    
+}
+
+
+/** 游戏结束信息 */
+export interface S_GameOver {
+    board: Card[]
+    deskId: number
+    playerList: GameOverPlayerInfo //玩家得分集合
+}
+
+
+interface GameOverPlayerInfo {
+    playerId: number
+    handsCard: Card[]
+    ranking: string //牌型
+    board: number //输赢记分牌
+    bankRoll: number //剩余记分牌
+    status: GamePlayerOverStatus // 输赢
+}
+
+export interface Action {
+    action: TexasAction,
+    minBet: number
+}
+
+interface Card {
+    value: number,
+    suit: string
+}
+
+

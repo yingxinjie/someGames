@@ -29,24 +29,73 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var ComponentBase_1 = require("../../00_base/script/common/ComponentBase");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var NewClass = /** @class */ (function (_super) {
-    __extends(NewClass, _super);
-    function NewClass() {
+var timedown = /** @class */ (function (_super) {
+    __extends(timedown, _super);
+    function timedown() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.lightEff = null;
+        _this.animNode = null;
+        _this.animTime = null;
+        _this.labTime = null;
+        _this.isPlay = false;
+        _this.maxTime = 0;
+        _this.percentTime = 0;
+        _this.timeSprite = null;
+        _this.nowTime = 0;
         return _this;
     }
-    NewClass.prototype.start = function () {
+    timedown.prototype.start = function () {
+    };
+    timedown.prototype.playTime = function (time) {
+        this.maxTime = this.nowTime = time;
+        this.labTime.string = "" + time;
+        this.timeSprite = this.node.getComponent(cc.Sprite);
+        this.timeSprite.fillStart = 0.25;
+        this.timeSprite.fillRange = 1;
+        this.animNode.angle = 0;
+        this.animTime.play();
+        this.node.active = true;
+        this.isPlay = true;
+    };
+    timedown.prototype.stopTime = function () {
+        this.isPlay = false;
+        this.node.active = false;
+        this.animTime.stop();
+    };
+    timedown.prototype.update = function (dt) {
+        if (!this.isPlay) {
+            return;
+        }
+        this.nowTime -= dt;
+        this.percentTime = this.nowTime / this.maxTime;
+        if (this.nowTime < 0)
+            this.stopTime();
+        if (this.percentTime >= 0) {
+            this.timeSprite.fillRange = this.percentTime;
+            this.animNode.angle = this.percentTime * 360 - 360;
+        }
+        var tmpInt = Math.floor(this.nowTime);
+        if (tmpInt >= 0) {
+            if (this.labTime) {
+                this.labTime.string = tmpInt.toString();
+            }
+        }
     };
     __decorate([
         property(cc.Node)
-    ], NewClass.prototype, "lightEff", void 0);
-    NewClass = __decorate([
+    ], timedown.prototype, "animNode", void 0);
+    __decorate([
+        property(cc.Animation)
+    ], timedown.prototype, "animTime", void 0);
+    __decorate([
+        property(cc.Label)
+    ], timedown.prototype, "labTime", void 0);
+    timedown = __decorate([
         ccclass
-    ], NewClass);
-    return NewClass;
-}(cc.Component));
-exports.default = NewClass;
+    ], timedown);
+    return timedown;
+}(ComponentBase_1.default));
+exports.default = timedown;
 
 cc._RF.pop();

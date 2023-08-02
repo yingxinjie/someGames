@@ -5,11 +5,16 @@ cc._RF.push(module, '6405cBwWDtE95cMAwWrwF9b', 'deskInfo');
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeskInfo = void 0;
+var UserInfo_1 = require("../../../01_hall/script/config/UserInfo");
+var gameConst_1 = require("./gameConst");
 var deskInfo = /** @class */ (function () {
     function deskInfo() {
         this.players = {};
         this.seatPlayers = {};
         this.board = [];
+        this.seatLen = 9; //默认9（灯光角度数量与座位数一致
+        this.readyPos = -1; //准备选择的位置
+        this.curMyAcitons = {};
     }
     Object.defineProperty(deskInfo, "ins", {
         get: function () {
@@ -35,29 +40,61 @@ var deskInfo = /** @class */ (function () {
         this.roundIsRun = data.roundIsRun;
         this.createDeskPlayerId = data.createDeskPlayerId;
         data.playerList.forEach(function (lpalyer) {
-            _this.setLplayer(lpalyer.position, lpalyer);
+            _this.setLplayer(lpalyer.id, lpalyer);
         });
         data.seatPlayerList.forEach(function (dplayer) {
-            _this.setLplayer(dplayer.position, dplayer);
+            _this.setDplayer(dplayer.position, dplayer);
         });
     };
     deskInfo.prototype.setDplayer = function (seat, data) {
         this.seatPlayers[seat] = data;
     };
     deskInfo.prototype.getDplayer = function (seat) {
-        if (this.players[seat]) {
+        if (this.seatPlayers[seat]) {
             return this.seatPlayers[seat];
         }
         return null;
     };
-    deskInfo.prototype.setLplayer = function (seat, data) {
-        this.players[seat] = data;
+    deskInfo.prototype.clearDplayer = function (seat) {
+        var seatP = this.seatPlayers[seat];
+        if (seatP) {
+            seatP.pot = 0;
+            seatP.handsCard = [];
+            seatP.curPositionRole = null;
+            seatP.playerId = 0;
+            seatP.status = gameConst_1.PlayerInfoStatus.LEAVE;
+        }
     };
-    deskInfo.prototype.getLplayer = function (seat) {
-        if (this.players[seat]) {
-            return this.players[seat];
+    deskInfo.prototype.setLplayer = function (id, data) {
+        this.players[id] = data;
+    };
+    deskInfo.prototype.getLplayer = function (id) {
+        if (this.players[id]) {
+            return this.players[id];
         }
         return null;
+    };
+    deskInfo.prototype.getMylplayer = function () {
+        for (var seat in this.players) {
+            if (this.players[seat] && this.players[seat].id == UserInfo_1.UserInfo.testuuid) {
+                return this.players[seat];
+            }
+        }
+    };
+    deskInfo.prototype.getMydplayer = function () {
+        for (var seat in this.seatPlayers) {
+            if (this.seatPlayers[seat] && this.seatPlayers[seat].playerId == UserInfo_1.UserInfo.testuuid) {
+                return this.seatPlayers[seat];
+            }
+        }
+    };
+    deskInfo.prototype.setplayerInfo = function (id, trueSeat, status) {
+        var dplayer = exports.DeskInfo.getDplayer(trueSeat);
+        dplayer.position = trueSeat;
+        dplayer.status = status;
+        var lpalyer = exports.DeskInfo.getLplayer(id);
+        lpalyer.position = trueSeat;
+        lpalyer.status = status;
     };
     deskInfo.sing = null;
     return deskInfo;

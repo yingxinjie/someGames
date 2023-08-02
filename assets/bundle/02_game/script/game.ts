@@ -3,14 +3,17 @@ import { bundleLoader } from "../../../script/bundleLoader";
 import ComponentBase from "../../00_base/script/common/ComponentBase";
 import { UserInfo } from "../../01_hall/script/config/UserInfo";
 import { ViewManager } from "../../01_hall/script/config/ViewManager";
-import { ViewEnum, WidgetEnum } from "../../01_hall/script/config/config";
+import { WidgetEnum } from "../../01_hall/script/config/config";
 import { cmdClientEvent, cmdClientType } from "./config/cmdClient";
-import { DeskInfo, S_GameStart } from "./config/deskInfo";
+import { Action, DeskInfo, S_Bet, S_Board, S_GameStart } from "./config/deskInfo";
 import { DeskMgr } from "./config/deskMgr";
-import { DeskSeatStatus, PlayerInfoStatus } from "./config/gameConst";
+import { DzUtils } from "./config/dzUtils";
+import { AutoBtnName, DeskSeatStatus, OperateBtnName, PlayerInfoStatus, TexasAction } from "./config/gameConst";
 import { NodeDZpool, POOLTYPE } from "./config/nodeDZpool";
+import slider from "./config/slider";
 import head from "./head";
 import light from "./light";
+import timedown from "./timedown";
 
 const { ccclass, property } = cc._decorator;
 
@@ -18,10 +21,13 @@ const { ccclass, property } = cc._decorator;
 export default class game extends ComponentBase {
 
     @property(cc.Node)
-    card: cc.Node = null;
+    boards: cc.Node[] = [];
 
     @property(light)
     light: light = null;
+
+    @property(slider)
+    slider: slider = null;
 
     @property(cc.Node)
     alert: cc.Node = null;
@@ -39,6 +45,9 @@ export default class game extends ComponentBase {
     myOperate: cc.Node = null;
 
     @property(cc.Node)
+    sliderNode: cc.Node = null;
+
+    @property(cc.Node)
     seats: cc.Node[] = [];
 
     @property(cc.Node)
@@ -53,6 +62,12 @@ export default class game extends ComponentBase {
     @property(cc.Node)
     mycards: cc.Node[] = [];
 
+    @property(cc.Sprite)
+    myCardtype: cc.Sprite = null;
+
+    @property(cc.Label)
+    labMyscore: cc.Label = null;
+
     private heads: { [trueSeat: number]: cc.Node } = {}
 
     /** 桌子坐标 */
@@ -61,8 +76,15 @@ export default class game extends ComponentBase {
     private labdichi: cc.Label
     private chouma_di: cc.Label
 
+    private operNode: cc.Node
+    private notOperNode: cc.Node
+    private btnAddtime: cc.Node
+
 
     protected start(): void {
+        this.initprops()
+        // this.test()
+        //return
 
 
         //消息回调
@@ -84,9 +106,29 @@ export default class game extends ComponentBase {
             this.TouchOn(btn, this.evt_bottom, this) // 游戏场景下方按钮事件
         }
 
-        this.initprops()
+        this.operNode.children.forEach(btn => {
+            this.TouchOn(btn, this.evt_operate, this)
+        });
+
+        this.notOperNode.children.forEach(btn => {
+            this.TouchOn(btn, this.evt_auto, this)
+        });
+
+        this.slider.setCallback(this.evt_slidecall, this)
+
+
         this.init()
 
+
+    }
+
+
+    test() {
+        this.slider.init(100, 0.1)
+        this.slider.setCallback(this.evt_slidecall, this)
+        setTimeout(() => {
+
+        }, 1000);
     }
 
     protected onLoad(): void {
@@ -105,15 +147,27 @@ export default class game extends ComponentBase {
 
     private svr_bet(data: any) {
         console.log("svr_bet")
+        if (!data) return cc.error("数据错误")
+        let _data: S_Bet = data.requestData
+        DeskInfo.currRoundPlayerId = _data.nextPlayerId
+        DeskInfo.playerBetTime = _data.nextBetTime
+
+        this.heads[_data.playerId].getComponent(head).setStopTime()
+
+
+
     }
 
     private svr_gamestart(data: any) {
         console.log("svr_gamestart")
-        this.card.active = false
+        //   this.card.active = false
         let _data: S_GameStart = data.requestData
         this.switchAlert(-1)
+        let isJoinGame: boolean = false
+
 
         DeskInfo.currRoundPlayerId = _data.curPlayerId
+        DeskInfo.playerBetTime = _data.betTime
         DeskInfo.deskId = _data.deskId
         DeskInfo.pots = _data.playerPots
         DeskInfo.pots.forEach((pot, index) => {
@@ -128,7 +182,7 @@ export default class game extends ComponentBase {
         _data.seatPlayerList.forEach(dplayer => {
             DeskInfo.setDplayer(dplayer.position, dplayer)
             if (dplayer.playerId > 0) {
-                let clientSeat: number = this.getSeatByHeadId(dplayer.position)
+                let clientSeat: number = this.getClientSeatByTureSeat(dplayer.position)
                 this.setChoumaNum(0, clientSeat - 1)
 
                 let head = this.heads[dplayer.position]
@@ -138,26 +192,39 @@ export default class game extends ComponentBase {
                     if (dplayer.position == UserInfo.testuuid) {
                         let dplayer = DeskInfo.getMydplayer()
                         dplayer.handsCard.forEach((card, index) => {
-                            this.setMyCard(index, card.value)
+                            DeskMgr.setCard(this.mycards, index, card.value)
+                            DeskMgr.TweenTurnCard(this.mycards[index], () => {
+                                this.mycards[index].getChildByName("cardbg").active = false
+                            })
                         })
                     } else {
                         head.getChildByName("sprTwoCard").active = true
                     }
                 }, this.node)
-            }
 
+                if (dplayer.playerId == DeskInfo.currRoundPlayerId) {
+                    this.setLigth(dplayer.position)
+                }
+                isJoinGame = (dplayer.playerId == UserInfo.testuuid)
+            }
         });
 
+        if (DeskInfo.currRoundPlayerId == UserInfo.testuuid) {
+            this.switchOperate(true, _data.actions, isJoinGame)
 
-        //后续补齐发牌动画
-
+        } else {
+            this.switchOperate(false, _data.actions, isJoinGame)
+        }
 
 
     }
 
 
+
     private svr_gameover(data: any) {
         console.log("svr_gameover")
+        if (!data) return cc.error("数据错误")
+        let _data: S_GameStart = data.requestData
     }
 
     private svr_downup(data: any) {
@@ -166,30 +233,27 @@ export default class game extends ComponentBase {
         if (_data.status == DeskSeatStatus.TEMPORARY) {
             if (UserInfo.testuuid == _data.playerId) {
                 ViewManager.Alert(WidgetEnum.JoinDesk, bundleLoader.ENUM_BUNDLE.GAME)
-                let clientSeat = this.getSeatByHeadId(_data.position)
-                //DeskMgr.setconvertNum(DeskMgr.convert(_data.position))
+                let clientSeat = this.getClientSeatByTureSeat(_data.position)
                 DeskMgr.setconvertNum(clientSeat)
                 this.setHeadInfo(clientSeat, _data.playerId)
-                //this.craeteHead(_data.position, _data.playerId)
                 DeskMgr.TweenSeat(this.seats)
             } else {
-                let clientSeat = this.getSeatByHeadId(_data.position)
+                let clientSeat = this.getClientSeatByTureSeat(_data.position)
                 this.setHeadInfo(clientSeat, _data.playerId)
             }
 
+            DeskInfo.setplayerInfo(_data.playerId, _data.position, _data.status)
 
-            //数据处理
-            let dplayer = DeskInfo.getDplayer(_data.position)
-            dplayer.position = _data.position
-            dplayer.status = PlayerInfoStatus.TEMPORARY
         } else if (_data.status == DeskSeatStatus.SITDOWN) {
-            let clientSeat = this.getSeatByHeadId(_data.position)
+            let clientSeat = this.getClientSeatByTureSeat(_data.position)
             this.setHeadInfo(clientSeat, _data.playerId)
+            DeskInfo.setplayerInfo(_data.playerId, _data.position, _data.status)
         } else {
 
             this.removeHead(_data.position, _data.playerId)
         }
     }
+
 
     private svr_start(data: any) {
         console.log("svr_bet")
@@ -197,6 +261,20 @@ export default class game extends ComponentBase {
 
     private svr_board(data: any) {
         console.log("svr_board")
+        if (!data) return cc.error("数据错误")
+        let _data: S_Board = data.requestData
+        DeskInfo.currRoundPlayerId = _data.nextPlayerId
+        DeskInfo.playerBetTime = _data.nextBetTime
+        DeskInfo.deskId = _data.deskId
+        if (_data.board.length == 3) {
+
+        } else if (_data.board.length == 1) {
+
+        } else {
+
+        }
+
+
     }
 
     private svr_bring(data: any) {
@@ -217,7 +295,7 @@ export default class game extends ComponentBase {
         let name = e.currentTarget.name
         // let seat = DeskMgr.convertobj[Number(name.slice(-1)) + 1]
         // let seat = Number(name.slice(-1)) + 1
-        let seat = this.getHeadBySeat(Number(name.slice(-1)) + 1)
+        let seat = this.getTureSeatByClientSeat(Number(name.slice(-1)) + 1)
         DeskInfo.readyPos = seat
         let info = {
             playerId: UserInfo.testuuid,
@@ -264,6 +342,75 @@ export default class game extends ComponentBase {
         }
     }
 
+    private evt_operate(e: cc.Event.EventTouch) {
+        console.log("evt_operate")
+        let name = e.currentTarget.name
+        let info = {
+            playerId: UserInfo.testuuid,
+            deskId: 9,
+            action: "",
+            bet: 0
+        }
+        switch (name) {
+            case OperateBtnName.btnAdd:
+                this.sliderNode.active = true
+                break;
+            case OperateBtnName.btnGen:
+                info.action = TexasAction.CALL
+                break;
+            case OperateBtnName.btnGiveup:
+                info.action = TexasAction.FOLD
+                break;
+            case OperateBtnName.btnLook:
+                info.action = TexasAction.CHECK
+                break;
+            case OperateBtnName.btnB1:
+                info.action = TexasAction.BET
+                break;
+            case OperateBtnName.btnB2:
+
+                break;
+            case OperateBtnName.btnB3:
+
+                break;
+            case OperateBtnName.btnB4:
+
+                break;
+        }
+        if (OperateBtnName.btnAdd == name) return
+        info.bet = DeskInfo.curMyAcitons[info.action]
+        UserInfo.cwebsocket.clientSend(cmdClientEvent.BET, info)
+    }
+
+
+    private evt_auto(e: cc.Event.EventTouch) {
+        console.log("evt_auto")
+        let name = e.currentTarget.name
+
+        switch (name) {
+            case AutoBtnName.btnAuto:
+
+                break;
+            case AutoBtnName.btnAutoCancel:
+
+                break;
+        }
+    }
+
+
+    async evt_slidecall(value: number) {
+
+        let url1 = value >= this.slider._maxValue() ? "slider2" : (value <= this.slider._minValue() ? "slider0" : "slider1")
+        let url2 = value >= this.slider._maxValue() ? "max" : (value <= this.slider._minValue() ? "normal" : "normal")
+        let color = value >= this.slider._maxValue() ? "#FFFFFF" : (value <= this.slider._minValue() ? "#FF0000" : "#FFFFFF")
+
+        this.slider.setHandleSprite(url1)
+        this.slider.setBackgroundSprite(url2)
+        this.slider.setLabColor(color)
+
+        this.slider.Handlelab.node.active = !(value >= this.slider._maxValue())
+    }
+
     //初始化
     init() {
         this.curSeatP = UserInfo.seatPJson[DeskInfo.seatLen]
@@ -288,26 +435,27 @@ export default class game extends ComponentBase {
         if (UserInfo.testuuid == DeskInfo.createDeskPlayerId) {
             this.switchAlert(2)
         }
+
+        this.light.init(DeskInfo.seatLen)
         //  this.setMyCard(0, 30)
-        setTimeout(() => {
-            DeskMgr.TweenTurnCard(this.mycards[0])
-        }, 1000);
-      
+
+
 
     }
 
     initprops() {
         this.labdichi = this.deskbet.getChildByName("labdichi").getComponent(cc.Label)
         this.chouma_di = this.deskbet.getChildByName("chouma_di").getComponentInChildren(cc.Label)
+        this.notOperNode = this.myOperate.getChildByName("notoperNode")
+        this.operNode = this.myOperate.getChildByName("operNode")
+        this.btnAddtime = this.myOperate.getChildByName("btnAddtime")
     }
 
 
 
 
-    async setMyCard(index: number, value: number) {
-        this.mycards[index].getComponent(cc.Sprite).spriteFrame = await DeskMgr.convertPoker(value)
-        this.mycards[index].active = true
-    }
+
+
 
     setChoumaNum(Num: number, index: number,) {
         this.choumas[index].getComponentInChildren(cc.Label).string = "" + Num
@@ -354,21 +502,14 @@ export default class game extends ComponentBase {
         _ts.setHeadInfo(id)
     }
 
+    setLigth(tureSeat: number) {
+        let clientSeat = this.getClientSeatByTureSeat(tureSeat)
+        this.light.setAngle(clientSeat)
+    }
 
 
-    // setElseHeadInfo(seat: number, id: number) {
-    //     let convertSeat = DeskMgr.convertArr[seat - 1]
-    //     let seatNode = this.seats[convertSeat - 1]
-    //     let _head = cc.instantiate(this.headItem)
-    //     let _ts = _head.getComponent(head)
-    //     _ts.init(id, seat, convertSeat)
-    //     _head.parent = seatNode
-    //     _head.x = 0
-    //     _head.y = 0
-    // }
 
-
-    getHeadBySeat(clientSeat: number) {
+    getTureSeatByClientSeat(clientSeat: number) {
         let trueSeat = 0
         let seatNode = this.seats[clientSeat - 1]
         let _head = seatNode.children[0]
@@ -377,7 +518,7 @@ export default class game extends ComponentBase {
         return trueSeat
     }
 
-    getSeatByHeadId(trueSeat: number) {
+    getClientSeatByTureSeat(trueSeat: number) {
         let clientSeat = 0
         let head = this.heads[trueSeat]
         clientSeat = Number(head.parent.name.slice(-1)) + 1
@@ -400,27 +541,82 @@ export default class game extends ComponentBase {
         DeskInfo.clearDplayer(trueSeat)
     }
 
+    switchOperate(isShow: boolean, actions: Action[], isJoinGame: boolean) {
+        this.myOperate.active = isJoinGame
+        this.operNode.active = isShow
+        this.notOperNode.active = !isShow
+        actions.forEach(ele => {
+            this.setBtnOper(ele.action, ele.minBet)
+        });
+    }
+
+
+    setBtnOper(action: TexasAction, minBet: number) {
+        let btn: cc.Node = null
+        switch (action) {
+            case TexasAction.BET:
+                btn = this.operNode.children[4]
+                btn.getChildByName("labBNum").getComponent(cc.Label).string = "x" + 1
+                btn.getChildByName("labB").getComponent(cc.Label).string = "快速下注"
+                btn.getChildByName("labBScore").getComponent(cc.Label).string = "" + minBet
+                break;
+
+            case TexasAction.CALL:
+                btn = this.operNode.children[3]
+                btn.getChildByName("labGenNum").getComponent(cc.Label).string = "x" + minBet
+                break;
+
+            case TexasAction.CHECK:
+                this.operNode.children[1].getComponent(timedown).stopTime()
+                btn = this.operNode.children[2]
+                btn.getComponent(timedown).playTime(DeskInfo.playerBetTime)
+                break;
+
+            case TexasAction.RAISE:
+            case TexasAction.RERAISE:
+                btn = this.operNode.children[0]
+                let lpayer = DeskInfo.getMylplayer()
+                this.slider.init(lpayer.bankRoll, minBet)
+                break;
+
+            case TexasAction.FOLD:
+                btn = this.operNode.children[1]
+                btn.getComponent(timedown).playTime(DeskInfo.playerBetTime)
+                break;
+
+
+        }
+        DeskInfo.curMyAcitons[action] = minBet
+        if (btn) btn.active = true
+    }
+
+
+
+
+
+
+
     //其他钩子函数
 
-    private nowTime: number = 0
+    // private nowTime: number = 0
 
-    private nowTimeInt: number = 0
+    // private nowTimeInt: number = 0
 
-    private nowClockLabel: cc.Label = null
+    // private nowClockLabel: cc.Label = null
 
-    update(dt: number) {
-        if (!DeskInfo.isStartGame) {
-            return;
-        }
-        this.nowTime -= dt;
-        let tmpInt = Math.floor(this.nowTime);
-        if (tmpInt !== this.nowTimeInt && tmpInt >= 0) {
-            this.nowTimeInt = tmpInt;
-            if (this.nowClockLabel) {
-                this.nowClockLabel.string = tmpInt.toString();
-            }
-        }
-    }
+    // update(dt: number) {
+    //     if (!DeskInfo.isStartGame) {
+    //         return;
+    //     }
+    //     this.nowTime -= dt;
+    //     let tmpInt = Math.floor(this.nowTime);
+    //     if (tmpInt !== this.nowTimeInt && tmpInt >= 0) {
+    //         this.nowTimeInt = tmpInt;
+    //         if (this.nowClockLabel) {
+    //             this.nowClockLabel.string = tmpInt.toString();
+    //         }
+    //     }
+    // }
 
 
     protected onDestroy(): void {

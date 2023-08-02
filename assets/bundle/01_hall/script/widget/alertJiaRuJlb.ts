@@ -44,6 +44,7 @@ export default class alertJiaRuJlb extends ComponentBase {
     }
 
     private onClickJiaRuPaiJu() {
+        ViewManager.Open(ViewEnum.Game, bundleLoader.ENUM_BUNDLE.GAME)
         UserInfo.cwebsocket.clientSend(cmdClientEvent.CONNECT, { playerToekn: UserInfo.testToken, deskId: 9 })
         //  ViewManager.Alert("alertInputYzm");
     }

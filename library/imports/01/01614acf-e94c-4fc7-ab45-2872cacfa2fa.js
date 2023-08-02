@@ -6,6 +6,7 @@ cc._RF.push(module, '01614rP6UxPx6tFKHLKz6L6', 'cwebsocket');
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.cwebsocket = void 0;
 var tips_1 = require("../../../00_base/script/uiutils/tips");
+var cmdClient_1 = require("../../../02_game/script/config/cmdClient");
 var cwebsocket = /** @class */ (function () {
     function cwebsocket(address, id) {
         this.connectState = cwebsocket.nommal;
@@ -39,6 +40,7 @@ var cwebsocket = /** @class */ (function () {
         };
         this.ws.onmessage = function (event) {
             console.log("收到消息: ", event.data);
+            _this.handleMsg(event.data);
         };
         this.ws.onerror = function (event) {
             console.log("收到一个错误,服务器关闭的时候这里不会触发"); //连接服务器连不上的时候会触发
@@ -86,25 +88,47 @@ var cwebsocket = /** @class */ (function () {
         }
         this.ws.send(info);
     };
-    cwebsocket.prototype.on = function (id, func, cbo) {
-        if (id <= 0) {
-            cc.error("消息id必须>0", id);
+    cwebsocket.prototype.clientSend = function (event, requestData, requestType, taskId) {
+        if (requestType === void 0) { requestType = cmdClient_1.cmdClientType.CLIENTTOSERVER; }
+        var info = {
+            event: event,
+            requestData: requestData,
+            requestType: requestType,
+            taskId: taskId
+        };
+        var packages = JSON.stringify(info);
+        this.send(packages);
+    };
+    cwebsocket.prototype.handleMsg = function (data) {
+        var _data = JSON.parse(data);
+        this.readMsg(_data);
+    };
+    cwebsocket.prototype.readMsg = function (data) {
+        this.handleInfo.forEach(function (item, idx) {
+            if (item.event == data.event) {
+                item.func.bind(item.cbo)(data);
+            }
+        });
+    };
+    cwebsocket.prototype.on = function (event, func, cbo) {
+        if (event == '') {
+            cc.error("消息id必须>0", event);
             return;
         }
         if (!func) {
-            cc.error("消息注册回调不能为空", id);
+            cc.error("消息注册回调不能为空", event);
             return;
         }
         if (!cbo) {
-            cc.error("消息注册的函数句柄不能为空", id);
+            cc.error("消息注册的函数句柄不能为空", event);
             return;
         }
-        this.handleInfo.push({ id: id, func: func, cbo: cbo });
+        this.handleInfo.push({ event: event, func: func, cbo: cbo });
     };
-    cwebsocket.prototype.off = function (id, func, cbo) {
+    cwebsocket.prototype.off = function (event, func, cbo) {
         var _this = this;
         this.handleInfo.forEach(function (item, idx) {
-            if (item.id == id && item.func === func && item.cbo === cbo) {
+            if (item.event == event && item.func === func && item.cbo === cbo) {
                 _this.handleInfo.splice(idx, 1);
             }
         });

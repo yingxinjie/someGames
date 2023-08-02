@@ -29,7 +29,7 @@ export default class dzUtils {
     loadPic(url: string, bundleIndex = bundleLoader.ENUM_BUNDLE.GAME) {
         return new Promise((resolve, reject) => {
             let bundle = bundleLoader.ENUM_BUNDLE_SAVE[bundleIndex];
-            bundle.load('prefab/img/' + url, cc.SpriteFrame, (err: Error, pic: cc.SpriteFrame) => {
+            bundle.load('img/' + url, cc.SpriteFrame, (err: Error, pic: cc.SpriteFrame) => {
                 if (err) {
                     cc.error("加载图片错误", err);
                     reject("error");
@@ -41,7 +41,7 @@ export default class dzUtils {
     }
 
 
-    loadCardPic(url: string, bundleIndex = bundleLoader.ENUM_BUNDLE.GAME)  {
+    loadCardPic(url: string, bundleIndex = bundleLoader.ENUM_BUNDLE.GAME) {
         return new Promise<cc.SpriteFrame>((resolve, reject) => {
             let bundle = bundleLoader.ENUM_BUNDLE_SAVE[bundleIndex];
             bundle.load('card/' + url, cc.SpriteFrame, (err: Error, pic: cc.SpriteFrame) => {
@@ -54,6 +54,23 @@ export default class dzUtils {
             });
         });
     }
+
+    colorOfString(value: string): cc.Color {
+        if (value == null || value.length != 7) {
+            return null;
+        }
+        var color = value.toLowerCase();
+        if (color.charAt(0) != "#") {
+            return;
+        }
+        color = color.slice(1);
+        var r = parseInt(color[0] + color[1], 16);
+        var g = parseInt(color[2] + color[3], 16);
+        var b = parseInt(color[4] + color[5], 16);
+        return new cc.Color(r, g, b, 255);
+    }
+
+    
 
 }
 export const DzUtils = dzUtils.ins;

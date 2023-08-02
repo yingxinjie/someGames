@@ -6,6 +6,8 @@
 //  - https://docs.cocos.com/creator/2.4/manual/en/scripting/life-cycle-callbacks.html
 
 import { string } from "../../../../tools/packages/bundle-hotupdate/jszip";
+import { UserInfo } from "../../01_hall/script/config/UserInfo";
+import { DeskMgr } from "./config/deskMgr";
 
 const { ccclass, property } = cc._decorator;
 
@@ -15,7 +17,18 @@ export default class light extends cc.Component {
     @property([cc.String])
     private angleNumArr: string[] = [];
 
+    private angleNums: number[] = [];
+
     protected start(): void {
 
+    }
+
+    init(SeatLen: number = 9) {
+        this.angleNums = UserInfo.lightPJson[SeatLen]
+    }
+
+
+    setAngle(clientSeat: number) {
+        this.node.rotation = this.angleNums[clientSeat - 1]
     }
 }
