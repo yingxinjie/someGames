@@ -1,4 +1,5 @@
-import { UserInfo } from "../../../01_hall/script/config/UserInfo";
+
+import { C_User } from "../../../01_hall/script/config/C_User";
 import head from "../head";
 import { DeskInfo } from "./deskInfo";
 import { DzUtils } from "./dzUtils";
@@ -85,8 +86,8 @@ class deskMgr {
             let seat = seats[i]
             let nextSeat = this.convertArr[i]
 
-            let nextPos = UserInfo.seatPJson[DeskInfo.seatLen][nextSeat - 1]
-            let pos = UserInfo.seatPJson[DeskInfo.seatLen][i]
+            let nextPos =  C_User.ins.seatPJson[DeskInfo.seatLen][nextSeat - 1]
+            let pos =  C_User.ins.seatPJson[DeskInfo.seatLen][i]
             cc.tween(seat).to(0.5, { x: nextPos.x, y: nextPos.y }).call(() => {
                 seat.x = pos.x
                 seat.y = pos.y

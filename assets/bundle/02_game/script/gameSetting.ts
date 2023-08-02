@@ -6,7 +6,8 @@
 //  - https://docs.cocos.com/creator/2.4/manual/en/scripting/life-cycle-callbacks.html
 
 import ComponentBase from "../../00_base/script/common/ComponentBase";
-import { UserInfo } from "../../01_hall/script/config/UserInfo";
+import { C_User } from "../../01_hall/script/config/C_User";
+
 import { cmdClientEvent } from "./config/cmdClient";
 import { DeskInfo } from "./config/deskInfo";
 import { DeskSeatStatus, PlayerInfoStatus } from "./config/gameConst";
@@ -39,12 +40,12 @@ export default class gameSetting extends ComponentBase {
     init() {
 
         let info = {
-            playerId: UserInfo.testuuid,
+            playerId:  C_User.ins.testuuid,
             deskId: 9,
             bring: 200,
             status: PlayerInfoStatus.OBSERVE
         }
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.BRING, info)
+         C_User.ins.cwebsocket.clientSend(cmdClientEvent.BRING, info)
     }
 
 
@@ -53,12 +54,12 @@ export default class gameSetting extends ComponentBase {
         switch (Number(name.slice(-1))) {
             case 0: //站起
                 let info = {
-                    playerId: UserInfo.testuuid,
+                    playerId:  C_User.ins.testuuid,
                     deskId: 9,
                     position: DeskInfo.readyPos,
                     status: DeskSeatStatus.LEAVESEAT
                 }
-                UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
+                 C_User.ins.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
                 break;
             case 1:
 

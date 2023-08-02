@@ -1,13 +1,12 @@
 
 import { bundleLoader } from "../../../script/bundleLoader";
 import ComponentBase from "../../00_base/script/common/ComponentBase";
-import { UserInfo } from "../../01_hall/script/config/C_User";
+import { C_User } from "../../01_hall/script/config/C_User";
 import { ViewManager } from "../../01_hall/script/config/ViewManager";
 import { WidgetEnum } from "../../01_hall/script/config/config";
 import { cmdClientEvent, cmdClientType } from "./config/cmdClient";
 import { Action, DeskInfo, S_Bet, S_Board, S_GameStart } from "./config/deskInfo";
 import { DeskMgr } from "./config/deskMgr";
-import { DzUtils } from "./config/dzUtils";
 import { AutoBtnName, DeskSeatStatus, OperateBtnName, PlayerInfoStatus, TexasAction } from "./config/gameConst";
 import { NodeDZpool, POOLTYPE } from "./config/nodeDZpool";
 import slider from "./config/slider";
@@ -88,15 +87,15 @@ export default class game extends ComponentBase {
 
 
         //消息回调
-        UserInfo.cwebsocket.on(cmdClientEvent.BET, this.svr_bet, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.GAMESTART, this.svr_gamestart, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.GAMEOVER, this.svr_gameover, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.START, this.svr_start, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.BOARD, this.svr_board, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.BRING, this.svr_bring, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.INSURANCE, this.svr_insurance, this)
-        UserInfo.cwebsocket.on(cmdClientEvent.EXIT, this.svr_exit, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.BET, this.svr_bet, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.GAMESTART, this.svr_gamestart, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.GAMEOVER, this.svr_gameover, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.START, this.svr_start, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.BOARD, this.svr_board, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.BRING, this.svr_bring, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.INSURANCE, this.svr_insurance, this)
+        C_User.ins.cwebsocket.on(cmdClientEvent.EXIT, this.svr_exit, this)
 
         //事件回调
         this.TouchOn(this.alert.children[2], this.evt_start, this) // 房主游戏开始
@@ -132,8 +131,8 @@ export default class game extends ComponentBase {
     }
 
     protected onLoad(): void {
-        UserInfo.cwebsocket.on(cmdClientEvent.CONNECT, this.svr_connect, this) // 只处理数据
-        UserInfo.cwebsocket.on(cmdClientEvent.RECONNECT, this.svr_connect, this) // 只处理数据
+        C_User.ins.cwebsocket.on(cmdClientEvent.CONNECT, this.svr_connect, this) // 只处理数据
+        C_User.ins.cwebsocket.on(cmdClientEvent.RECONNECT, this.svr_connect, this) // 只处理数据
 
         NodeDZpool.initCard()
         NodeDZpool.initCoin()
@@ -189,7 +188,7 @@ export default class game extends ComponentBase {
                 head.getChildByName("sprTwoCard").active = false
 
                 DeskMgr.TweenSendCard(head, () => {
-                    if (dplayer.position == UserInfo.testuuid) {
+                    if (dplayer.position ==  C_User.ins.testuuid) {
                         let dplayer = DeskInfo.getMydplayer()
                         dplayer.handsCard.forEach((card, index) => {
                             DeskMgr.setCard(this.mycards, index, card.value)
@@ -205,11 +204,11 @@ export default class game extends ComponentBase {
                 if (dplayer.playerId == DeskInfo.currRoundPlayerId) {
                     this.setLigth(dplayer.position)
                 }
-                isJoinGame = (dplayer.playerId == UserInfo.testuuid)
+                isJoinGame = (dplayer.playerId ==  C_User.ins.testuuid)
             }
         });
 
-        if (DeskInfo.currRoundPlayerId == UserInfo.testuuid) {
+        if (DeskInfo.currRoundPlayerId ==  C_User.ins.testuuid) {
             this.switchOperate(true, _data.actions, isJoinGame)
 
         } else {
@@ -231,8 +230,8 @@ export default class game extends ComponentBase {
         if (!data) return cc.error("数据错误")
         let _data = data.requestData
         if (_data.status == DeskSeatStatus.TEMPORARY) {
-            if (UserInfo.testuuid == _data.playerId) {
-                ViewManager.Alert(WidgetEnum.JoinDesk, bundleLoader.ENUM_BUNDLE.GAME)
+            if ( C_User.ins.testuuid == _data.playerId) {
+                ViewManager.Alert(WidgetEnum.JoinDesk,null, bundleLoader.ENUM_BUNDLE.GAME)
                 let clientSeat = this.getClientSeatByTureSeat(_data.position)
                 DeskMgr.setconvertNum(clientSeat)
                 this.setHeadInfo(clientSeat, _data.playerId)
@@ -298,12 +297,12 @@ export default class game extends ComponentBase {
         let seat = this.getTureSeatByClientSeat(Number(name.slice(-1)) + 1)
         DeskInfo.readyPos = seat
         let info = {
-            playerId: UserInfo.testuuid,
+            playerId:  C_User.ins.testuuid,
             deskId: 9,
             position: DeskInfo.readyPos,
             status: DeskSeatStatus.TEMPORARY
         }
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
+         C_User.ins.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
         //console.log(e)
 
     }
@@ -311,12 +310,12 @@ export default class game extends ComponentBase {
 
     private evt_start(e: cc.Event.EventTouch) {
         console.log("evt_start")
-        if (UserInfo.testuuid == DeskInfo.createDeskPlayerId) {
+        if ( C_User.ins.testuuid == DeskInfo.createDeskPlayerId) {
             let info = {
-                playerId: UserInfo.testuuid,
+                playerId:  C_User.ins.testuuid,
                 deskId: 9
             }
-            UserInfo.cwebsocket.clientSend(cmdClientEvent.START, info)
+             C_User.ins.cwebsocket.clientSend(cmdClientEvent.START, info)
         }
     }
 
@@ -337,7 +336,7 @@ export default class game extends ComponentBase {
 
                 break;
             case 4:
-                ViewManager.Alert(WidgetEnum.GameSetting, bundleLoader.ENUM_BUNDLE.GAME)
+                ViewManager.Alert(WidgetEnum.GameSetting,null ,bundleLoader.ENUM_BUNDLE.GAME)
                 break;
         }
     }
@@ -346,7 +345,7 @@ export default class game extends ComponentBase {
         console.log("evt_operate")
         let name = e.currentTarget.name
         let info = {
-            playerId: UserInfo.testuuid,
+            playerId:  C_User.ins.testuuid,
             deskId: 9,
             action: "",
             bet: 0
@@ -379,7 +378,7 @@ export default class game extends ComponentBase {
         }
         if (OperateBtnName.btnAdd == name) return
         info.bet = DeskInfo.curMyAcitons[info.action]
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.BET, info)
+         C_User.ins.cwebsocket.clientSend(cmdClientEvent.BET, info)
     }
 
 
@@ -413,7 +412,7 @@ export default class game extends ComponentBase {
 
     //初始化
     init() {
-        this.curSeatP = UserInfo.seatPJson[DeskInfo.seatLen]
+        this.curSeatP =  C_User.ins.seatPJson[DeskInfo.seatLen]
         for (let i = 0; i < DeskInfo.seatLen; i++) {
             this.seats[i].x = this.curSeatP[i].x
             this.seats[i].y = this.curSeatP[i].y
@@ -432,7 +431,7 @@ export default class game extends ComponentBase {
             DeskMgr.initSeat(this.seats)
         }
 
-        if (UserInfo.testuuid == DeskInfo.createDeskPlayerId) {
+        if ( C_User.ins.testuuid == DeskInfo.createDeskPlayerId) {
             this.switchAlert(2)
         }
 
@@ -620,16 +619,16 @@ export default class game extends ComponentBase {
 
 
     protected onDestroy(): void {
-        UserInfo.cwebsocket.off(cmdClientEvent.CONNECT, this.svr_connect, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.BET, this.svr_bet, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.GAMESTART, this.svr_gamestart, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.GAMEOVER, this.svr_gameover, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.START, this.svr_start, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.BOARD, this.svr_board, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.BRING, this.svr_bring, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.INSURANCE, this.svr_insurance, this)
-        UserInfo.cwebsocket.off(cmdClientEvent.EXIT, this.svr_exit, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.CONNECT, this.svr_connect, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.BET, this.svr_bet, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.GAMESTART, this.svr_gamestart, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.GAMEOVER, this.svr_gameover, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.START, this.svr_start, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.BOARD, this.svr_board, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.BRING, this.svr_bring, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.INSURANCE, this.svr_insurance, this)
+         C_User.ins.cwebsocket.off(cmdClientEvent.EXIT, this.svr_exit, this)
     }
 
 

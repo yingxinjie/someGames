@@ -6,7 +6,8 @@
 //  - https://docs.cocos.com/creator/2.4/manual/en/scripting/life-cycle-callbacks.html
 
 import ComponentBase from "../../00_base/script/common/ComponentBase";
-import { UserInfo } from "../../01_hall/script/config/C_User";
+import { C_User } from "../../01_hall/script/config/C_User";
+
 import { cmdClientEvent } from "./config/cmdClient";
 import { DeskInfo } from "./config/deskInfo";
 import { DeskSeatStatus, PlayerInfoStatus } from "./config/gameConst";
@@ -68,15 +69,15 @@ export default class joinDesk extends ComponentBase {
     }
 
     init() {
-        this.labtitle1.string = "" + UserInfo.nick
+        this.labtitle1.string = "" +  C_User.ins.me.name
         this.labF.string = "" + 200
         let info = {
-            playerId: UserInfo.testuuid,
+            playerId:  C_User.ins.testuuid,
             deskId: 9,
             bring: 200,
             status: PlayerInfoStatus.OBSERVE
         }
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.BRING, info)
+         C_User.ins.cwebsocket.clientSend(cmdClientEvent.BRING, info)
     }
 
     setJifen() {
@@ -87,12 +88,12 @@ export default class joinDesk extends ComponentBase {
 
     private evt_Close() {
         let info = {
-            playerId: UserInfo.testuuid,
+            playerId:  C_User.ins.testuuid,
             deskId: 9,
             position: DeskInfo.readyPos,
             status: DeskSeatStatus.LEAVESEAT
         }
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
+         C_User.ins.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
         this.node.destroy()
     }
 
@@ -102,12 +103,12 @@ export default class joinDesk extends ComponentBase {
 
     private evt_Join() {
         let info = {
-            playerId: UserInfo.testuuid,
+            playerId:  C_User.ins.testuuid,
             deskId: 9,
             position: DeskInfo.readyPos,
             status: DeskSeatStatus.SITDOWN
         }
-        UserInfo.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
+         C_User.ins.cwebsocket.clientSend(cmdClientEvent.SITDOWNORSTANDUP, info)
         this.node.destroy()
     }
 

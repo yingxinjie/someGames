@@ -1,4 +1,4 @@
-import { UserInfo } from "../../../01_hall/script/config/UserInfo";
+import { C_User } from "../../../01_hall/script/config/C_User";
 import { GamePlayerDeepRole, GamePlayerOverStatus, PlayerInfoStatus, TexasAction, TexasRound } from "./gameConst";
 
 
@@ -103,7 +103,7 @@ class deskInfo {
 
     public getMylplayer() {
         for (let seat in this.players) {
-            if (this.players[seat] && this.players[seat].id == UserInfo.testuuid) {
+            if (this.players[seat] && this.players[seat].id == C_User.ins.testuuid) {
                 return this.players[seat]
             }
         }
@@ -111,7 +111,7 @@ class deskInfo {
 
     public getMydplayer() {
         for (let seat in this.seatPlayers) {
-            if (this.seatPlayers[seat] && this.seatPlayers[seat].playerId == UserInfo.testuuid) {
+            if (this.seatPlayers[seat] && this.seatPlayers[seat].playerId == C_User.ins.testuuid) {
                 return this.seatPlayers[seat]
             }
         }

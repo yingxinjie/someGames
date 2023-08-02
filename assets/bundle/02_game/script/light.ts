@@ -6,7 +6,7 @@
 //  - https://docs.cocos.com/creator/2.4/manual/en/scripting/life-cycle-callbacks.html
 
 import { string } from "../../../../tools/packages/bundle-hotupdate/jszip";
-import { UserInfo } from "../../01_hall/script/config/UserInfo";
+import { C_User } from "../../01_hall/script/config/C_User";
 import { DeskMgr } from "./config/deskMgr";
 
 const { ccclass, property } = cc._decorator;
@@ -24,7 +24,7 @@ export default class light extends cc.Component {
     }
 
     init(SeatLen: number = 9) {
-        this.angleNums = UserInfo.lightPJson[SeatLen]
+        this.angleNums =  C_User.ins.lightPJson[SeatLen]
     }
 
 

@@ -49,6 +49,14 @@ export class C_User {
         return this._token;
     }
 
+    public get testToken() {
+        return "d382bbb47b16ff60211af01e08dfa36f6697e0e3b5bd95126ea374e4e6eadc468c1f56d4f9b6685246a02273f064c3f7"
+    }
+
+    public get testuuid() {
+        return 42
+    }
+
     private _me: D_User;
     get me(): D_User {
         if (!this._me) {
