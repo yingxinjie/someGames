@@ -4,7 +4,7 @@ cc._RF.push(module, 'b24b9QQSnVPFqI0wZV2OSsV', 'config');
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeviceType = exports.UserSex = exports.EventName = exports.AccountType = exports.ComUseStr = exports.HttpPath = exports.GlobalConfig = exports.WidgetEnum = exports.ViewEnum = exports.config = void 0;
+exports.VipType = exports.DeviceType = exports.UserSex = exports.EventName = exports.AccountType = exports.ComUseStr = exports.HttpPath = exports.GlobalConfig = exports.WidgetEnum = exports.ViewEnum = exports.config = void 0;
 var bundleLoader_1 = require("../../../../script/bundleLoader");
 var C_User_1 = require("./C_User");
 var config = /** @class */ (function () {
@@ -215,5 +215,12 @@ var DeviceType;
     DeviceType["Ios"] = "IOS";
     DeviceType["Web"] = "WEB";
 })(DeviceType = exports.DeviceType || (exports.DeviceType = {}));
+/** vip类型 */
+var VipType;
+(function (VipType) {
+    VipType["BLUE"] = "BLUE";
+    VipType["GOLD"] = "GOLD";
+    VipType["PLATINUM"] = "PLATINUM";
+})(VipType = exports.VipType || (exports.VipType = {}));
 
 cc._RF.pop();
