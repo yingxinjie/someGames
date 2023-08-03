@@ -1,4 +1,4 @@
-import { DeviceType, DiamondRecordType, HttpPath, LanguageType, LoginType, SexType } from "../config/config";
+import { CoinRecordType, DeviceType, DiamondRecordType, HttpPath, LanguageType, LoginType, SexType } from "../config/config";
 import { cwebsocket } from "../config/cwebsocket";
 import { D_Set } from "../set/D_Set";
 import { D_User } from "./D_User";
@@ -433,6 +433,20 @@ export class C_User {
         }
         this.diamondRecordArr = res.data;
     }
+
+    coinRecordArr:CoinRecord[];
+    /**钻石记录列表查询 */
+    async sendCoinRecordList(current: number) {
+        let data = {
+            current: current,
+            size: 20
+        }
+        let res: any = await Utils.Post(HttpPath.coinRecordList, data);
+        if (!Utils.serverCode(res.code)) {
+            return;
+        }
+        this.coinRecordArr = res.data;
+    }
 }
 
 export interface DiamondRecord {
@@ -452,4 +466,17 @@ export interface DiamondRecord {
     createDateTime: string;
 }
 
-
+export interface CoinRecord {
+    /**id */
+    id: number,
+    /**记录类型,(enums),RECHARGE=充值,CONSUME=消耗 */
+    recordType: CoinRecordType,
+    /**记录类型,(enums),RECHARGE=充值,CONSUME=消耗 */
+    recordTypeDesc: string,
+    /**记录数量 */
+    number: string,
+    /**记录备注 */
+    remarks: string,
+    /**记录时间 */
+    createDateTime: string
+}

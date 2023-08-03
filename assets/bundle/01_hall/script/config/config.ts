@@ -260,7 +260,7 @@ export enum PropsType {
     VIP = "VIP",//会员
 }
 
-/** 道具类型 */
+/** 钻石记录类型 */
 export enum DiamondRecordType {
     RECHARGE = "RECHARGE",//充值
     CONSUME = "CONSUME",//消耗
@@ -272,4 +272,56 @@ export enum DiamondRecordType {
     UPGRADECLUBVIP = "CONSUME",//升级俱乐部VIP
     UPGRADEUNION = "CONSUME",//升级联盟VIP
     REVISEUNIONNAME = "CONSUME",//修改联盟名称
+}
+
+/** 金币记录类型 */
+export enum CoinRecordType {
+    RECHARGE = "RECHARGE",//充值
+    CONSUME = "CONSUME",//消耗
+}
+
+/** 游戏类型 */
+export enum GameType {
+    TEXAS = "TEXAS",//德州扑克
+}
+
+/** 游戏类型 */
+export enum ClubJob {
+    ADMIN = "ADMIN",//管理员
+    AGENT = "AGENT",//代理
+    SERVICE = "SERVICE",//客服号
+    BOSS = "BOSS"//老板号
+}
+
+/** 分页查询已加入俱乐部用户列表请求 排序字段*/
+export enum ClubPlayerOrderBy {
+    NAME = "NAME",
+    COIN = "COIN"
+}
+
+/** 分页查询已加入俱乐部用户列表请求 排序方式*/
+export enum ClubPlayerOrder {
+    ASC = "ASC",
+    DESC = "DESC"
+}
+
+/** 用户来源*/
+export enum PlayerSourceType {
+    APPLY = "APPLY",//申请
+    SYSTEM = "SYSTEM",//系统
+    INVITE = "INVITE"//邀请
+}
+
+/** 金币记录类型 */
+export enum ClubCoinRecordType {
+    RECLAIM = "RECLAIM",//回收
+    GRANT = "GRANT",//发放
+    UNIONRECLAIM = "UNIONRECLAIM",//联盟回收
+    UNIONGRANT = "UNIONGRANT"//联盟发放
+}
+
+/** 俱乐部币申请类型*/
+export enum ClubCoinApplyType {
+    APPLY = "APPLY",//申请
+    RECLAIM = "RECLAIM",//回收
 }
