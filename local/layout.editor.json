@@ -13,79 +13,63 @@
         "type": "dock-h",
         "children": [
           {
-<<<<<<< HEAD
-            "width": 385,
-            "height": 1271.5,
-=======
-            "width": 606,
-            "height": 919.5,
->>>>>>> 80314b7e433fc444f230837a652dded5b8d6be20
-            "type": "panel",
-            "active": 0,
-            "children": [
-              "assets"
-            ]
-          },
-          {
-<<<<<<< HEAD
-            "width": 531,
-            "height": 1271.5,
-=======
-            "width": 297,
-            "height": 919.5,
->>>>>>> 80314b7e433fc444f230837a652dded5b8d6be20
-            "type": "panel",
-            "active": 0,
-            "children": [
-              "hierarchy"
-            ]
-          },
-          {
-<<<<<<< HEAD
-            "width": 484,
-            "height": 1271.5,
-=======
-            "width": 488,
-            "height": 919.5,
->>>>>>> 80314b7e433fc444f230837a652dded5b8d6be20
-            "type": "panel",
-            "active": 0,
-            "children": [
-              "inspector"
-            ]
-          },
-          {
-<<<<<<< HEAD
-            "width": 1135,
-            "height": 1271.5,
-            "type": "dock-v",
-            "children": [
-              {
-                "width": 1135,
-                "height": 860.65625,
-=======
-            "width": 504,
+            "width": 308,
             "height": 919.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 504,
-                "height": 622.296875,
->>>>>>> 80314b7e433fc444f230837a652dded5b8d6be20
+                "width": 308,
+                "height": 458.75,
                 "type": "panel",
                 "active": 0,
                 "children": [
-                  "scene"
+                  "hierarchy"
                 ]
               },
               {
-<<<<<<< HEAD
-                "width": 1135,
-                "height": 407.84375,
-=======
-                "width": 504,
-                "height": 294.1875,
->>>>>>> 80314b7e433fc444f230837a652dded5b8d6be20
+                "width": 308,
+                "height": 457.75,
+                "type": "panel",
+                "active": 0,
+                "children": [
+                  "assets"
+                ]
+              }
+            ]
+          },
+          {
+            "width": 1286,
+            "height": 919.5,
+            "type": "dock-v",
+            "children": [
+              {
+                "width": 1286,
+                "height": 457.75,
+                "type": "dock-h",
+                "children": [
+                  {
+                    "width": 823,
+                    "height": 457.75,
+                    "type": "panel",
+                    "active": 0,
+                    "children": [
+                      "scene"
+                    ]
+                  },
+                  {
+                    "width": 460,
+                    "height": 457.75,
+                    "type": "panel",
+                    "active": 0,
+                    "children": [
+                      "node-library"
+                    ]
+                  }
+                ]
+              },
+              {
+                "width": 1286,
+                "height": 458.75,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -95,38 +79,44 @@
                 ]
               }
             ]
+          },
+          {
+            "width": 304,
+            "height": 919.5,
+            "type": "panel",
+            "active": 0,
+            "children": [
+              "inspector",
+              "cocos-services"
+            ]
           }
         ]
       },
       "panels": [
-        "assets",
         "hierarchy",
-        "inspector",
+        "assets",
         "scene",
+        "node-library",
         "console",
         "timeline",
-        "game-window"
+        "game-window",
+        "inspector",
+        "cocos-services"
       ]
     }
   },
   "panels": {
-    "project-settings": {
-      "x": 1432,
-      "y": 420,
-      "width": 600,
-      "height": 565
-    },
     "preferences": {
-      "x": 846,
-      "y": 205,
-      "width": 601,
+      "x": 566,
+      "y": 176,
+      "width": 600,
       "height": 566
     },
     "sprite-editor": {
-      "x": 2776,
-      "y": 427,
-      "width": 516,
-      "height": 539
+      "x": 596,
+      "y": 176,
+      "width": 514,
+      "height": 538
     }
   },
   "panelLabelWidth": {}

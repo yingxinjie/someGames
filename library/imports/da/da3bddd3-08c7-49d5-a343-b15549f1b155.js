@@ -27,7 +27,7 @@ var bundleLoader_1 = require("../../../../script/bundleLoader");
 var ComponentBase_1 = require("../../../00_base/script/common/ComponentBase");
 var cmdClient_1 = require("../../../02_game/script/config/cmdClient");
 var deskInfo_1 = require("../../../02_game/script/config/deskInfo");
-var UserInfo_1 = require("../config/UserInfo");
+var C_User_1 = require("../user/C_User");
 var ViewManager_1 = require("../config/ViewManager");
 var config_1 = require("../config/config");
 var cwebsocket_1 = require("../config/cwebsocket");
@@ -45,7 +45,7 @@ var alertJiaRuJlb = /** @class */ (function (_super) {
         this.TouchOn(this.closeBtn, this.alertDestory);
         this.TouchOn(this.jiaRuPaiJuBtn, this.onClickJiaRuPaiJu);
         this.TouchOn(this.jiaRuJuLeBuBtn, this.onClickJiaRuJuLeBu);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this);
+        C_User_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this);
     };
     alertJiaRuJlb.prototype.svr_connect = function (data) {
         if (data.requestType == cmdClient_1.cmdClientType.SERVERRESPONSE) {
@@ -59,11 +59,11 @@ var alertJiaRuJlb = /** @class */ (function (_super) {
         }
     };
     alertJiaRuJlb.prototype.onLoad = function () {
-        UserInfo_1.UserInfo.cwebsocket = new cwebsocket_1.cwebsocket("ws://192.168.31.188:4030/channel", 1);
+        C_User_1.UserInfo.cwebsocket = new cwebsocket_1.cwebsocket("ws://192.168.31.188:4030/channel", 1);
     };
     alertJiaRuJlb.prototype.onClickJiaRuPaiJu = function () {
         ViewManager_1.ViewManager.Open(config_1.ViewEnum.Game, bundleLoader_1.bundleLoader.ENUM_BUNDLE.GAME);
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.CONNECT, { playerToekn: UserInfo_1.UserInfo.testToken, deskId: 9 });
+        C_User_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.CONNECT, { playerToekn: C_User_1.UserInfo.testToken, deskId: 9 });
         //  ViewManager.Alert("alertInputYzm");
     };
     alertJiaRuJlb.prototype.onClickJiaRuJuLeBu = function () {
@@ -71,7 +71,7 @@ var alertJiaRuJlb = /** @class */ (function (_super) {
         ViewManager_1.ViewManager.Alert("julebuliebiao");
     };
     alertJiaRuJlb.prototype.onDestroy = function () {
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this);
+        C_User_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this);
     };
     __decorate([
         property(cc.Node)

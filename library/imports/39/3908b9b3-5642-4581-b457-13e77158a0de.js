@@ -41,7 +41,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeskMgr = void 0;
-var UserInfo_1 = require("../../../01_hall/script/config/UserInfo");
+var C_User_1 = require("../../../01_hall/script/user/C_User");
 var head_1 = require("../head");
 var deskInfo_1 = require("./deskInfo");
 var dzUtils_1 = require("./dzUtils");
@@ -127,8 +127,8 @@ var deskMgr = /** @class */ (function () {
         var _loop_1 = function (i) {
             var seat = seats[i];
             var nextSeat = this_1.convertArr[i];
-            var nextPos = UserInfo_1.UserInfo.seatPJson[deskInfo_1.DeskInfo.seatLen][nextSeat - 1];
-            var pos = UserInfo_1.UserInfo.seatPJson[deskInfo_1.DeskInfo.seatLen][i];
+            var nextPos = C_User_1.C_User.ins.seatPJson[deskInfo_1.DeskInfo.seatLen][nextSeat - 1];
+            var pos = C_User_1.C_User.ins.seatPJson[deskInfo_1.DeskInfo.seatLen][i];
             cc.tween(seat).to(0.5, { x: nextPos.x, y: nextPos.y }).call(function () {
                 seat.x = pos.x;
                 seat.y = pos.y;

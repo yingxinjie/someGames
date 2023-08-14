@@ -64,7 +64,7 @@ var Utils_1 = require("../config/Utils");
 var ComponentBase_1 = require("../../../00_base/script/common/ComponentBase");
 var config_1 = require("../config/config");
 var CountryCode_1 = require("../../../00_base/script/common/CountryCode");
-var C_User_1 = require("../config/C_User");
+var C_User_1 = require("../user/C_User");
 var tips_1 = require("../../../00_base/script/uiutils/tips");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var login = /** @class */ (function (_super) {

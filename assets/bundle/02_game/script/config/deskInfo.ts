@@ -1,4 +1,5 @@
-import { C_User } from "../../../01_hall/script/config/C_User";
+
+import { C_User } from "../../../01_hall/script/user/C_User";
 import { GamePlayerDeepRole, GamePlayerOverStatus, PlayerInfoStatus, TexasAction, TexasRound } from "./gameConst";
 
 

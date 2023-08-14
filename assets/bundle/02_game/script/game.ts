@@ -1,7 +1,7 @@
 
 import { bundleLoader } from "../../../script/bundleLoader";
 import ComponentBase from "../../00_base/script/common/ComponentBase";
-import { C_User } from "../../01_hall/script/config/C_User";
+
 import { ViewManager } from "../../01_hall/script/config/ViewManager";
 import { WidgetEnum } from "../../01_hall/script/config/config";
 import { cmdClientEvent, cmdClientType } from "./config/cmdClient";
@@ -13,6 +13,7 @@ import slider from "./config/slider";
 import head from "./head";
 import light from "./light";
 import timedown from "./timedown";
+import { C_User } from "../../01_hall/script/user/C_User";
 
 const { ccclass, property } = cc._decorator;
 

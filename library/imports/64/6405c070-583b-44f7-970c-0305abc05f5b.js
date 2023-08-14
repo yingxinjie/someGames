@@ -5,7 +5,7 @@ cc._RF.push(module, '6405cBwWDtE95cMAwWrwF9b', 'deskInfo');
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeskInfo = void 0;
-var UserInfo_1 = require("../../../01_hall/script/config/UserInfo");
+var C_User_1 = require("../../../01_hall/script/user/C_User");
 var gameConst_1 = require("./gameConst");
 var deskInfo = /** @class */ (function () {
     function deskInfo() {
@@ -76,14 +76,14 @@ var deskInfo = /** @class */ (function () {
     };
     deskInfo.prototype.getMylplayer = function () {
         for (var seat in this.players) {
-            if (this.players[seat] && this.players[seat].id == UserInfo_1.UserInfo.testuuid) {
+            if (this.players[seat] && this.players[seat].id == C_User_1.C_User.ins.testuuid) {
                 return this.players[seat];
             }
         }
     };
     deskInfo.prototype.getMydplayer = function () {
         for (var seat in this.seatPlayers) {
-            if (this.seatPlayers[seat] && this.seatPlayers[seat].playerId == UserInfo_1.UserInfo.testuuid) {
+            if (this.seatPlayers[seat] && this.seatPlayers[seat].playerId == C_User_1.C_User.ins.testuuid) {
                 return this.seatPlayers[seat];
             }
         }

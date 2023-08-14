@@ -61,7 +61,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentBase_1 = require("../../../../00_base/script/common/ComponentBase");
 var config_1 = require("../../config/config");
-var UserInfo_1 = require("../../config/UserInfo");
+var C_User_1 = require("../../user/C_User");
 var Utils_1 = require("../../config/Utils");
 var ViewManager_1 = require("../../config/ViewManager");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
@@ -88,27 +88,27 @@ var faxian = /** @class */ (function (_super) {
                 switch (_a.label) {
                     case 0:
                         info = {
-                            uuid: UserInfo_1.UserInfo.uuid,
-                            token: UserInfo_1.UserInfo.token,
+                            uuid: C_User_1.C_User.ins.uid,
+                            token: C_User_1.C_User.ins.token,
                         };
-                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.queryPerson, info)];
+                        return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.userQuery, info)];
                     case 1:
                         res = _a.sent();
                         if (res.code != 200) {
                             return [2 /*return*/];
                         }
                         back = res.data;
-                        UserInfo_1.UserInfo.uid = back.id;
-                        UserInfo_1.UserInfo.gender = back.sex;
-                        UserInfo_1.UserInfo.vipType = back.vipType;
-                        UserInfo_1.UserInfo.code = back.code;
-                        UserInfo_1.UserInfo.phoneAreaCode = back.phoneAreaCode;
-                        UserInfo_1.UserInfo.phoneNumber = back.phoneNumber;
-                        UserInfo_1.UserInfo.gold = Number(back.gold);
-                        UserInfo_1.UserInfo.diamond = Number(back.diamond);
-                        UserInfo_1.UserInfo.lastLoginTime = back.lastLoginTime;
-                        UserInfo_1.UserInfo.clubNum = Number(back.clubNum);
-                        UserInfo_1.UserInfo.joinClubNum = Number(back.joinClubNum);
+                        C_User_1.C_User.ins.uid = back.id;
+                        C_User_1.C_User.ins.me.sex = back.sex;
+                        C_User_1.C_User.ins.me.vipType = back.vipType;
+                        C_User_1.C_User.ins.me.code = back.code;
+                        C_User_1.C_User.ins.me.phoneAreaCode = back.phoneAreaCode;
+                        C_User_1.C_User.ins.me.phoneNumber = back.phoneNumber;
+                        C_User_1.C_User.ins.me.gold = back.gold;
+                        C_User_1.C_User.ins.me.diamond = back.diamond;
+                        C_User_1.C_User.ins.me.lastLoginTime = back.lastLoginTime;
+                        C_User_1.C_User.ins.me.clubNum = back.clubNum;
+                        C_User_1.C_User.ins.me.joinClubNum = back.joinClubNum;
                         return [2 /*return*/];
                 }
             });

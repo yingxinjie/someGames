@@ -1,5 +1,5 @@
 "use strict";
-cc._RF.push(module, '12ea6cmuMlEzIjM6UBVz6VJ', 'Utils');
+cc._RF.push(module, '5c567p4Ee1PKbpdydzlXR4L', 'Utils');
 // bundle/01_hall/script/config/Utils.ts
 
 "use strict";
@@ -41,8 +41,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Utils = void 0;
+var C_Tip_1 = require("../tip/C_Tip");
 var config_1 = require("./config");
-var C_User_1 = require("./C_User");
+var C_User_1 = require("../user/C_User");
+var ViewManager_1 = require("./ViewManager");
 var Utils = /** @class */ (function () {
     function Utils() {
     }
@@ -196,14 +198,61 @@ var Utils = /** @class */ (function () {
             isWeixin: Boolean(navigator.userAgent.match(/MicroMessenger/ig)),
         };
         if (BrowserInfo.isAndroid) {
-            return config_1.DeviceType.Android;
+            return config_1.DeviceType.ANDROID;
         }
         else if (BrowserInfo.isIpad || BrowserInfo.isIphone) {
-            return config_1.DeviceType.Ios;
+            return config_1.DeviceType.IOS;
         }
         else {
-            return config_1.DeviceType.Web;
+            return config_1.DeviceType.WEB;
         }
+    };
+    Utils.serverCode = function (code) {
+        var _this = this;
+        if (code == 200) {
+            console.log("成功");
+            return true;
+        }
+        else if (code == 400) {
+            console.log("系统异常");
+        }
+        else if (code == 405) {
+            console.log("请求方式异常");
+        }
+        else if (code == 415) {
+            console.log("Content-Type不正确");
+        }
+        else if (code == 500) {
+            console.log("登录过期");
+        }
+        else if (code == 501) {
+            console.log("账户异常");
+        }
+        if (code == 500 || code == 501) {
+            C_Tip_1.C_Tip.instance.showTip(config_1.config.instance.getLang(0), function () { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, ViewManager_1.ViewManager.Open(config_1.ViewEnum.Login)];
+                        case 1:
+                            _a.sent();
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        }
+        return false;
+    };
+    Utils.getSpriteFrame = function (url) {
+        return new Promise(function (resolve, reject) {
+            cc.resources.load(url, function (err, asset) {
+                if (err) {
+                    cc.error(err);
+                    return;
+                }
+                var spriteFrame = new cc.SpriteFrame(asset);
+                resolve(spriteFrame);
+            });
+        });
     };
     return Utils;
 }());

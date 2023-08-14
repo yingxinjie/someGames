@@ -49,7 +49,7 @@ export enum ViewEnum {
     Reg = 'reg',
     Login = "login",
     FaXian = "faxian",
-    Create = "create0",
+    Club = "club",
     Game = "game",
 }
 
@@ -60,6 +60,8 @@ export enum WidgetEnum {
     JoinDesk = "joinDesk",
     GameSetting = "gameSetting",
     AlertAddClub = "alertAddClub",
+    Tip = "tip",
+    CreateDZ = "createDZ",
 }
 
 /** 全局配置参数 */

@@ -1,5 +1,7 @@
 import { HttpPath } from "../config/config";
+import { Message } from "../config/Message";
 import { Utils } from "../config/Utils";
+import { C_Hall } from "../hall/C_Hall";
 
 export class C_Game {
     /**道具 */
@@ -16,18 +18,29 @@ export class C_Game {
 
     }
 
-    gameArr:Game[];
+    gameArr: Game[];
     /**桌子配置项查询 游戏类型*/
-    async sendGameList(current: number) {
+    async sendGameList(current: number=0) {
         let data = {
             current: current,
-            size:20
+            size: 20
         }
         let res: any = await Utils.Post(HttpPath.gameList, data);
         if (!Utils.serverCode(res.code)) {
             return;
         }
         this.gameArr = res.data;
+        C_Hall.evt.emit(Message.gameList);
+    }
+
+    getIndexByGameId(gameId:string):number{
+        for(let i=0;i<this.gameArr.length;i++){
+            let game:Game = this.gameArr[i];
+            if(game.id == gameId){
+                return i;
+            }
+        }
+        return -1;
     }
 }
 

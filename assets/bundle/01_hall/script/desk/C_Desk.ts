@@ -1,6 +1,11 @@
+import { DeskInfo } from "../../../02_game/script/config/deskInfo";
 import { GameType, HttpPath } from "../config/config";
+import { Message } from "../config/Message";
 import { Utils } from "../config/Utils";
+import { C_Game } from "../game/C_Game";
+import { C_Hall } from "../hall/C_Hall";
 import { D_Desk } from "./D_Desk";
+import { D_DeskConfig } from "./D_DeskConfig";
 
 export class C_Desk {
     /**道具 */
@@ -67,39 +72,104 @@ export class C_Desk {
         }
     }
 
-    /**桌子创建相关请求 所属俱乐部ID/所属俱乐部联盟ID/游戏id/桌子名称/下注类型 betTree 中的key/带入记分牌/小盲/大盲/人数/自动开始人数/
-     * 前注设置/牌局时长(时)/带入记分牌倍数example: 1,1.5,2,2.5选中部分用逗号拼接后传上来/最小保留记分牌倍数/服务费/限iOS/强制盲注/控制玩家代入/
-     * 保险模式/GPS限制/IP限制/全下或弃牌/延迟看牌/允许带出记分牌/隐藏小数/牌桌同步联盟集合/总手数限制/最低入池率/封顶（大盲）
-    */
-    async sendDeskCreate(clubId: number, unionId: number, gameId: number, nick: number, betType: boolean, scoreBoard: string, sb: string, bb: string,
-        personNum: number, autoStartNum: number, ante: string, duration: string, scoreBoardMultiple: string, minScoreBoardMultiple: string,
-        serviceRate: string, ios: boolean, blind: boolean, playerInvite: boolean, insurance: boolean, gps: boolean, ipRestriction: boolean,
-        allinFold: boolean, delayedCheck: boolean, scoreboardAllowed: boolean, hideDecimals: boolean, unionIds: string, totalPlayNumLimit: number,
-        minJoinChance: string, cappedBigBlind: string) {
-        let data = {
-            clubId: clubId, unionId: unionId, gameId: gameId, nick: nick, betType: betType, scoreBoard: scoreBoard, sb: sb, bb: bb,
-            personNum: personNum, autoStartNum: autoStartNum, ante: ante, duration: duration, scoreBoardMultiple: scoreBoardMultiple,
-            minScoreBoardMultiple: minScoreBoardMultiple, serviceRate: serviceRate, ios: ios, blind: blind, playerInvite: playerInvite,
-            insurance: insurance, gps: gps, ipRestriction: ipRestriction, allinFold: allinFold, delayedCheck: delayedCheck,
-            scoreboardAllowed: scoreboardAllowed, hideDecimals: hideDecimals, unionIds: unionIds, totalPlayNumLimit: totalPlayNumLimit,
-            minJoinChance: minJoinChance, cappedBigBlind: cappedBigBlind
+    /**桌子创建相关请求 */
+    _deskInfo:DeskInfo;
+    get deskInfo():DeskInfo{
+        if(!this._deskInfo){
+            this._deskInfo = {} as DeskInfo;
         }
+        return this._deskInfo;
+    }
+    async sendDeskCreate() {
+        let data = this.deskInfo;
         let res: any = await Utils.Post(HttpPath.deskCreate, data);
         if (!Utils.serverCode(res.code)) {
             return;
         }
     }
 
+    deskConfigArr:D_DeskConfig[];
     /**桌子配置项查询 游戏类型*/
-    async sendDeskConfig(gameType: GameType) {
+    async sendDeskConfig(gameId: string) {
         let data = {
-            gameType: gameType
+            gameId: gameId
         }
         let res: any = await Utils.Post(HttpPath.deskConfig, data);
         if (!Utils.serverCode(res.code)) {
             return;
         }
-        
+        if(!this.deskConfigArr){
+            this.deskConfigArr = [];
+        }
+        if(!C_Game.instance.gameArr){
+            console.log("C_Game.instance.gameArr error")
+            return;
+        }
+        let index:number = C_Game.instance.getIndexByGameId(gameId);
+        this.deskConfigArr[index] = new D_DeskConfig();
+        this.deskConfigArr[index].init(res.data);
+        C_Hall.evt.emit(Message.deskConfig);
     }
+}
+
+export interface DeskInfo {
+    /**所属俱乐部ID*/
+    clubId: number;
+    /**所属俱乐部联盟ID */
+    unionId: number;
+    /**游戏id */
+    gameId: number;
+    /**桌子名称 */
+    nick: string, 
+    /**下注类型 betTree 中的key */
+    betType: boolean,
+    /**带入记分牌 */
+    scoreBoard: string, 
+    /**小盲 */
+    sb: string, 
+    /**大盲 */
+    bb: string,  
+    /**人数 */  
+    personNum: number, 
+    /**自动开始人数 */
+    autoStartNum: number, 
+    /**前注设置 */
+    ante: string, 
+    /**牌局时长(时) */
+    duration: string, 
+    /**带入记分牌倍数example: 1,1.5,2,2.5选中部分用逗号拼接后传上来 */
+    scoreBoardMultiple: string, 
+    /**最小保留记分牌倍数 */
+    minScoreBoardMultiple: string,
+    /**服务费 */
+    serviceRate: string, 
+    /**限iOS */
+    ios: boolean, 
+    /**强制盲注*/
+    blind: boolean,
+    /**控制玩家代入*/
+    playerInvite: boolean, 
+    /**保险模式*/
+    insurance: boolean, 
+    /**GPS限制*/
+    gps: boolean, 
+    /**IP限制 */
+    ipRestriction: boolean,
+    /**全下或弃牌 */
+    allinFold: boolean, 
+    /**延迟看牌 */
+    delayedCheck: boolean, 
+    /**允许带出记分牌*/
+    scoreboardAllowed: boolean, 
+    /**隐藏小数*/
+    hideDecimals: boolean, 
+    /**牌桌同步联盟集合 */
+    unionIds: string, 
+    /**总手数限制  */
+    totalPlayNumLimit: number,
+    /**最低入池率 */
+    minJoinChance: string, 
+    /**封顶（大盲）*/
+    cappedBigBlind: string
 }
 

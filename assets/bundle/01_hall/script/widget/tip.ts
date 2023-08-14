@@ -1,4 +1,6 @@
 import ComponentBase from "../../../00_base/script/common/ComponentBase";
+import { config, WidgetEnum } from "../config/config";
+import { ViewManager } from "../config/ViewManager";
 
 const { ccclass, property } = cc._decorator;
 
@@ -11,12 +13,16 @@ export default class tip extends ComponentBase {
 
     start() {
         this.TouchOn(this.closeBtn, this.alertDestory);
-        this._yesCb && this._yesCb();
     }
 
     private _yesCb: Function;
     init(str:string,yesCb?: () => void){
         this.txt.string = str;
         this._yesCb = yesCb;
+    }
+
+    sure(){
+        ViewManager.RemoveAlert(WidgetEnum.Tip);
+        this._yesCb && this._yesCb();
     }
 }

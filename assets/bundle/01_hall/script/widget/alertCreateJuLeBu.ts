@@ -28,7 +28,7 @@ export default class alertCreateJuLeBu extends ComponentBase {
 
     private onClickChuangJianPaiJu() {
         ViewManager.RemoveAlert(WidgetEnum.BottomToggle)
-        ViewManager.Open(ViewEnum.Create)
+        ViewManager.Alert(WidgetEnum.CreateDZ)
         this.node.destroy();
     }
 

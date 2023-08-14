@@ -24,7 +24,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var Languages_1 = require("../../../../res/i18n/Languages");
-var C_User_1 = require("./C_User");
+var C_User_1 = require("../user/C_User");
 var Utils_1 = require("./Utils");
 var EventManger_1 = require("../../../00_base/script/common/EventManger");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;

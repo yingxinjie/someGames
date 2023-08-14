@@ -80,7 +80,7 @@ var alertCreateJuLeBu = /** @class */ (function (_super) {
     };
     alertCreateJuLeBu.prototype.onClickChuangJianPaiJu = function () {
         ViewManager_1.ViewManager.RemoveAlert(config_1.WidgetEnum.BottomToggle);
-        ViewManager_1.ViewManager.Open(config_1.ViewEnum.Create);
+        ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.CreateDZ);
         this.node.destroy();
     };
     alertCreateJuLeBu.prototype.onClickChuangJianJuLeBu = function () {
@@ -88,14 +88,14 @@ var alertCreateJuLeBu = /** @class */ (function (_super) {
             var res, list;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.queryCreatedJuLeBu, { current: 0, size: 20 })];
+                    case 0: return [4 /*yield*/, Utils_1.Utils.Post(config_1.HttpPath.clubListQuery, { current: 1, size: 20 })];
                     case 1:
                         res = _a.sent();
                         if (res.code != 200) {
                             return [2 /*return*/];
                         }
                         list = res.data;
-                        if (list.length == 0) {
+                        if (!list || list.length == 0) {
                             ViewManager_1.ViewManager.Alert("chuangjianjulebu");
                         }
                         else {

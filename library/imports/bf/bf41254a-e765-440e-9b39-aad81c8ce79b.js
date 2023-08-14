@@ -63,7 +63,7 @@ var C_Tip = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         console.log("showTip");
-                        return [4 /*yield*/, ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.BottomToggle, function (node) {
+                        return [4 /*yield*/, ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.Tip, function (node) {
                                 node.getComponent(tip_1.default).init(str, yesCb);
                             })];
                     case 1:

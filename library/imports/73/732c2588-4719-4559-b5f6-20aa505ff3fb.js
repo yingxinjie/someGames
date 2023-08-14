@@ -30,7 +30,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentBase_1 = require("../../00_base/script/common/ComponentBase");
-var UserInfo_1 = require("../../01_hall/script/config/UserInfo");
+var C_User_1 = require("../../01_hall/script/config/C_User");
 var cmdClient_1 = require("./config/cmdClient");
 var deskInfo_1 = require("./config/deskInfo");
 var gameConst_1 = require("./config/gameConst");
@@ -65,27 +65,27 @@ var joinDesk = /** @class */ (function (_super) {
         this.init();
     };
     joinDesk.prototype.init = function () {
-        this.labtitle1.string = "" + UserInfo_1.UserInfo.nick;
+        this.labtitle1.string = "" + C_User_1.C_User.ins.me.name;
         this.labF.string = "" + 200;
         var info = {
-            playerId: UserInfo_1.UserInfo.testuuid,
+            playerId: C_User_1.C_User.ins.testuuid,
             deskId: 9,
             bring: 200,
             status: gameConst_1.PlayerInfoStatus.OBSERVE
         };
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BRING, info);
+        C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BRING, info);
     };
     joinDesk.prototype.setJifen = function () {
         this.labF.string = "" + 200;
     };
     joinDesk.prototype.evt_Close = function () {
         var info = {
-            playerId: UserInfo_1.UserInfo.testuuid,
+            playerId: C_User_1.C_User.ins.testuuid,
             deskId: 9,
             position: deskInfo_1.DeskInfo.readyPos,
             status: gameConst_1.DeskSeatStatus.LEAVESEAT
         };
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
+        C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
         this.node.destroy();
     };
     joinDesk.prototype.evt_Refrsh = function () {
@@ -93,12 +93,12 @@ var joinDesk = /** @class */ (function (_super) {
     };
     joinDesk.prototype.evt_Join = function () {
         var info = {
-            playerId: UserInfo_1.UserInfo.testuuid,
+            playerId: C_User_1.C_User.ins.testuuid,
             deskId: 9,
             position: deskInfo_1.DeskInfo.readyPos,
             status: gameConst_1.DeskSeatStatus.SITDOWN
         };
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
+        C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
         this.node.destroy();
     };
     joinDesk.prototype.evt_CoinAdd = function () {

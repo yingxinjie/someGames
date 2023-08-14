@@ -13,7 +13,7 @@ export class C_User {
         }
         return this.sing;
     }
-
+    testuuid;
     private _uid: string = "";
 
     /** uid */

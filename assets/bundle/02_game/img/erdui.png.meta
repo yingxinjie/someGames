@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "c7eb03dc-6a18-4932-96cc-40a02f5d852e",
+  "uuid": "a3a3773b-6ac8-4a6e-b574-19ac7ab9e6d2",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -14,9 +14,9 @@
   "subMetas": {
     "erdui": {
       "ver": "1.0.6",
-      "uuid": "31eba53f-bdb1-4395-b726-afa3b60e94c5",
+      "uuid": "dae6a756-48ed-4285-a877-3093f8a46aa3",
       "importer": "sprite-frame",
-      "rawTextureUuid": "c7eb03dc-6a18-4932-96cc-40a02f5d852e",
+      "rawTextureUuid": "a3a3773b-6ac8-4a6e-b574-19ac7ab9e6d2",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

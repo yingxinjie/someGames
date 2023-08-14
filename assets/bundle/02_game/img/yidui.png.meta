@@ -1,6 +1,6 @@
 {
   "ver": "2.3.7",
-  "uuid": "5d104b67-6ce3-4cb2-b053-6d0790b75ebb",
+  "uuid": "864ef4ae-080c-4d31-9a5d-e960cbff06c5",
   "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
@@ -14,9 +14,9 @@
   "subMetas": {
     "yidui": {
       "ver": "1.0.6",
-      "uuid": "5cc5ff7c-b57a-48af-a396-0f8928c8189d",
+      "uuid": "e3aa90a2-c95a-4a98-8ce2-385d9a59ca2f",
       "importer": "sprite-frame",
-      "rawTextureUuid": "5d104b67-6ce3-4cb2-b053-6d0790b75ebb",
+      "rawTextureUuid": "864ef4ae-080c-4d31-9a5d-e960cbff06c5",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

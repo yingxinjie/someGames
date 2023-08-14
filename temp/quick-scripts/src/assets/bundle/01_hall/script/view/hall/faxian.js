@@ -61,7 +61,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentBase_1 = require("../../../../00_base/script/common/ComponentBase");
 var config_1 = require("../../config/config");
-var C_User_1 = require("../../config/C_User");
+var C_User_1 = require("../../user/C_User");
 var Utils_1 = require("../../config/Utils");
 var ViewManager_1 = require("../../config/ViewManager");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;

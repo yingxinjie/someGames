@@ -1,5 +1,7 @@
 import { ClubCoinApplyType, ClubCoinRecordType, ClubJob, ClubPlayerOrder, ClubPlayerOrderBy, HttpPath } from "../config/config";
+import { Message } from "../config/Message";
 import { Utils } from "../config/Utils";
+import { C_Hall } from "../hall/C_Hall";
 import { D_Club } from "./D_Club";
 import { D_ClubPlayer } from "./D_ClubPlayer";
 
@@ -421,6 +423,7 @@ export class C_Club {
                 this.joinedClub.push(club);
             }
         }
+        C_Hall.evt.emit(Message.clubJoined);
     }
 
     /**删除解散 */

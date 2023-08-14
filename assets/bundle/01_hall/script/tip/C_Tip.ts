@@ -18,7 +18,7 @@ export class C_Tip{
 
     public async showTip(str: string,yesCb?: () => void){
         console.log("showTip");
-        await ViewManager.Alert(WidgetEnum.BottomToggle,(node) => {
+        await ViewManager.Alert(WidgetEnum.Tip,(node) => {
             node.getComponent(tip).init(str,yesCb);
         });
     }

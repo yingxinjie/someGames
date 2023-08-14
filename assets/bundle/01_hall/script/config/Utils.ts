@@ -2,6 +2,7 @@ import { C_Tip } from "../tip/C_Tip";
 import { config, DeviceType, GlobalConfig, ViewEnum } from "./config";
 import { C_User } from "../user/C_User";
 import { ViewManager } from "./ViewManager";
+import { bundleLoader } from "../../../../script/bundleLoader";
 
 export class Utils {
     /**
@@ -185,5 +186,19 @@ export class Utils {
         }
         return false;
     }
+
+    static getSpriteFrame(url: string): Promise<cc.SpriteFrame> {
+        return new Promise((resolve, reject) => {
+            cc.resources.load(url, (err, asset: cc.Texture2D) => {
+                if (err) {
+                    cc.error(err)
+                    return
+                }
+                let spriteFrame = new cc.SpriteFrame(asset)
+                resolve(spriteFrame)
+            })
+        })
+    }
+   
 }
 

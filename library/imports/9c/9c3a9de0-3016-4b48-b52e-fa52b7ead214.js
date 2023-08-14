@@ -61,7 +61,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var bundleLoader_1 = require("../../../script/bundleLoader");
 var ComponentBase_1 = require("../../00_base/script/common/ComponentBase");
-var UserInfo_1 = require("../../01_hall/script/config/UserInfo");
 var ViewManager_1 = require("../../01_hall/script/config/ViewManager");
 var config_1 = require("../../01_hall/script/config/config");
 var cmdClient_1 = require("./config/cmdClient");
@@ -73,6 +72,7 @@ var slider_1 = require("./config/slider");
 var head_1 = require("./head");
 var light_1 = require("./light");
 var timedown_1 = require("./timedown");
+var C_User_1 = require("../../01_hall/script/user/C_User");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var game = /** @class */ (function (_super) {
     __extends(game, _super);
@@ -103,15 +103,15 @@ var game = /** @class */ (function (_super) {
         // this.test()
         //return
         //消息回调
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.BET, this.svr_bet, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.GAMESTART, this.svr_gamestart, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.GAMEOVER, this.svr_gameover, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.START, this.svr_start, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.BOARD, this.svr_board, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.BRING, this.svr_bring, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.INSURANCE, this.svr_insurance, this);
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.EXIT, this.svr_exit, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.BET, this.svr_bet, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.GAMESTART, this.svr_gamestart, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.GAMEOVER, this.svr_gameover, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.START, this.svr_start, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.BOARD, this.svr_board, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.BRING, this.svr_bring, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.INSURANCE, this.svr_insurance, this);
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.EXIT, this.svr_exit, this);
         //事件回调
         this.TouchOn(this.alert.children[2], this.evt_start, this); // 房主游戏开始
         for (var i = 0; i < this.bottoms.length; i++) {
@@ -134,8 +134,8 @@ var game = /** @class */ (function (_super) {
         }, 1000);
     };
     game.prototype.onLoad = function () {
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this); // 只处理数据
-        UserInfo_1.UserInfo.cwebsocket.on(cmdClient_1.cmdClientEvent.RECONNECT, this.svr_connect, this); // 只处理数据
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this); // 只处理数据
+        C_User_1.C_User.ins.cwebsocket.on(cmdClient_1.cmdClientEvent.RECONNECT, this.svr_connect, this); // 只处理数据
         nodeDZpool_1.NodeDZpool.initCard();
         nodeDZpool_1.NodeDZpool.initCoin();
     };
@@ -182,7 +182,7 @@ var game = /** @class */ (function (_super) {
                 var head_2 = _this.heads[dplayer.position];
                 head_2.getChildByName("sprTwoCard").active = false;
                 deskMgr_1.DeskMgr.TweenSendCard(head_2, function () {
-                    if (dplayer.position == UserInfo_1.UserInfo.testuuid) {
+                    if (dplayer.position == C_User_1.C_User.ins.testuuid) {
                         var dplayer_1 = deskInfo_1.DeskInfo.getMydplayer();
                         dplayer_1.handsCard.forEach(function (card, index) {
                             deskMgr_1.DeskMgr.setCard(_this.mycards, index, card.value);
@@ -198,10 +198,10 @@ var game = /** @class */ (function (_super) {
                 if (dplayer.playerId == deskInfo_1.DeskInfo.currRoundPlayerId) {
                     _this.setLigth(dplayer.position);
                 }
-                isJoinGame = (dplayer.playerId == UserInfo_1.UserInfo.testuuid);
+                isJoinGame = (dplayer.playerId == C_User_1.C_User.ins.testuuid);
             }
         });
-        if (deskInfo_1.DeskInfo.currRoundPlayerId == UserInfo_1.UserInfo.testuuid) {
+        if (deskInfo_1.DeskInfo.currRoundPlayerId == C_User_1.C_User.ins.testuuid) {
             this.switchOperate(true, _data.actions, isJoinGame);
         }
         else {
@@ -219,8 +219,8 @@ var game = /** @class */ (function (_super) {
             return cc.error("数据错误");
         var _data = data.requestData;
         if (_data.status == gameConst_1.DeskSeatStatus.TEMPORARY) {
-            if (UserInfo_1.UserInfo.testuuid == _data.playerId) {
-                ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.JoinDesk, bundleLoader_1.bundleLoader.ENUM_BUNDLE.GAME);
+            if (C_User_1.C_User.ins.testuuid == _data.playerId) {
+                ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.JoinDesk, null, bundleLoader_1.bundleLoader.ENUM_BUNDLE.GAME);
                 var clientSeat = this.getClientSeatByTureSeat(_data.position);
                 deskMgr_1.DeskMgr.setconvertNum(clientSeat);
                 this.setHeadInfo(clientSeat, _data.playerId);
@@ -252,6 +252,12 @@ var game = /** @class */ (function (_super) {
         deskInfo_1.DeskInfo.currRoundPlayerId = _data.nextPlayerId;
         deskInfo_1.DeskInfo.playerBetTime = _data.nextBetTime;
         deskInfo_1.DeskInfo.deskId = _data.deskId;
+        if (_data.board.length == 3) {
+        }
+        else if (_data.board.length == 1) {
+        }
+        else {
+        }
     };
     game.prototype.svr_bring = function (data) {
         console.log("svr_bring");
@@ -270,22 +276,22 @@ var game = /** @class */ (function (_super) {
         var seat = this.getTureSeatByClientSeat(Number(name.slice(-1)) + 1);
         deskInfo_1.DeskInfo.readyPos = seat;
         var info = {
-            playerId: UserInfo_1.UserInfo.testuuid,
+            playerId: C_User_1.C_User.ins.testuuid,
             deskId: 9,
             position: deskInfo_1.DeskInfo.readyPos,
             status: gameConst_1.DeskSeatStatus.TEMPORARY
         };
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
+        C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
         //console.log(e)
     };
     game.prototype.evt_start = function (e) {
         console.log("evt_start");
-        if (UserInfo_1.UserInfo.testuuid == deskInfo_1.DeskInfo.createDeskPlayerId) {
+        if (C_User_1.C_User.ins.testuuid == deskInfo_1.DeskInfo.createDeskPlayerId) {
             var info = {
-                playerId: UserInfo_1.UserInfo.testuuid,
+                playerId: C_User_1.C_User.ins.testuuid,
                 deskId: 9
             };
-            UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.START, info);
+            C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.START, info);
         }
     };
     game.prototype.evt_bottom = function (e) {
@@ -301,7 +307,7 @@ var game = /** @class */ (function (_super) {
             case 3:
                 break;
             case 4:
-                ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.GameSetting, bundleLoader_1.bundleLoader.ENUM_BUNDLE.GAME);
+                ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.GameSetting, null, bundleLoader_1.bundleLoader.ENUM_BUNDLE.GAME);
                 break;
         }
     };
@@ -309,7 +315,7 @@ var game = /** @class */ (function (_super) {
         console.log("evt_operate");
         var name = e.currentTarget.name;
         var info = {
-            playerId: UserInfo_1.UserInfo.testuuid,
+            playerId: C_User_1.C_User.ins.testuuid,
             deskId: 9,
             action: "",
             bet: 0
@@ -340,7 +346,7 @@ var game = /** @class */ (function (_super) {
         if (gameConst_1.OperateBtnName.btnAdd == name)
             return;
         info.bet = deskInfo_1.DeskInfo.curMyAcitons[info.action];
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BET, info);
+        C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BET, info);
     };
     game.prototype.evt_auto = function (e) {
         console.log("evt_auto");
@@ -369,7 +375,7 @@ var game = /** @class */ (function (_super) {
     };
     //初始化
     game.prototype.init = function () {
-        this.curSeatP = UserInfo_1.UserInfo.seatPJson[deskInfo_1.DeskInfo.seatLen];
+        this.curSeatP = C_User_1.C_User.ins.seatPJson[deskInfo_1.DeskInfo.seatLen];
         for (var i = 0; i < deskInfo_1.DeskInfo.seatLen; i++) {
             this.seats[i].x = this.curSeatP[i].x;
             this.seats[i].y = this.curSeatP[i].y;
@@ -386,7 +392,7 @@ var game = /** @class */ (function (_super) {
             deskInfo_1.DeskInfo.readyPos = Mylplayer.position;
             deskMgr_1.DeskMgr.initSeat(this.seats);
         }
-        if (UserInfo_1.UserInfo.testuuid == deskInfo_1.DeskInfo.createDeskPlayerId) {
+        if (C_User_1.C_User.ins.testuuid == deskInfo_1.DeskInfo.createDeskPlayerId) {
             this.switchAlert(2);
         }
         this.light.init(deskInfo_1.DeskInfo.seatLen);
@@ -526,16 +532,16 @@ var game = /** @class */ (function (_super) {
     //     }
     // }
     game.prototype.onDestroy = function () {
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.BET, this.svr_bet, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.GAMESTART, this.svr_gamestart, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.GAMEOVER, this.svr_gameover, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.START, this.svr_start, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.BOARD, this.svr_board, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.BRING, this.svr_bring, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.INSURANCE, this.svr_insurance, this);
-        UserInfo_1.UserInfo.cwebsocket.off(cmdClient_1.cmdClientEvent.EXIT, this.svr_exit, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.CONNECT, this.svr_connect, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.BET, this.svr_bet, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.GAMESTART, this.svr_gamestart, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.GAMEOVER, this.svr_gameover, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, this.svr_downup, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.START, this.svr_start, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.BOARD, this.svr_board, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.BRING, this.svr_bring, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.INSURANCE, this.svr_insurance, this);
+        C_User_1.C_User.ins.cwebsocket.off(cmdClient_1.cmdClientEvent.EXIT, this.svr_exit, this);
     };
     __decorate([
         property(cc.Node)

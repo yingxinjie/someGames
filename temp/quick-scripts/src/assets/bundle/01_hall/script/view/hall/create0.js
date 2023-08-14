@@ -29,6 +29,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var Message_1 = require("../../config/Message");
+var C_Game_1 = require("../../game/C_Game");
+var C_Hall_1 = require("../../hall/C_Hall");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var create0 = /** @class */ (function (_super) {
     __extends(create0, _super);
@@ -42,6 +45,22 @@ var create0 = /** @class */ (function (_super) {
     // LIFE-CYCLE CALLBACKS:
     // onLoad () {}
     create0.prototype.start = function () {
+        C_Hall_1.C_Hall.evt.on(Message_1.Message.gameList, this.gameList, this);
+    };
+    create0.prototype.gameList = function () {
+        var _a;
+        if (C_Game_1.C_Game.instance.gameArr && C_Game_1.C_Game.instance.gameArr.length > 0) {
+            (_a = this._gameArr).push.apply(_a, C_Game_1.C_Game.instance.gameArr);
+        }
+    };
+    create0.prototype.getGameList = function () {
+        this._current = 0;
+        this._gameArr = [];
+        this.doGameList();
+    };
+    create0.prototype.doGameList = function () {
+        C_Game_1.C_Game.instance.sendGameList(this._current);
+        this._current++;
     };
     __decorate([
         property(cc.Node)

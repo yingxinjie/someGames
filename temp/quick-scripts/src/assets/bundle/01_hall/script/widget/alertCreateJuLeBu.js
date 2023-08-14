@@ -80,7 +80,7 @@ var alertCreateJuLeBu = /** @class */ (function (_super) {
     };
     alertCreateJuLeBu.prototype.onClickChuangJianPaiJu = function () {
         ViewManager_1.ViewManager.RemoveAlert(config_1.WidgetEnum.BottomToggle);
-        ViewManager_1.ViewManager.Open(config_1.ViewEnum.Create);
+        ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.CreateDZ);
         this.node.destroy();
     };
     alertCreateJuLeBu.prototype.onClickChuangJianJuLeBu = function () {

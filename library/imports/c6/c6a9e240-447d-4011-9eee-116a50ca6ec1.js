@@ -30,7 +30,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var ComponentBase_1 = require("../../00_base/script/common/ComponentBase");
-var UserInfo_1 = require("../../01_hall/script/config/UserInfo");
+var C_User_1 = require("../../01_hall/script/config/C_User");
 var cmdClient_1 = require("./config/cmdClient");
 var deskInfo_1 = require("./config/deskInfo");
 var gameConst_1 = require("./config/gameConst");
@@ -53,24 +53,24 @@ var gameSetting = /** @class */ (function (_super) {
     };
     gameSetting.prototype.init = function () {
         var info = {
-            playerId: UserInfo_1.UserInfo.testuuid,
+            playerId: C_User_1.C_User.ins.testuuid,
             deskId: 9,
             bring: 200,
             status: gameConst_1.PlayerInfoStatus.OBSERVE
         };
-        UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BRING, info);
+        C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.BRING, info);
     };
     gameSetting.prototype.evt_box = function (e) {
         var name = e.currentTarget.name;
         switch (Number(name.slice(-1))) {
             case 0: //站起
                 var info = {
-                    playerId: UserInfo_1.UserInfo.testuuid,
+                    playerId: C_User_1.C_User.ins.testuuid,
                     deskId: 9,
                     position: deskInfo_1.DeskInfo.readyPos,
                     status: gameConst_1.DeskSeatStatus.LEAVESEAT
                 };
-                UserInfo_1.UserInfo.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
+                C_User_1.C_User.ins.cwebsocket.clientSend(cmdClient_1.cmdClientEvent.SITDOWNORSTANDUP, info);
                 break;
             case 1:
                 break;

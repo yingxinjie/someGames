@@ -64,7 +64,7 @@ var Utils_1 = require("../config/Utils");
 var ComponentBase_1 = require("../../../00_base/script/common/ComponentBase");
 var config_1 = require("../config/config");
 var CountryCode_1 = require("../../../00_base/script/common/CountryCode");
-var UserInfo_1 = require("../config/UserInfo");
+var C_User_1 = require("../user/C_User");
 var tips_1 = require("../../../00_base/script/uiutils/tips");
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
 var login = /** @class */ (function (_super) {
@@ -148,14 +148,14 @@ var login = /** @class */ (function (_super) {
                             cc.error("手机登陆请求错误", config_1.HttpPath.phoneLogin, JSON.stringify(res));
                             return [2 /*return*/];
                         }
-                        UserInfo_1.UserInfo.uuid = res.uuid;
-                        UserInfo_1.UserInfo.nick = res.data.name;
-                        UserInfo_1.UserInfo.headPic = res.data.headPic;
-                        UserInfo_1.UserInfo.gender = res.data.sex;
-                        UserInfo_1.UserInfo.vipValidityPeriod = res.data.vipValidityPeriod;
-                        UserInfo_1.UserInfo.vipType = res.data.vipType;
-                        UserInfo_1.UserInfo.uuid = res.uuid;
-                        UserInfo_1.UserInfo.token = res.data.token;
+                        C_User_1.C_User.ins.me.uid = res.uuid;
+                        C_User_1.C_User.ins.me.name = res.data.name;
+                        C_User_1.C_User.ins.me.headPic = res.data.headPic;
+                        C_User_1.C_User.ins.me.sex = res.data.sex;
+                        C_User_1.C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+                        C_User_1.C_User.ins.me.vipType = res.data.vipType;
+                        C_User_1.C_User.ins.uid = res.uuid;
+                        C_User_1.C_User.ins.token = res.data.token;
                         return [4 /*yield*/, ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.BottomToggle)];
                     case 2:
                         _a.sent();
@@ -202,14 +202,14 @@ var login = /** @class */ (function (_super) {
                             cc.error("手机登陆请求错误", config_1.HttpPath.emailLogin, JSON.stringify(res));
                             return [2 /*return*/];
                         }
-                        UserInfo_1.UserInfo.uuid = res.uuid;
-                        UserInfo_1.UserInfo.nick = res.data.name;
-                        UserInfo_1.UserInfo.headPic = res.data.headPic;
-                        UserInfo_1.UserInfo.gender = res.data.sex;
-                        UserInfo_1.UserInfo.vipValidityPeriod = res.data.vipValidityPeriod;
-                        UserInfo_1.UserInfo.vipType = res.data.vipType;
-                        UserInfo_1.UserInfo.uuid = res.uuid;
-                        UserInfo_1.UserInfo.token = res.data.token;
+                        C_User_1.C_User.ins.uid = res.uuid;
+                        C_User_1.C_User.ins.me.name = res.data.name;
+                        C_User_1.C_User.ins.me.headPic = res.data.headPic;
+                        C_User_1.C_User.ins.me.sex = res.data.sex;
+                        C_User_1.C_User.ins.me.vipValidityPeriod = res.data.vipValidityPeriod;
+                        C_User_1.C_User.ins.me.vipType = res.data.vipType;
+                        C_User_1.C_User.ins.me.uid = res.uuid;
+                        C_User_1.C_User.ins.token = res.data.token;
                         return [4 /*yield*/, ViewManager_1.ViewManager.Alert(config_1.WidgetEnum.BottomToggle)];
                     case 2:
                         _a.sent();
